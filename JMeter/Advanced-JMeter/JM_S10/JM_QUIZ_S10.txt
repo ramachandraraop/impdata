@@ -1,0 +1,31 @@
+1. Where do you find the JDBC request Element in JMeter ?
+a) Logical Controller
+b) Pre-Processor
+C) Sampler
+D) Post-Processor
+
+Ans: C
+
+2. What are the options of Query Type in JDBC Request ?
+a) Select Statement
+b) Update Statement
+c) Callable Statement
+d) All of the above
+
+Ans: D
+
+3. Where do you find the JDBC Connection Configuration Element in JMeter ?
+a) Logical Controller
+b) Config Elements
+C) Sampler
+D) None
+
+Ans: B
+
+4. Which of the following is invalid option of Database Connection Configuration in JDBC Connection Configuration Element?
+a) Database URL
+b) JDBC Driver Class
+c) Username
+d) JDBC Class
+
+Ans: D

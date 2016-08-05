@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Working With DRL-Select}}}
+
+\vspace{1pc}
+
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+\begin{enumerate}\itemsep10pt
+%\underline{\hspace{3cm}}.
+\item Write a query to select Emp\_Name and DeptNo from ``Emp'' table \underline{\hspace{3cm}}.
+
+\item Write a query to retrieve records from ``Emp'' table \underline{\hspace{3cm}}.
+
+\item Write a query to retrieve `Salary' from ``Emp'' table \underline{\hspace{3cm}}.
+
+\item \underline{\hspace{3cm}} operator is used for SQL wildcards.
+
+\item \underline{\hspace{3cm}} character is used to separate column names in a \texttt{SELECT} statement.
+
+\item \underline{\hspace{3cm}} keyword is used to retrieve data from a table.
+
+\item Where is the \texttt{GROUP BY} clause placed in a SQL \texttt{SELECT} statement?\underline{\hspace{3cm}}
+
+\item Write a query to select Emp\_name in ascending order from ``employee'' table.
+
+
+
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs.
+\end{itemize}
+\begin{description}
+\item[Program 1]\
+\begin{verbatim}
+SQL> DESC employees;
+ Name                    Null?    Type
+ ----------------------- -------- ----------------
+ EMPLOYEE_ID             NOT NULL INT(6)
+ FIRST_NAME                       VARCHAR(20)
+ LAST_NAME               NOT NULL VARCHAR(25)
+ EMAIL                   NOT NULL VARCHAR(25)
+ PHONE_NUMBER                     VARCHAR(20)
+ HIRE_DATE               NOT NULL DATE
+ JOB_ID                  NOT NULL VARCHAR(10)
+ SALARY                           FLOAT(11)
+ COMMISSION_PCT                   FLOAT(12)
+ MANAGER_ID                       INT(6)
+ DEPARTMENT_ID                    INT(4)
+\end{verbatim}
+
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the query given below?\newline
+\texttt{SELECT distinct salary from employees where last\_name = `Adam';}
+\end{enumerate}
+
+\item[Program 2]\
+\begin{verbatim}
+SQL> select *from Emp;
+
+EMPNO     SAL
+--------- ------
+7499      1600
+7521      8500
+7566      2975
+7654      1250
+7698      2850
+7782      2450
+7788      3000
+7839      5000
+8 rows selected.
+
+\end{verbatim}
+
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the query given below?\newline
+\texttt{SELECT empno, sal FROM emp WHERE sal > Any(2000, 3000, 4000);}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT empno, sal FROM   emp WHERE  all> Any (2000, 3000, 4000);}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT empno, sal  FROM   emp WHERE  sal > Some (2000, 3000, 4000);}
+\end{enumerate}
+\item [Program 3]\ 
+\begin{verbatim}
+SQL> SELECT * FROM CHECKS;
+
+CHECK#   PAYEE                AMOUNT   REMARKS
+-------- -------------------- -------- ------------------
+       1 Ma Bell                   150 Have sons next time
+       2 Reading R.R.           245.34 Train to Chicago
+       3 Ma Bell                200.32 Cellular Phone
+       4 Local Utilities            98 Gas
+       5 Joes Stale $ Dent         150 Groceries
+      16 Cash                       25 Wild Night Out
+      17 Joans Gas                25.1 Gas
+       9 Abes Cleaners           24.35 X-Tra Starch       
+      20 Abes Cleaners            10.5 All Dry Clean
+       8 Cash                       60 Trip to Boston
+      21 Cash                       34 Trip to Dayton
+11 rows selected.
+\end{verbatim}
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the query given below?\newline
+\texttt{SELECT * FROM CHECKS ORDER CHECK\#;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT PAYEE, AMOUNT FROM CHECKS ORDER BY CHECK\# ASC;}
+\item Write a query to order CHECKS by PAYEE and REMARKS.
+\item What will be the output of the query given below?\newline
+\texttt{SELECT * FROM CHECKS ORDER BY PAYEE ASC, REMARKS DESC;}
+\end{enumerate}
+\end{description}
+
+
+\end{document}

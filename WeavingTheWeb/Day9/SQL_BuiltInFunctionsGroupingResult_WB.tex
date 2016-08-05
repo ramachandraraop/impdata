@@ -1,0 +1,219 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Built-In Functions And Grouping Result}}}
+
+\vspace{1pc}
+
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+
+\begin{enumerate}\itemsep10pt
+
+\item \underline{\hspace{3cm}} function is used to find the maximum value in a column.
+
+\item \underline{\hspace{3cm}} function is used to compare dates.
+
+\item \underline{\hspace{3cm}} function is used to get the current time in MYSQL.
+
+\item \underline{\hspace{3cm}} function converts a field to Uppercase.
+
+\item \underline{\hspace{3cm}} function returns count of rows in a table.
+
+\item \underline{\hspace{3cm}} function is used to calculate the arc sine of a value.
+
+\item The function SIGN(-50) gives value as \underline{\hspace{3cm}}
+
+\item The function ABS(-50) returns \underline{\hspace{3cm}}
+
+\item The output of day(`2008-01-12') would be same as that of day(`12.01.2008'). (True / False)
+
+\item What will be the output of the following query? \underline{\hspace{3cm}}
+
+\texttt{SELECT ROUND(12345, -2), ROUND(12.345,2), ROUND(12.345,3) FROM DUAL;}
+
+\item What will be the output of the following query?\underline{\hspace{3cm}}
+
+\texttt{SELECT SUBSTR(`Talent Sprint', -10) FROM DUAL;}
+
+\item What will be the output of the following query?\underline{\hspace{3cm}}
+
+\texttt{SELECT DAYOFWEEK(`2013-07-16') FROM DUAL;}
+
+\end{enumerate}
+\newpage
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs.
+\end{itemize}
+\begin{description}
+\item[Program 1]\
+\begin{verbatim}
+MYSQL> SELECT * FROM TEAMSTATS;
+
+NAME      POS AB  HITS WALKS SINGLES DOUBLES TRIPLES HR SO
+--------- --- --- ---- ----- ------- ------- ------- -- --
+JONES     1B  145 45   34    31       8      1       5  10
+DONKNOW   3B  175 65   23    50      10      1       4  15
+WORLEY    LF  157 49   15    35       8      3       3  16
+DAVID     OF  187 70   24    48       4      0       17 42
+HAMHOCKER 3B  50  12   10    10       2      0       0  13
+CASEY     DH  1   0    0     0        0      0       0  1
+
+
+6 rows selected.
+
+
+
+\end{verbatim}
+
+%\AnswerBox
+
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output  of the query given below?\newline
+\texttt{SELECT SUM(SINGLES) TOTAL\_SINGLES FROM TEAMSTATS;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT SUM(SINGLES) TOTAL\_SINGLES, SUM(DOUBLES) TOTAL\_DOUBLES, SUM(TRIPLES) TOTAL\_TRIPLES, 
+SUM(HR) TOTAL\_HR FROM TEAMSTATS;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT SUM(HITS)/SUM(AB) TEAM\_AVERAGE FROM TEAMSTATS;}
+\item What will be the output of the query given below?
+\texttt{SELECT SUM(NAME) FROM TEAMSTATS;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT COUNT(*) FROM TEAMSTATS WHERE HITS/AB < .35;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT COUNT(NAME) NUM\_BELOW\_350 FROM TEAMSTATS WHERE HITS/AB < .35;}
+\end{enumerate}
+\newpage
+\item[Program 2]\
+\begin{verbatim}
+MYSQL> SELECT * FROM TEAMSTATS;
+
+NAME      POS AB  HITS WALKS SINGLES DOUBLES TRIPLES HR SO
+--------- --- --- ---- ----- ------- ------- ------- -- --
+JONES     1B  145 45   34    31       8      1       5  10
+DONKNOW   3B  175 65   23    50      10      1       4  15
+WORLEY    LF  157 49   15    35       8      3       3  16
+DAVID     OF  187 70   24    48       4      0       17 42
+HAMHOCKER 3B  50  12   10    10       2      0       0  13
+CASEY     DH  1   0    0     0        0      0       0  1
+
+6 rows selected.
+
+\end{verbatim}
+
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the query given below?\newline
+\texttt{SELECT AVG(SO) AVE\_STRIKE\_OUTS FROM TEAMSTATS;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT AVG(HITS)/AVG(AB) TEAM\_AVERAGE FROM TEAMSTATS;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT MAX(HITS) FROM TEAMSTATS;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT NAME FROM TEAMSTATS WHERE HITS = MAX(HITS);}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT MIN(NAME) FROM TEAMSTATS;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT MIN(AB), MAX(AB) FROM TEAMSTATS;}
+\end{enumerate}
+\item [Program 3]\ 
+\begin{verbatim}
+MYSQL> SELECT * FROM PROJECT;
+
+TASK           STARTDATE ENDDATE
+-------------- --------- ---------
+KICKOFF MTG    01-APR-95 01-APR-95
+TECH SURVEY    02-APR-95 01-MAY-95
+USER MTGS      15-MAY-95 30-MAY-95
+DESIGN WIDGET  01-JUN-95 30-JUN-95
+CODE WIDGET    01-JUL-95 02-SEP-95
+TESTING        03-SEP-95 17-JAN-96
+
+6 rows selected.
+\end{verbatim}
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the query given below?\newline
+\texttt{SELECT TASK, STARTDATE, ENDDATE ORIGINAL\_END, ADD\_MONTHS(ENDDATE, 2) FROM PROJECT;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT ENDDATE, LAST\_DAY(ENDDATE) FROM PROJECT;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT DISTINCT LAST\_DAY(`1-FEB-95') NON\_LEAP, LAST\_DAY(`1-FEB-96') LEAP FROM PROJECT;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT TASK, STARTDATE, ENDDATE, MONTHS\_BETWEEN(STARTDATE, ENDDATE) DURATION FROM PROJECT;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT STARTDATE, NEXT\_DAY(STARTDATE, `FRIDAY') FROM PROJECT;}
+\end{enumerate}
+
+\item[Program 4]\
+\begin{verbatim}
+MYSQL> DESC SALES;
+
+
+FIELD         TYPE       NULL  
+------------- ---------- -------
+STORE_ID      INT(11)    YES
+SALES_DATE    DATE       YES
+SALES_AMOUNT  FLOAT      YES
+
+\end{verbatim}
+
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write a query to find the sales amount for each store?
+\item Write a query to list all stores whose total sales amount is above 5000?
+\item Write a query to find the total number of stores in the SALES table?
+\item Write a query to find the total sales amount for STORE\_ID 25 and 45?
+\end{enumerate}
+\newpage
+\item [Program 5]\ 
+\begin{verbatim}
+MYSQL> SELECT * FROM EXAM_RESULTS;
+
+STUDENT_ID  FIRST_NAME    LAST_NAME EXAM_ID  EXAM_SCORE
+----------- ------------- --------- -------- -----------
+10          LAURA         LYNCH	    1        90 
+10          LAURA         LYNCH     2        85
+11          GRACE         BROWN     1        78
+11          GRACE         BROWN     2        72
+12          JAY           JACKSON   1        95
+12          JAY           JACKSON   2        92
+13          WILLIAM       BISHOP    1        70
+13          WILLIAM       BISHOP    2        100
+14          CHARLES       PRADA     2        85
+9 rows selected.
+\end{verbatim}
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the query given below?\newline
+\texttt{SELECT COUNT(DISTINCT STUDENT\_ID) FROM EXAM\_RESULTS;}
+\item Write a query to find the average exam score for EXAM\_ID = 1?
+\item Write a query to retrieve students records whose last name starts with `L'?
+\item What will be the output of the query given below?\newline
+\texttt{SELECT MAX(EXAM\_SCORE) FROM EXAM\_RESULTS WHERE EXAM\_ID = 1 AND FIRST\_NAME LIKE `\%E\%';}
+
+\item How many records does the following statement returns?\newline
+\texttt{SELECT * FROM EXAM\_RESULTS WHERE LAST\_NAME LIKE `\%N\%' AND EXAM\_SCORE > 88;}
+\item How many records does the following statement returns?\newline 
+\texttt{MYSQL> SELECT * FROM EXAM\_RESULTS WHERE STUDENT\_ID <= 12 AND EXAM\_SCORE > 85;}
+\end{enumerate}
+
+\end{description}
+
+\end{document}

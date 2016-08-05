@@ -1,0 +1,39 @@
+1. Who developed JMeter Tool?
+a) James Gosling
+b) Bjarne Stroustrup
+c) Stefano Mazzocchi
+d) Doug Cutting
+
+Ans : C
+
+2. Which java version support's jmeter?
+a) java 4 or below
+b) java 5 or below
+c) java 6 or later
+d) java 3 or below
+
+Ans : C
+
+3. Where to configure the java path in local machine?
+a) Control Panel
+b) Environment Variables
+c) Devices and Printers
+d) Default Programs
+
+Ans : B
+
+4. How to verify Java Configuration?
+a) Java-version
+b) java -version
+c) Java -Version
+d) java -Version
+
+Ans : D
+
+5. Where you find jmeter.bat file in jmeter folder?
+a) lib
+b) extras
+c) licenses
+d) bin
+
+Ans : D

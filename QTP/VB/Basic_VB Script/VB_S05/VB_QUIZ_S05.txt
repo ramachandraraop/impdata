@@ -1,0 +1,76 @@
+Using which method Actual Value of an Argument is Passed to the calling function?
+A. Call ByRef
+B. Call ByVal
+c. Call Val
+D. Call Ref
+Answer : B
+
+Using which method reference is Passed to the calling function?
+A. Call ByRef
+B. Call ByVal
+c. Call Val
+D. Call Ref
+Answer : A
+
+What types of Procedures in VB Script?
+A. Functional Procedures   
+B. Sub Procedures
+C. Functional Procedures and  Sub Procedures 
+D. None of the above  
+Answer: C
+
+
+Using Call By Reference the memory address of argument is passed to the called procedure.
+A. True
+B. False
+Answer: A
+
+Using Call By Value the actual value stored in the argument is passed to the called procedure.
+A. True
+B. False
+Answer: A
+
+Functions in VB Scripts are declared with the help of?
+A. Sub Keyword
+B. Function Keyword
+C. Dim Keyword
+D. Const Keyword
+Answer: B
+
+
+What is the difference between a subroutine and a function?
+A. A function returns a value; a subroutine cannot
+B. A function can accept arguments; a subroutine cannot
+C. A subroutine can call itself; a function cannot
+D. A function can accept arguments; a subroutine cannot
+Answer: A
+
+In VB Script functions, which one is false among the following
+A. None of the above
+B. Variables must be declared before use
+C. Variables may not be declared before use
+D. Variables may be declared without data types
+Answer: B
+
+The Now function returns?
+A. Current system date and time
+B. Current system date
+C. None of the above
+D. Current system time
+Answer: A
+
+What is the output of the given program?
+i=10
+msgbox i
+Call add(i)
+msgbox i
+Function add(Byval i)
+i=50
+msgbox i
+End Function
+A. 50 50 10  
+B. 10 10 50
+C. 10 50 10
+D. 10 50 50
+Answer: C
+

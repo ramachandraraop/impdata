@@ -1,0 +1,221 @@
+\documentclass[11pt,a4paper]{article}
+\author{TalentSprint}
+\date{}
+\usepackage{verbatim}
+\usepackage{fancyhdr}           % For header and footer
+\usepackage{multicol}
+\usepackage{colortbl}           % For coloured tables
+\usepackage{setspace}           % For line height
+\usepackage{seqsplit}           % Splits long words.
+\usepackage{amsmath} 
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[tikz]{bclogo}
+\usepackage{textcomp}
+\usepackage{listings}
+\lstset{language=python,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\headheight=14pt
+\lhead{\nouppercase{}}
+\rhead{\nouppercase{\leftmark}}
+
+\graphicspath{{../Images/} {../ScreenShots/}}
+\setcounter{tocdepth}{1}
+\setlength\parindent{0pt}
+\parskip=4pt
+\newcommand{\Code}[1]{\textbf{\texttt{#1}}}
+
+\begin{comment}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\thispagestyle{empty}
+\vspace{1.5pc}
+\topskip0pt
+\vspace*{\fill}
+\centerline{\Huge Modern Programming}
+\vspace{2pc}
+\centerline{\Huge Practice}
+\vspace{2pc}
+\centerline{\Large using Python}
+\vspace*{\fill}
+\centerline{Prepared by TalentSprint WISE Team} 
+\setcounter{page}{1}
+
+
+\end{comment}
+%========================================================================
+
+% Lengths and widths
+\addtolength{\textwidth}{5cm}
+\addtolength{\hoffset}{-1cm}
+\setlength{\headsep}{-12pt} % Reduce space between header and content
+\setlength{\headheight}{85pt} % If less, LaTeX automatically increases it
+\renewcommand{\footrulewidth}{2pt} % Remove footer line
+\renewcommand{\headrulewidth}{1pt} % Remove header line
+\renewcommand{\seqinsert}{\ifmmode\allowbreak\else\-\fi} % Hyphens in seqsplit
+% This two commands together give roughly
+% the right line height in the tables
+\renewcommand{\arraystretch}{1.3}
+\onehalfspacing
+
+
+
+% Commands
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}} % Shortcut for row colour
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{white}}#2}{#3}} % For coloured multi-cols
+\newcolumntype{x}[1]{>{\raggedright}p{#1}} % New column types for ragged-right paragraph columns
+\newcommand{\tn}{\tabularnewline} % Required as custom column type in use
+
+% Font and Colours
+\definecolor{HeadBackground}{HTML}{333333}
+\definecolor{FootBackground}{HTML}{666666}
+\definecolor{TextColor}{HTML}{333333}
+\definecolor{DarkBackground}{HTML}{6B8E23} %{FD1AA8}
+\definecolor{LightBackground}{HTML}{E8FED8} %D3FDC8
+\definecolor{tit}{HTML}{FF6600}
+\renewcommand{\familydefault}{\sfdefault}
+\color{TextColor}
+ \headsep = 25pt
+% Header and Footer
+\pagestyle{fancy}
+\usepackage[headheight=110pt]{geometry}
+\fancyhf{}% Clear header/footer
+
+\fancyhead[r]{\includegraphics[width = 4cm, height = 2cm]{TS-Logo.png}\hspace{0cm}}
+
+%=================================TITLE=====================================
+\fancyhead[l]{\Large{\bf{\textcolor{tit}{\textrm{Lists}}}}}
+%===========================================================================
+
+\renewcommand{\headrulewidth}{0.4pt}% Default \headrulewidth is 0.4pt
+\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+
+\rfoot{Page \thepage}
+\lfoot{COPYRIGHT \textcopyright TALENTSPRINT, 2015. ALL RIGHTS RESERVED.}
+
+
+
+
+\begin{document}
+
+%\chapter*{Lists}
+Recall that the main built-in types in python are numerics, sequences, mappings, classes, instances and exceptions. 
+
+The \textbf{sequence} type is characterised by the concept of order. Broadly speaking a sequence has
+\begin{itemize}
+    \item a first element
+    \item a last element
+    \item a way of accessing an arbitrary element
+    \item a way of systematically accessing all elements \emph{in order}.
+\end{itemize}
+
+Lists are one variety of mutable sequence type. Lists are a compound data type, used to group \emph{related} data together.  That is, they are a collection of data items. We enclose the items within square brackets and separate them by commas. Some examples are
+
+\begin{verbatim}
+>>> p = [2, 3, 5, 7, 11, 13]
+>>> f = [1, 1, 2, 3, 5, 8, 13]
+\end{verbatim}
+
+An empty list is denoted by \Code{[]} and a new list is typically initialised to that.
+
+Lists can be heterogenous; that is they can  contain items of different data types. For example, 
+\begin{verbatim}
+>>> mix = ["A", 12, 13.7, -2]
+\end{verbatim}
+\texttt{mix} is a list containing 4 elements: the first is a string; the second and fourth are integers and the third is float.
+
+\section*{Accessing an element}
+The elements of a list can be accessed by its \emph{index} which is the position of the element in the list. The convention is to use the index number 0 for the first element. Thus a list of n elements is said to have elements in index 0 to index n-1.
+\begin{verbatim}
+>>> cubes = [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+>>> print(cubes[2])
+27
+>>> print(cubes[9])
+1000
+>>> i = 3
+>>> print(cubes[i])
+64
+\end{verbatim}
+Lists are mutable. So we can modify an element of a list by assigning a new value as in:
+\begin{verbatim}
+>>> alpha = ["A", "X", "X", "T"]
+>>> alpha[2] = "Q"
+>>> alpha
+["A", "X", "Q", "T"]
+\end{verbatim}
+As you can see in the above example, a list can have multiple elements with the same value.
+
+But we cannot add an element by trying to access a non-existing index. See \ref{subsec:InvalidIndex}.
+
+\subsection*{Negative indices}
+In languages like C, Java you need to know/compute the number of elements in an array, in order to access the last element. But python gives a convenient shorthand: -1 is the index of the last element, -2 is the index of the last but one and so on.
+\begin{verbatim}
+>>> cubes[-1] == 1000
+True
+>>> print(cubes[-2])
+729
+\end{verbatim}
+\subsection*{Invalid indices}
+It is an error to try to access an elemnent that is not in the list; that is trying to access cubes[10] or cubes[-11] etc., will give \emph{IndexError}.
+\label{subsec:InvalidIndex}
+
+\section*{Slicing and striding}
+We can \emph{slice}, that is select a part of a list by using the slicing operation. For example,
+\begin{verbatim}
+>>> cubes[1:5]
+[8, 27, 64, 125]
+\end{verbatim}
+
+The syntax of a slice is \Code{aList[start:end]}. Note that this operation
+    \begin{itemize}
+        \item returns a new list
+        \item the first element of that new list is \Code{aList[start]}
+        \item the last element is \Code{aList[end - 1]}, that is \Code{aList} has (\Code{end} - \Code{start}) elements
+        \item aList is unchanged
+    \end{itemize}
+
+\begin{verbatim}
+>>> p = [2, 3, 5, 7, 11, 13, 17, 19]
+>>> p[3:7]
+[7, 11, 13, 17]
+>>> tp = p[4:]
+>>> print(tp)
+[11, 13, 17, 19]
+>>> print(p[:-2])
+[2, 3, 5, 7, 11, 13]
+\end{verbatim}
+
+As we can see from the above if either \Code{start} or \Code{end} is not specified it defaults to be the logical end point.
+
+\subsection*{Striding}
+ 
+While creating a slice we can pick every $n^{th}$ element instead of every element. That is, achieved by specifying \Code{aList[start:end:n]}. This will return a new list whose starting elements are \Code{aList[start]}, \Code{aList[start + n]}, \Code{aList[start + 2n]}, \Code{aList[start + 3n]} \ldots till the \Code{aList[end]}. 
+
+\section*{List methods}
+All lists support the various operations by \emph{methods}. The general syntax is \Code{list.method([param])}. Some methods mutate the list while others do not. It is important to be aware whether a method is mutating or not.
+\subsection*{Adding elements}
+We noted that we cannot use a non-existing index to add an element to a list. There are many ways of adding elements to a list:
+    \begin{itemize}
+        \item Concatenate a list to another: \Code{alpha = alpha + beta}, where \Code{alpha} and \Code{beta} are lists, results in the elements of \Code{beta} being added to the end of existing elements in \Code{alpha}
+        \item Extend a list: \Code{alpha.extend(beta)} has the same effect as above.
+        \item To add only one element, use \Code{alpha.append(newElement)}
+        \item To add an element in the middle, say index $n$, use \Code{alpha.insert(n, newElement)}
+    \end{itemize}
+
+\subsection*{Removing Elements}
+Again there are different ways:
+    \begin{itemize}
+        \item Specify the value of the element to be removed:  \Code{alpha.remove(x)} where \Code{x} is an elemnt in \Code{alpha}. If there is more than one element with the value \Code{x} the first is removed.
+        \item We can remove a slice by assigning it to the empty list. Thus \Code{alpha[p:q] = []} will remove the elements in indices \Code{p, p+1 ... q-1}. That means the number of elements in the list is now less by \Code{q - p}. Of course a single element at index p can be removed by, \Code{alpha[p:p+1] = []}.
+        \item The code \Code{k = alpha.pop()} does two things: One it assigns the value of the first element of \Code{alpha} to \Code{k}; two it removes the first element from the list. 
+        \item \Code{alpha.clear()} removes all the elements in alpha, making it the empty list.
+    \end{itemize}
+    \subsection*{Utility methods}
+    \begin{itemize}
+        \item \Code{alpha.sort()} sorts the elements of the list \emph{in place}. That is it mutates the list.
+        \item \Code{alpha.reverse()} reverses the order of elements in the list. Again mutates the list.
+        \item \Code{alpha.count(x)} returns the number of times the value x occurs in the list.
+    \end{itemize}
+\end{document}

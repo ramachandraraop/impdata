@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../../TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Command Line Arguments}}}
+\vspace{1pc}
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+
+\begin{enumerate}
+\item The Operator used to compare two values for equality is \underline{\hspace{5cm}}.
+\item Let \lstinline!int a = 345; int r = a % 10 * a / 100;!\\
+What will be the value of r? \underline{\hspace{5cm}}.
+\item What is the default value of boolean variable \underline{\hspace{5cm}}.   
+\item Let \lstinline!String str = ``10'';! write a statement to convert string to number and store to \lstinline!int n;!\\
+\underline{\hspace{5cm}}.
+\item What will be the output of the below code when executed\\
+    java SampleCode1 30 50
+\begin{lstlisting}
+class SampleCode1 {
+    public static void main(String[] args) {
+        int a = Integer.parseInt(args[0]);
+        int b = Integer.parseInt(args[1]);
+        int c = a + b;
+        System.out.println(``Result '' + c);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item Write a command to execute the below code and output?
+\begin{lstlisting}
+class SampleCode2 {
+    public static void main(String[] args) {
+        int i = Integer.parseInt(args[0]);
+        int j = Integer.parseInt(arsg[1]);
+        int k = Integer.parseInt(args[2]);
+        int res = (i + j) * k;
+        System.out.println(res);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What will be the output of the below code when executed?\\
+    java SampleCode3 ``Hi'' ``All''
+\begin{lstlisting}
+class SampleCode3 {
+    public static void main(String[] args) {
+        String x = args[0];
+        String y = args[1];
+        System.out.println(x + y);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\end{enumerate}
+\end{document}

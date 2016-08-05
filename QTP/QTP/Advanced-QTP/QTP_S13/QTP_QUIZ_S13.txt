@@ -1,0 +1,15 @@
+Where do we store the output values in QTP?
+(x) Data Table
+() Random Number
+() Data Table and Environment variables
+() Environment variables
+
+Text Output Value -
+a) outputs property value of any object 
+b) outputs text string appearing in AUT
+c) outputs part of displayed text appearing in AUT
+() only a 
+() only b 
+()  only c 
+(x)  both b and c 
+

@@ -1,0 +1,44 @@
+	Select the component which is not a part of selenium suite
+()	Selenium RC
+()	Selenium web
+()	Selenium IDE
+()	Selenium Grid
+
+ans: b
+
+	Select the language which is not supported by the selenium RC
+()	C#
+()	Java
+()	ASP
+()	PHP
+
+
+ans: c
+
+
+	Select the name which is not the type of Locators
+()	Name
+()	ID
+()	Password
+()	Link text
+
+
+ans: c
+
+	Out of the following which can only test web application
+()	QTP
+()	Selenium
+
+
+ans: b
+
+
+	The selenium
+()	Provides professional customer support
+()	Test reports are generated automatically
+()	Comes with a built in object repository
+()	Cannot access elements outside of web application under Test
+
+
+ans: d
+

@@ -1,0 +1,2 @@
+1) Given the .txt file of The Adventures of Sherlock Holmes (Downloaded from Gutenburg project) , Count the number of times the following 
+words occured, "Holmes", "Watson", "London", "Inspector Lestrade"

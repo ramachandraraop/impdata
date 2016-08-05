@@ -1,0 +1,369 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{Abstract classes, Interfaces and Wrapper classes}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item An abstract class\underline{\hspace{3cm}}
+\item An abstract method\underline{\hspace{3cm}}
+\item An abstract class can contain\underline{\hspace{3cm}}
+\item How many interfaces can a class implement?\underline{\hspace{3cm}}
+\item The methods of interface are\underline{\hspace{3cm}}by default.
+\item An interface can be declared using\underline{\hspace{3cm}}keyword.
+\item To implement an interface\underline{\hspace{3cm}}keyword is used.
+\item The variables of interfaces are\underline{\hspace{3cm}}by default
+\item Which keyword is used to define an abstract class?\underline{\hspace{3cm}}
+\item What is autoboxing?
+
+\AnswerBox
+
+\item What are the different methods to parse Strings in java? \underline{\hspace{4cm}}
+\end{enumerate}
+\section*{State whether the following are True/False}
+\begin{enumerate}\itemsep2pt
+        \item A class that implements an interface must implement all the methods declared in the interface. [\hspace{1cm}]
+        \item An abstract class can only contain abstract methods. [\hspace{1cm}]
+        \item Interfaces are defined using the reserved word \texttt{interface} and the reserved word \texttt{class}.[\hspace{1cm}]
+        \item Using the mechanism of inheritance, every public member of the class Object can be overridden and/or invoked by every object of any class type.[\hspace{1cm}]
+	\item You can instantiate an object of a subclass of an abstract class, but only if the subclass gives the definitions of all the abstract methods of the superclass. [\hspace{1cm}]
+	\item An abstract method is a method that has only the heading with no body. [\hspace{1cm}]
+	\item An interface is a class that contains only abstract methods and/or named constants. [\hspace{1cm}]
+	\item  A class can extend only one class and can implements more than one interface. [\hspace{1cm}]
+\end{enumerate}
+\section*{Multiple Choice Questions}
+\begin{enumerate}
+    \item Which of the following declares an abstract method in an abstract Java class?
+        \begin{enumerate}
+            \item public abstract method();
+            \item public abstract void method();
+            \item public void abstract Method();
+            \item public void method() {}
+            \item public abstract void method() {} 
+        \end{enumerate}
+    \item Which of the following statements regarding abstract methods are true?
+        \begin{enumerate}
+            \item An abstract class can have instances created using the constructor of the abstract class.
+	    \item An abstract class can be extended.
+	    \item A subclass of a non-abstract superclass can be abstract.
+	    \item A subclass can override a concrete method in a superclass to declare it abstract.
+	    \item An abstract class can be used as a data type
+        \end{enumerate}
+    \item Suppose A is an abstract class, B is a concrete subclass of A, and both A and B have a default constructor. Which of the following is correct?
+        \begin{enumerate}
+            \item A a = new A();
+	    \item A a = new B();
+	    \item B b = new A();
+	    \item B b = new B();
+        \end{enumerate}
+    \item Which of the following is a correct interface?
+        \begin{enumerate}
+            \item interface A { void print() { }; }
+	    \item abstract interface A { print(); }
+	    \item abstract interface A { abstract void print() { };}
+	    \item interface A { void print();}
+        \end{enumerate}
+    
+    \item Which of these packages contains abstract keyword?
+    \begin{enumerate}    
+        \item java.lang
+	\item java.util
+	\item java.io
+	\item java.system
+    \end{enumerate}
+    
+    \item Which of these access specifiers can be used for an interface?
+    \begin{enumerate}
+	\item public
+	\item protected
+	\item private
+	\item All of the mentioned
+    \end{enumerate}
+    \item Which of these keywords is used by a class to use an interface defined previously?
+    \begin{enumerate}
+	\item import
+	\item Import
+        \item implements
+	\item Implements
+    \end{enumerate}
+    \item When class is declared as abstract, then
+    \begin{enumerate}
+	\item Its object can not be created
+	\item Its subclass can not be created
+	\item It can not inherit any class
+	\item It can not have method
+    \end{enumerate}
+    \item A class can implements
+    \begin{enumerate}
+	\item only one
+	\item one or more than one
+	\item maximum two
+	\item minimum two
+    \end{enumerate}
+    \item A method implementation of an interface must be declared as
+    \begin{enumerate}	
+	\item private
+	\item default access
+	\item public
+	\item protected
+    \end{enumerate}
+    \item An interface contains
+    \begin{enumerate}
+	\item The method definitions
+	\item The method declaration
+   	\item Method declaration and definition
+	\item none of these
+    \end{enumerate}
+    \item A class implements an interface but does not override all the methods of interface then
+    \begin{enumerate}
+    	\item It should be declared as abstract class
+	\item It should be declared as final class
+	\item It must override all the methods of interface
+	\item none of these
+    \end{enumerate}
+    \item When class is declared as abstract, then
+    \begin{enumerate}
+    	\item Its object can not be created
+	\item Its subclass can not be created
+	\item can not inherit any class
+	\item It can not have methods
+    \end{enumerate}
+\item Which of these is a super class of wrappers Long, Character and Integer?
+     \begin{enumerate}
+         \item Long
+         \item digits
+         \item Float
+         \item Number
+     \end{enumerate}
+ \item Which of the following is method of wrapper Integer for converting the value of an object into byte?
+     \begin{enumerate}
+         \item bytevalue()
+         \item byte bytevalue()
+         \item Bytevalue()
+         \item Byte Bytevalue().
+     \end{enumerate}
+ \item What is the function of the parseInt() method?
+     \begin{enumerate}
+         \item Parses a datatype and stores in an integer
+         \item Parses a string and returns an integer
+         \item Parses an integer and returns a string
+         \item none
+     \end{enumerate}
+ 
+\end{enumerate}
+\section*{Exercises}
+\begin{itemize}
+    \item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1] \
+\begin{lstlisting}
+abstract interface Bendable {
+    final int x = 2009; 
+    void method1() ; 
+    public static class Angle {
+
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Is the above declaration for interface Bendable correct and free of compilation error?
+\end{enumerate}
+
+\item [Program 2] \
+\begin{lstlisting}
+abstract class AirPlane { 
+    abstract void fly(); 
+    void land() {
+        System.out.print(``Landing..'');
+    }
+}
+class AirJet extends AirPlane { 
+    AirJet() {
+        super(); 
+    }
+    void fly() {
+        System.out.print(``Flying..'');
+    }
+    abstract void land() ;
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item The above code contains a compilation error , what can be done to fix this error - independently?
+\end{enumerate}
+
+\item [Program 3] \
+\begin{lstlisting}
+public abstract interface Bouncable {
+    int num1 = 0;
+    public int num2 = 1;
+    public static int num3 = 2;
+    public static transient int num4 = 3;
+    public final int num5 = 3;
+    public static final int num6 = 3;
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Which of the variables is incorrectly declared?
+\end{enumerate}
+
+\item [Program 4] \
+\begin{lstlisting}
+interface Movable {
+    public abstract void m1(); 
+    void m2();
+    public void m3(); 
+    abstract void m4(); 
+}
+class Chair implements Movable { 
+    public void m1() {
+    
+    } 
+    void m2() {
+    
+    } 
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item To resolve the compilation error(s) in the above code, what can be done independently? 
+\end{enumerate}
+
+\item [Program 5] \
+\begin{lstlisting}
+abstract class AirPlane {
+    abstract void fly();
+    void land() { 
+        System.out.print(``Landing'');
+    }
+}
+class AirJet extends AirPlane {
+    AirJet() {
+        super();
+    }
+    void fly() {
+        System.out.print(``Flying'');
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Will the above code compile correctly?
+    \end{enumerate}
+
+
+\item [Program 6] \
+\begin{lstlisting}
+interface Count {
+    short counter = 0;
+    void countUp();
+}
+public class TestCount implements Count {
+    public static void main(String [] args) {
+        TestCount t = new TestCount();
+        t.countUp();
+    }
+    public void countUp() {
+        for (int x = 6; x > counter; x--, ++counter) {
+            System.out.print(`` '' + counter);
+        }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the above program?
+\end{enumerate}
+
+
+\item [Program 7] \
+\begin{lstlisting}
+abstract class A {
+    int num1;
+    abstract void display();
+}    
+class B extends A {
+    int num2;
+    void display() {
+    System.out.println(num2);
+    }
+}
+class Abstract_demo {
+    public static void main(String args[]) {
+        B obj = new B();
+        obj.num2 = 2;
+        obj.display();    
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the above program?
+\end{enumerate}
+
+\item [Program 8] \
+\begin{lstlisting}
+public class Tester {
+    public static void main(String[] args) {
+        Number x = 12; // Line 5
+        Number y = (Long) x; // Line 6
+        System.out.print(x+`` ''+y); // Line 7
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Given that Long and Integer extend Number, what is the result of compiling and running the code?
+\end{enumerate}
+\end{description}
+\end{document}
+

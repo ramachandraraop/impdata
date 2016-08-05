@@ -1,0 +1,31 @@
+1. What is the navigation in order to add Building a soap web services Test Plan?
+a) File -> Merge -> Select Template -> Choose Building a Soap Web Services Test Plan
+b) File -> Template -> Select Template -> Choose Building a Soap Web Services Test Plan
+c) Edit -> Template -> Select Template -> Choose Building a Soap Web Services Test Plan
+d) Search -> Template -> Select Template -> Choose Building a Soap Web Services Test Plan
+
+Ans : B
+
+2. What is the final element you need to add to your Test Plan?
+a) Sampler
+b) Config Element
+c) Listener
+d) Pre-Processor
+
+Ans : C
+
+3. To construct a JMS Point-Point Test Plan, you will use the following element.
+a) Thread Group -> Graph Results -> JMS Point-Point.
+b) Thread Group -> JMS Point-Point -> Graph Results.
+c) Both A and B
+d) None
+
+Ans: B
+
+4. Where do you find the SOAP Action in Soap Web Services Test Plan ?
+a) Http request
+b) Header Manager
+C) Assertion
+d) All of the above
+
+Ans: B

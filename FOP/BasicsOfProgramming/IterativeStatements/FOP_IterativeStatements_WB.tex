@@ -1,0 +1,331 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Iterative Statements}}}
+\vspace{1pc}
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+\begin{enumerate}
+\item How many times the condition is checked in the below code
+\begin{lstlisting}
+class SampleCode1 {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 5) {
+            i++;
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What is the output of the below code
+\begin{lstlisting}
+class SampleCode2 {
+    public static void main(String[] args) {
+        int x = 3, y = 2;
+        while (x + y < 10) {
+            System.out.println(x + y);
+            x++;
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What is the output of the below code
+\begin{lstlisting}
+class SampleCode3 {
+    public static void main(String[] args) {
+        int i = 0, j = 0;
+        while (i < 5 && j < 10) {
+            i++;
+            j += 3;
+        }
+        System.out.println(i + `` '' + j);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item How many times is the phrase ``In the loop'' prints?
+\begin{lstlisting}
+class SampleCode4 {
+    public static void main(String[] args) {
+        int a = 6;
+        int b = 12;
+        while (a < b) {
+            System.out.println(``In the loop'');
+            a += 2;
+            b -= 2;
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox	
+
+\item What is the output of the below code
+\begin{lstlisting}
+class SampleCode5 {
+    public static void main(String[] args) {
+        int x = 2, y = 2;
+        while (x <= 5 && y <= 3) {
+            System.out.println(++x + `` '' + ++y);
+        }
+    }
+}  
+\end{lstlisting}
+\AnswerBox
+\item The following program is intended to compute 5! = 120, but it prints 24 instead. Find out the error in the program?
+\begin{lstlisting}
+class SampleCode6 {
+    public static void main(String[] args) {
+        int num = 5; 
+        int total = 1;
+        while (num > 1) {
+            total *= --num;
+        }
+        System.out.println(total);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\item What would be the output of the below code
+\begin{lstlisting}
+class SampleCode7 {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 10) {
+            i++;
+            System.out.println(``hi'');
+        }  
+        while (i < 8) {
+            i++;
+        }
+        System.out.println(``hello'');
+    }
+}    
+\end{lstlisting}
+
+\AnswerBox
+
+\item What would be the output of the belo code when executed\\
+    java ScampleCode8 4525
+\begin{lstlisting}
+class SampleCode8 {
+    public static void main(String[] args) {
+        int num = Integer.parseInt(args[0]);
+        int count = 0;
+        while (num != 0) {
+            num /= 10;            
+            ++count;
+        }
+        System.out.println(count);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output of the below code?
+\begin{lstlisting}
+class SampleCode9 {{
+    public static void main(String[] args) {
+        int i = 1, j, sum  = 0;
+        while (i <= 5) {
+            if (i % 2 == 0) {
+                j = i * i;
+                sum = sum + j;
+            }
+            i++;
+        }
+        System.out.println(sum);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What is the output of the below code?
+\begin{lstlisting}
+ for (int j = 0; j < 5; j++) {
+     for (int k = 0; k < 10; k++) {
+         System.out.print(``*'');
+     }
+     System.out.println();
+ }
+\end{lstlisting}
+
+\AnswerBox
+
+\item What would be the output of the below code?
+\begin{lstlisting}
+ for (int count = 0; count <= 20; count += 2) {
+     System.out.println(count);
+ }
+\end{lstlisting}
+
+\AnswerBox
+
+\item What whould be the output of the below code?
+\begin{lstlisting}
+int x = 0;
+while (x < 100) {
+    System.out.println(x);
+    x = x + 5;
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\item What will be the output of the below program?  
+\begin{lstlisting} 
+int a = 0;
+for (int i = 1; i <= 10; i++) {
+    a++;
+    System.out.println(a);
+    if (a == 6)
+        break;
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What will be the output of the below program?  
+\begin{lstlisting} 
+int a = 0;
+for (int i = 1; i <= 10; i++) {
+    a++;
+    if (a % 2 == 0)
+        continue;
+    System.out.println(a);
+}   
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output of the below code?
+\begin{lstlisting} 
+class SampleCode10 {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i <= 20) {
+            i++;
+            if (i == 10)
+                break;
+            System.out.println(i);
+        }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\item What will be the output?
+\begin{lstlisting}
+class SampleCode11 {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 10) {
+            i++;
+            if (i == 3 || i == 6 || i == 9) 
+                continue;
+            System.out.println(i);
+        }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\item What is the output of below code?
+\begin{lstlisting}
+class SampleCode12 {
+    public static void main(String[] args) {
+        int i = 0;
+        do {
+            System.out.println(i);
+            i++;
+        } while (i <= 10);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What is the output of following code?
+\begin{lstlisting}
+class SampleCode13 {
+    public static void main(String[] args) {
+        int i = 50;
+        do {
+            if (i % 5 == 0) 
+                System.out.println(i);
+            i--;
+        } while (i >= 10);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What will be the output of this below code
+\begin{lstlisting}
+class SampleCode14 {
+    public static void main(String[] args) {
+        int i = 40;
+    	do {
+            System.out.println(i);
+        } while(i > 0);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\item What will be the output of the below code?
+
+\begin{lstlisting}
+class SampleCode15 {
+    public static void main(String[] args) {
+        int x = 15;
+        do {
+            if (x >=15)
+                System.out.println(`` ONE'');
+            else if (x >= 10)
+                System.out.println(`` TWO'');
+            else if (x  >= 5)
+                System.out.println(`` THREE'');
+            else 
+                System.out.println(`` FOUR'');
+            x -= 5;
+        } while (x);
+    }
+}
+\end{lstlisting}
+
+\item What will be the output of the below code?
+
+\begin{lstlisting}
+class SampleCode16 {
+    public static void main(String[] args) {
+        int i = 5;
+        do {
+            System.out.println(i);
+            if (i == 5)
+                continue;
+            i++;
+        } while (i <= 20);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+\end{enumerate}
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[14pt]{beamer}
+\title[COJ:Java:02]{JPL :: Good Practices}
+\author[TS]{TalentSprint}
+\institute[L\&D]{Licensed To Skill}
+\date{Version 1.0.4}
+\usefonttheme{serif}
+\usecolortheme{orchid}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\graphicspath{{../../Images/}}
+\usepackage{tikz}
+\beamertemplateballitem
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{TS-XP-Logo.jpg}}
+\lstset{language=C,numbers=left, numberstyle=\tiny, numbersep=10pt, showstringspaces=false, breaklines=true,keepspaces=true, columns=flexible}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Good Practices}
+ \textbf{Understand the following program}
+ \begin{lstlisting}[numbers=none]
+void main() {
+    int a;
+    printf("enter");
+    scanf("%d",&a);
+    if(a%2==0)
+    printf("YES");
+    else
+    printf("NO");
+}
+ \end{lstlisting}
+Name for the above program: \textbf{yesno.c}
+\end{frame}
+
+
+\begin{frame}[fragile]{Good Practices}
+\textbf{Analyze the following program}
+ \begin{lstlisting}[numbers=none]
+void main() {
+    int given_number;
+    printf("Enter The Number: ");
+    scanf ("%d", &given_number);
+    if (given_number % 2 == 0)
+        printf("The given Number is even");
+    else 
+        printf("The given Number is odd");	
+}
+ \end{lstlisting}
+Name for the above program: \textbf{EvenorOdd.c}
+\end{frame}
+
+\begin{frame}[fragile]{Good Practices}
+
+\begin{itemize}
+ \item program \textbf{yesno.c} looks more confusing and even from the program name one cannot understand the purpose of the program
+ \item Program \textbf{EvenorOdd.c} looks neat, well-written, readable and understood by others who need to maintain them later
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Good Practices}
+ Good Rules To Follow:
+ \begin{enumerate}[Rule 1]
+  \item Program must be readable 
+  \item Proper variable and  file naming
+  \item Proper indentation
+  \item Spacing between blocks
+  \item One character space before and after operator
+  \item Meaningful messages in the program(input/output)
+  \item Save the file at specific location 
+ \end{enumerate}
+\end{frame}
+
+\begin{frame}{Good Practices}
+ \begin{figure}[H]
+ \begin{center}
+  \includegraphics[scale=.3]{qa.png}   
+ \end{center}
+  \end{figure}
+\end{frame}
+\end{document}
+

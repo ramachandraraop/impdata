@@ -1,0 +1,38 @@
+Choose the correct answer  for the statement A = True, B = False ---> A Xor B = ?
+A. True
+B. False
+Answer :B
+
+Choose the correct answer  for the statement  A = True ---> Not A = ?
+A. True
+B. False
+Answer :B
+
+Choose the correct answer  for the statement A = True, B = True ---> A And B = ?
+A. True
+B. False
+Answer :A
+
+Choose the correct answer  for the statement  A=True, B=True, C=False ---> A Xor B Xor C = ?
+A. True
+B. False
+Answer :B
+
+Choose the correct answer  for the statement  A=True,B=True,C=False ---> A And B Or C = ?
+A. True
+B. False
+Answer :A
+
+Which one is override operator in VB Script?
+A. +
+B. *
+C. ^
+D. /
+Answer :A
+
+What are the different types of Operators we are using VB Script?
+A. Logical Operators    
+B. Comparison Operators
+C. All of them
+D. Arithmetic Operators
+Answer: C

@@ -1,0 +1,206 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\begin{document}
+\section*{WorkBook - 1}
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+\item jQuery is a JavaScript Library. (True / False)\underline{\hspace{3cm}}.
+
+\item jQuery uses CSS selectors and XPath expressions to select elements?(True / False)\underline{\hspace{3cm}}.
+
+\item Which sign does jQuery use as a shortcut for jQuery?\underline{\hspace{3cm}}.
+
+\item Is jQuery a library for client scripting or server scripting?\underline{\hspace{3cm}}.
+
+\item Is it possible to use jQuery together with AJAX?(Yes / No)\underline{\hspace{3cm}}.
+
+\item The jQuery \texttt{html()} method works for both HTML and XML documents. (True / False)\underline{\hspace{3cm}}.
+
+\item What is the correct jQuery code to set the background color of all \texttt{p} elements to red?\underline{\hspace{3cm}}.
+
+\item With jQuery, look at the following \texttt{selector: \$(``div.intro'')}. What does it select?\underline{\hspace{3cm}}.
+
+\item Which jQuery method is used to hide selected elements?\underline{\hspace{3cm}}.
+
+\item To use jQuery, you can refer to a hosted jQuery library at Google. (True / False)\underline{\hspace{3cm}}.
+
+\item What scripting language is jQuery written in?\underline{\hspace{3cm}}.
+
+\item Which jQuery function is used to prevent code from running, before the document is finished loading?\underline{\hspace{3cm}}.
+
+\item Is jQuery a W3C standard?(Yes / No)\underline{\hspace{3cm}}.
+
+\item jQuery is a JSON Library. (True / False)\underline{\hspace{3cm}}.
+
+\item Is jQuery replacement of Java Script? (Yes / No)\underline{\hspace{3cm}}.
+
+\item Which is the starting point of code execution in jQuery?\underline{\hspace{3cm}}.
+
+\item What does dollar sign \texttt{(\$)} means in jQuery?\underline{\hspace{3cm}}.
+
+\item Can we have multiple \texttt{document.ready()} function on the same page?(True / False)\underline{\hspace{3cm}}.
+
+\item Can we use our own specific character in the place of \$ sign in jQuery?(True / False)\underline{\hspace{3cm}}.
+
+\item What does CDN stand for?\underline{\hspace{3cm}}.
+
+\item What is a CDN?\underline{\hspace{3cm}}.
+
+\item Which are the popular jQuery CDN?\underline{\hspace{3cm}}.
+
+\item How to load jQuery from CDN?\underline{\hspace{3cm}}.
+
+\item What are selectors in jQuery and how many types of selectors are there?\underline{\hspace{3cm}}.
+
+\item How do you select element by ID in jQuery?\underline{\hspace{3cm}}.
+
+\item What does \texttt{\$(``div'')} will select?\underline{\hspace{3cm}}.
+
+\item How to select element having a particular class \texttt{(``.selected'')}?\underline{\hspace{3cm}}.
+
+\item What does \texttt{\$(``div.parent'')} will select?\underline{\hspace{3cm}}.
+
+\item What are the fastest selectors in jQuery?\underline{\hspace{3cm}}.
+
+\item What are the slow selectors in jQuery?\underline{\hspace{3cm}}.
+
+\item Difference between \texttt{\$(this)} and \texttt{`this'} in jQuery?\underline{\hspace{3cm}}.
+
+\item \$.foo() is equivalent to\underline{\hspace{3cm}}.
+
+\item Can you can use CSS3 selectors to select or find elements using jQuery?\underline{\hspace{3cm}}.
+
+\item What is the correct jQuery code for making all \texttt{div} elements 100 pixels high?\underline{\hspace{3cm}}.
+
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item[program 1]\
+\begin{lstlisting}
+<html>
+    <head>
+        <script src = `` jquery-1.11.1.js''>
+        </script>
+        <script>
+        $ ( document ).ready (function() {
+            $ ( ``#button1'' ).click (function() {
+                window.close();
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <button id = ``button1''>Close Window</button>
+    </body>
+</html>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is happening at line 3 in the above code snippet?
+\item What is happening at line 6 in the above code snippet?
+\item When will be the \texttt{window.close()} get's invoked?
+\end{enumerate}
+
+\item[Program 2]\
+\begin{lstlisting}
+<script src = `` jquery-1.11.1.js''>
+</script>
+<script>
+    $ (document).ready(function() {
+        $ ( ``p '').click(function(){
+            window.open( ``www.yahoo.com'', ``blank'');
+        });
+        $(``div'').click(function() {
+            window.open ( ``www.amazon.com'', ``blank'' )
+        });
+    });
+</script>
+<body>
+    <p>click here</p>
+    <div>click here</ div>
+</body>
+
+}\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will happen when \texttt{p} and \texttt{div} are clicked?
+\item What does \texttt{\$( ``p '')} and \texttt{\$(``div'')} will select?
+\end{enumerate}
+\item [Program 3]\ 
+\begin{lstlisting}
+<table border = ``1''>
+    <tr><td>Vikas Ahlawat</td></tr>
+    <tr><td>Edwin George</td></tr>
+    <tr><td>Rohit Khurana</td></tr>
+    <tr><td>Gyan Singh</td></tr>
+</table>
+
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item If you have a table, how you will apply the two differt color on alternate rows using jQuery?
+\item Add a solid red border around a table using jQuery?
+\end{enumerate}
+
+\item [Program 4]\ 
+\begin{lstlisting}
+<div id = ``meow''>
+    <p>CSS is FUN</p>
+</div>
+<p id = ``block''>jQuery will make this have a solid red border</p>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Make the formatting changes to the \texttt{div} above: background color FF7373, font color white, border black.
+\item Add a solid red border around \texttt{$<$p id = ``block''$>$....$<$/p$>$}.
+\end{enumerate}
+
+\end{description}
+\subsection*{Additional Exercises}
+\begin{enumerate}
+\item Add the tag $<$p$>$JavaScript drives me crazy sometimes$<$/p$>$ to the following div:
+\begin{lstlisting}
+<div class = ``intro''>
+    <h1>Marital Status?</h1>
+</div>
+\end{lstlisting}
+
+\item Store the value of the src attribute of \texttt{<img id = ``chapel'' src = ``indian\_chapel.jpg'' height = `300px' width = `400px'/>} in a variable called \texttt{imageFile} and then print the value of this variable to the screen to demonstrate it has been done correctly.
+\item Make the following image gradually disappear over a period of 3 seconds. \
+
+\texttt{<img id = ``picture'' src = ``oktoberfest.jpg'' height = `300px' width = `400px'/>}
+\item Add all the external links in the following webpage to the unordered list with id = ``website\_list''.
+\begin{lstlisting}
+<body>
+    <a href = ``http://google.com''>Google</a>
+    <a href = ``http://surfline.com''>Surfline</a>
+    <a href = ``http://paulgraham.com''>Paul Graham</a>
+    <div id = ``websites''>
+        <h3>Websites listed on this page</h3>
+        <ul id = ``website_list''>
+        </ul>
+    </div>
+</body>
+\end{lstlisting}
+\item Write the code for selecting the 1st div element, 4th div element, last div, and for even and odd div elemets also one by one?
+\end{enumerate}
+\end{document}

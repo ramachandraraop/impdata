@@ -1,0 +1,41 @@
+By default, how does Quick Test pass arguments to the procedure?
+( ) ByVal
+(x) ByRef
+( ) ByArg
+( ) ByRes
+
+In VB Script functions, which one is false among the following
+(x) Variables must be declared before use
+( ) Variables may not be declared before use
+( ) Variables may be declared without data types
+( ) None
+
+In which command can you associate a function library to a test?
+( ) Run Options
+(x) Test Settings
+( ) View Options
+( ) Function Definition Generator
+
+Statement to return the value from the function
+( ) Return (return value)
+( ) Exit (Return value)
+(x) Function name = Return value
+( ) None
+
+The method used to register the user-defined function with test object is
+( ) SetFunc()
+(x) RegisterUserFunc()
+( ) RegisterFunc()
+( ) None
+
+To invoke the function which does not return any value, we can use
+(x) call function name
+( ) function name
+( ) Both A and B
+( ) None
+
+What is the difference between a subroutine and a function?
+( ) A subroutine can call itself; a function cannot
+(x) A function returns a value; a subroutine cannot
+( ) A function can accept arguments; a subroutine cannot
+( ) A subroutine can call other procedures; a function cannot

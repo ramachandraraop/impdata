@@ -1,0 +1,175 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\begin{document}
+\section*{Practice Exercise}
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+\item What are the possible values of the ``Position'' attribute?\underline{\hspace{3cm}}.
+\item If \texttt{static} is specified, values for the top, bottom, right, and left properties will have no effect.(True / False)\underline{\hspace{3cm}}.
+\item The \texttt{absolute} value of the \texttt{position} property specifies\underline{\hspace{3cm}}.
+\item If no value is given to the \texttt{position} property, its value is\underline{\hspace{3cm}}.
+\item If \texttt{position = relative} then the \texttt{top} property specifies\underline{\hspace{3cm}}.
+\item If \texttt{position = absolute} then the \texttt{bottom} property specifies\underline{\hspace{3cm}}.
+\item \texttt{left:-10px;} means that the text is 10\% (or 50px) away from the default location.(True / False)\underline{\hspace{3cm}}.
+\item \texttt{right} property can be specified as a percentage, as a length, or `auto'.(Yes / No)\underline{\hspace{3cm}}.
+\item Possible values of CSS \texttt{overflow} property are\underline{\hspace{3cm}}.
+\item When there is an overlap between two elements, the\underline{\hspace{3cm}}value determines which one shows up on top. 
+\item \texttt{Overflow:hidden;} does what?\underline{\hspace{3cm}}.
+\item Which properties are used to position objects?\underline{\hspace{3cm}}.
+\item  The \texttt{z-index} property can only use positive numbers, and starts on 1.(True / False)\underline{\hspace{3cm}}.
+\item Applying \texttt{position:relative} to an element will cause the element to be positioned relative to\underline{\hspace{3cm}}.
+\item Applying \texttt{position:absolute} to an element will cause the element to be positioned relative to\underline{\hspace{3cm}}.
+\item What positioning makes an element stay in the same spot, even when the window is scrolled?\underline{\hspace{3cm}}.
+\item What direction(s) is an element able to \texttt{float}?\underline{\hspace{3cm}}.
+\item What is the default position for all elements on a page?\underline{\hspace{3cm}}.
+\item Can you specify more than one CSS class for any HTML element?(Yes / No)\underline{\hspace{3cm}}.
+\item What integer property values can we use with the `z-index' CSS property?\underline{\hspace{3cm}}.
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1]\
+\begin{lstlisting}
+<div id = ``container''>
+    <div id = ``navigation''>...</div>
+</div>
+
+#navigation {
+    position: absolute;
+    left: 30px;
+    top: 5px
+}
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write an equivalent HTML code for the above CSS code snippet?
+\item Write an equivalent CSS code to position the navigation exactly 30px from the left and 5px from the top of the container box without using \texttt{positioning}?
+\item What would be the \texttt{position} value of the container box?
+\end{enumerate}
+\item [Program 2]\
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h2 {
+                position: absolute;
+                left: 100px;
+                top: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>This heading has an absolute position</h2>
+        <p>With absolute positioning, an element can be placed
+             anywhere  on a page. The heading below is placed  
+             100px from the left of the page and 150px from the 
+             top of the page.
+        </p>
+    </body>
+</html>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What happens if line 6 is changed to \texttt{position:fixed}?
+\item What happens if line 6 is changed to \texttt{position:relative}?
+\item What happens if line 6 is changed to \texttt{position:static}?
+\item What happens if line 8 is changed to \texttt{top: -100px;}?
+\end{enumerate}
+
+\item [Program 3]\
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>This is a heading</h1>
+        <img src=``wise.png'' width=``100'' height=``140''>
+        <p>WISE module - III</p>
+    </body>
+</html>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What does \texttt{z-index:-1} will do in the above code snippet?
+\item What happens if line 9 is changed to \texttt{z-index:1}?
+\item What happens if line 6 is changed to \texttt{position:static}?
+\end{enumerate}
+\item [Program 4]\
+\begin{lstlisting}
+<div class=``article''>
+    <h1>Buddy In-law</h1>
+    <p> A friend of a friend of yours. 
+    <a href=``https://www.ts.com/?q=someone''>Someone</a>
+    you have yet to meet, but is friends with your friend. 
+    Someone you share a mutual friend with. 
+    Someone you share a mutual buddy with. </p>
+</div>
+\end{lstlisting}
+\AnswerBox
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item How would you change the paragraph ($<$p$>$) tag font to \texttt{Verdana}?
+\item How would you change the font size of the heading to a 20px?
+\item How would you make the whole article 600px wide and center the heading?
+\end{enumerate}
+\end{description}
+\subsection*{Additional Exercises}
+\begin{enumerate}
+
+\item Use your knowledge of advanced CSS positioning to build a pizza company website!
+
+\item Use text to create a new web page. Use CSS to format text, elements, DIVs, list. Apply properties text-transform, list-style-image, text-shadow, box-shadow. Use positioned DIVs to arrange text into side-by-side columns.
+\item Create a web page that includes \texttt{your name} and at least:\
+
+\textbf{HTML elements:}
+\begin{itemize}
+\item title tag for the page which includes your name
+\item two heading types
+\item two paragraphs
+\item a list - either numbered or bulleted
+\item a table - either a data table or positioning table
+\item a horizontal line
+\item a link and an email link
+\item an image
+\end{itemize}
+\textbf{CSS:}
+\begin{itemize}
+\item two different font-families and two font sizes
+\item background color or background image for the page or a table or a DIV
+\item an external style sheet with at least BODY style and P style
+\item an internal style sheet with two styles
+\item an inline style
+\item one image that is floating
+\item a positioned element - DIV, table, or something else
+\end{itemize}
+\end{enumerate}
+\end{document}
+
+
+
+

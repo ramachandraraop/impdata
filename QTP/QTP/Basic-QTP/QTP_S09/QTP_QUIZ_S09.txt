@@ -1,0 +1,6 @@
+What is the shortcut key that is used for step generator?
+
+() F12
+() F2
+() F10
+(x) F7

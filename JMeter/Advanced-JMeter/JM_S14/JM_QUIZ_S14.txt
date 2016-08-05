@@ -1,0 +1,31 @@
+1. Which function do you use for parameterization?
+a) _char
+b) _counter
+c} _CSVRead
+d) _doublesum
+
+Ans: C
+
+2. Which function returns the result of evaluating a string expression?
+a) _eval
+b) _counter
+c} _CSVRead
+d) _doublesum
+
+Ans: A
+
+3. Which function is used to read strings from a text file?
+a) _eval
+b) _StringFromFile
+c} _CSVRead
+d) _doublesum
+
+Ans: B
+
+4. Which function returns the result of evaluating a list of numbers as Unicode characters?
+a) _eval
+b) _StringFromFile
+c} _CSVRead
+d) _char
+
+Ans: D

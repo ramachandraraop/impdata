@@ -1,0 +1,60 @@
+From within an action, how many data table sheets can be accessed?
+( ) All sheets on data table
+( ) Corresponding Local sheet
+(x) Both Global and corresponding local sheet
+( ) Global sheet
+
+If the Global Data sheet contains no data and the Local Datasheet contains two rows of data,how many times will the test iterate?
+(x) 1
+( ) 2
+( ) 3
+( ) 5
+
+If the Local Data sheet contains two rows of data, how many times will the action iterate, by default?
+( ) 1
+(x) 2
+( ) 3
+( ) 5
+
+To refer the global data sheet, we can use the statement
+( ) Dtglobalsheet
+( ) Global
+(x) Both A and B
+( ) None
+
+What method is used to send a run-time Data sheet to an Excel file?
+( ) Send
+(x) Export
+( ) SendSheet
+( ) ExportSheet
+
+What are the default sheets available in Datatable?
+(x) One Global and One Local
+( ) Global
+( ) Local
+( ) External
+( ) Iternal
+
+Which method for the Data Table utility object will allow you to retrieve information from the Data Table during a test run?
+(x) Value
+( ) Import
+( ) GetCell
+( ) GetValue
+
+To count the no of rows in a table.
+(x) getrowcount
+( ) Getlinecount
+( ) Getcount 
+( ) Count
+
+The changes made during the execution of the script to the data table appear in which of the following?
+( ) Local data table
+( ) Design time data table
+(x) Run time data table
+( ) Global data table
+
+By default, how many no of tables would be there in a script?
+( ) One
+(x) Two
+( ) Three
+( ) Four

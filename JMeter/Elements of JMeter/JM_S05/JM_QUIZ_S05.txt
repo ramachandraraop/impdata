@@ -1,0 +1,41 @@
+1. What are components available in JMeter?
+a) Test case
+b) Workbench
+c) Both b and d
+d) Test Plan
+
+Ans: C
+
+2. How many types of thread groups do we have in JMeter?
+a) one
+b) two
+c) Five
+d) four
+
+Ans: C
+
+
+3. What is the navigation in order to add Thread group?
+a) Right click on Test Plan----> click on Add--> click on Threads---> click on Thread Group
+b) Click on Add--> click on Threads---> click on Thread Group
+c) Right click on Test Plan----> click on Threads---> click on Thread Group
+d) Right click on Test Plan----> click on Add--> click on Threads
+
+Ans: A
+
+4. Which of the following is invalid Thread Group in JMeter?
+a) Stepping Thread Group
+b) Ultimate Thread Group
+c) setUp Thread Group
+d) tearUp Thread Group
+
+Ans: D
+
+
+5. What are the valid options in Scheduler Configuration of Thread Group?
+a) Start Time, End Time, Delay, Startup Delay
+b) Start Time, End Time, Delay, Startup
+c) Startup Delay, Constant Time, End Time, Start Time
+D) Start Time, End Time, EndUp Delay, Delay
+
+Ans: A

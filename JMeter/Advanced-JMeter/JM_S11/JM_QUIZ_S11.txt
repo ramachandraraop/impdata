@@ -1,0 +1,40 @@
+1. How many ways can we do parameterization in JMeter?
+a) 1
+b) 3
+c) 5
+d) 4
+
+Ans: C
+
+2. How many users can we trigger the load from CSV Data Set Config?
+a) 1
+b) <1
+c) >1
+d) None
+
+Ans: C
+
+3. How many users can we trigger the load from User Defined Variables?
+a) 1
+b) <1
+c) >1
+d) None
+
+Ans: A
+
+
+4. How many users can we trigger the load from User Parameters?
+a) 1
+b) <1
+c) >1
+d) None
+
+Ans: C
+
+5. What is the default delimiter in CSV Data Set Config?
+a) ?
+b) "
+c) :
+d) ,
+
+Ans: D

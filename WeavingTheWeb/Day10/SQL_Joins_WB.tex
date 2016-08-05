@@ -1,0 +1,172 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Joins}}}
+
+\vspace{1pc}
+
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+
+\begin{enumerate}\itemsep10pt
+
+\item The joining technique is useful when data from several relations are to be retrieved and displayed and the relationships are not necessarily nested. (True/False)
+
+\item \underline{\hspace{3cm}} number of tables can be included with in a joining condition. 
+
+\item Subqueries can be nested multiple times. (True/False)\underline{\hspace{3cm}}
+
+\item Outer join is the same as equi-join, except one of the duplicate columns is eliminated in the result table. (True/False)
+
+\item \underline{\hspace{3cm}} type of join is used to include rows that do not have matching values.
+
+\item There should be one condition within the WHERE cluase for each pair of tables being joined. (True/False)
+
+\item \underline{\hspace{3cm}} type of join is used to return rows that do have matching values.
+
+\item Equi-join is same as inner-equi-join.(True/False)
+
+\item \underline{\hspace{3cm}} type of join retrieves the unmatched rows and matched from the left table and matched rows from right table.
+
+\item \underline{\hspace{3cm}} type of join is used in the below query.
+
+\texttt{MYSQL> SELECT * FROM EMP E INNER JOIN DEPT ON D WHERE E.DEPTNO = D.DEPTNO;}
+
+
+\item \underline{\hspace{3cm}} type of join is used in the below query.
+
+\texttt{SELECT * FROM EMP E1, EMP E2 WHERE E1.JOB = E2.JOB;}
+
+\item Cross join generally generate cross product between two tables.(True/False)
+
+
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs.
+
+\end{itemize}
+\begin{description}
+\item[Program 1]\
+\begin{verbatim}
+MYSQL> SELECT * FROM GAME;
+
+ID        MDATE       STADIUM                   TEAM1  TEAM2
+--------- ----------- ------------------------  ------ -------
+1001      8-June-2012 National Stadium, Warsaw  POL    GRE
+1002      8-June-2012 Stadion Miejski (Wroclaw) RUS    CZE
+1003     12-June-2012 Stadion Miejski (Wroclaw) GRE    CZE
+1004     12-June-2012 National Stadium, Warsaw	POL    RUS
+
+MYSQL> SELECT * FROM GOAL;
+
+MATCHID   TEAMID      PLAYER                    GTIME
+--------- ----------- ------------------------  -----
+1001      POL         Robert Lewandowski        17
+1001      GRE         Dimitris Salpingidis      51
+1002      RUS         Alan Dzagoev              15
+1001      RUS         Roman Pavlyuchenko        82
+
+MYSQL> SELECT * FROM ETEAM;
+
+ID        TEAMNAME        COACH                   
+--------- -----------     ------------------
+POL       Poland          Franciszek Smuda
+RUS       Russia          Dick Advocaat
+CZE       Czech Republic  Michal Bilek
+GRE       Greece          Fernando Santos      
+\end{verbatim}
+
+%\AnswerBox
+
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write a query to retrieve players, their team and the amount of goals they scored against Greece(GRE).
+\item What will be the output of the query given below?\newline
+\texttt{SELECT teamid, mdate FROM goal JOIN game on (matchid = id) WHERE mdate = `9 June 2012';}
+\item Write a query to retrieve player and their team for those who have scored against Poland(POL) in National Stadium, Warsaw.
+\item What will be the output of the query given below?\newline
+\texttt{MYSQL> SELECT teamname, COUNT(*) FROM eteam JOIN goal ON teamid = id GROUP BY teamname HAVING COUNT(*) < 3;}
+
+\end{enumerate}
+
+\item[Program 2]\
+\begin{verbatim}
+MYSQL> SELECT * FROM GAME;
+
+ID        MDATE       STADIUM                   TEAM1  TEAM2
+--------- ----------- ------------------------  ------ -------
+1001      8-June-2012 National Stadium, Warsaw  POL    GRE
+1002      8-June-2012 Stadion Miejski (Wroclaw) RUS    CZE
+1003     12-June-2012 Stadion Miejski (Wroclaw) GRE    CZE
+1004     12-June-2012 National Stadium, Warsaw	POL    RUS
+
+MYSQL> SELECT * FROM GOAL;
+
+MATCHID   TEAMID      PLAYER                    GTIME
+--------- ----------- ------------------------  -----
+1001      POL         Robert Lewandowski        17
+1001      GRE         Dimitris Salpingidis      51
+1002      RUS         Alan Dzagoev              15
+1001      RUS         Roman Pavlyuchenko        82
+
+MYSQL> SELECT * FROM ETEAM;
+
+ID        TEAMNAME        COACH                   
+--------- -----------     ------------------
+POL       Poland          Franciszek Smuda
+RUS       Russia          Dick Advocaat
+CZE       Czech Republic  Michal Bilek
+GRE       Greece          Fernando Santos
+\end{verbatim}
+
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+
+\item What will be the output of the query given below?\newline
+\texttt{SELECT teamname, player FROM eteam JOIN goal ON id = teamid ORDER BY teamname;}
+\item Write a query to retrieve the stadium and the number of goals scored in each stadium.?
+\item What will be the output of the query given below?\newline
+\texttt{SELECT player, stadium FROM game JOIN goal ON (id = matchid);}
+\end{enumerate}
+\item [Program 3]\ 
+\begin{verbatim}
+MYSQL> DESC MOVIE;         MYSQL> DESC ACTOR;         MYSQL> DESC CASTING;
+                                                                          
+FIELD    TYPE              FIELD     TYPE             FIELD      TYPE   
+------   -----             -------   -----            ------     -----
+ID       INT               ID        INT              MOVIEID    INT
+TITLE    VARCHAR(30)       NAME      VARCHAR(30)      ACTORID    INT
+YR       DATE
+DIRECTOR VARCHAR(30)
+BUDGET   FLOAT
+GROSS    FLOAT
+
+\end{verbatim}
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write a query to retrieve the titles of the films with id 11768, 11955, 21191
+\item Write a query to retrieve id number of the actor `Glenn Close'.
+\item Write a query  that shows the list of actors called 'John' by order of number of movies in which they acted.
+\item What will be the output of the query given below?\newline
+\texttt{MYSQL> SELECT title FROM movie, casting, actor WHERE name =`Paul Hogan' AND movieid = movie.id AND actorid = actor.id;}
+\end{enumerate}
+
+
+\end{description}
+
+
+\end{document}

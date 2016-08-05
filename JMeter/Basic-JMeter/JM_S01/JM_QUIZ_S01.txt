@@ -1,0 +1,51 @@
+1. JMeter is used for
+a) Manual
+b) Automation
+c) Performance
+d) Mobility
+
+Ans: C
+
+2. Is JMeter open source software? 
+a) No
+b) Yes
+
+Ans: B
+
+3. JMeter is not used for
+a) Endurance testing
+b) Functional testing
+c) Stress Testing
+d) Performance Testing
+
+Ans: B
+
+4. JMeter does not support 
+a) Load Testing
+b) Stress Testing
+c) Endurance Testing
+d) Monkey Testing
+
+Ans: D
+
+5. Is JMeter support all OS which are supported by Java application?
+a) TRUE
+b) FALSE
+
+Ans: A
+
+6. What is the advantage of JMeter?
+a) Remote machines must be declared in JMeter property file before starting application
+b) It is a platfor-independent tool
+c) Both A and B 
+d) None
+
+Ans: B
+
+7. What is the Key feature of JMeter?
+a) Jmeter can be run on any operating system with java.
+b) Using Jmeter, we cannot emulate huge load on the server in distributed mode.
+c) Both A and B 
+d) None
+
+Ans: C

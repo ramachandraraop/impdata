@@ -1,0 +1,148 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}  \end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{TS-Logo.png}}
+\def\Answerbox{\fbox{\begin{minipage}{4in}\hfill\vspace{1.0in}\end{minipage}}}
+\begin{document}
+\centerline{\huge{ \textbf{Arrays}}}
+\vspace{1pc}
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+\begin{enumerate}
+\item What would be the output of the below code?
+\begin{lstlisting}
+class SampleCodeA {
+    public static void main(String[] args) {
+        int[] a = new int[10];
+        System.out.println(a.length);
+        System.out.println(a[5]);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output of the below code? 
+\begin{lstlisting}
+class SampleCodeB {
+    public static void main(String[] args) {
+        int[] a = new int[10];
+        for (int i = 0; i < 10; i++) {
+            a[i] = i * i;
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(a[i]);
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output of the below code?
+\begin{lstlisting}
+class SampleCodeC {
+    public static void main(String[] args) {
+        int[] a = {10, 20, 30, 40, 50};
+        int[] b = a;
+        for (int i = 0; i < 5; i++) {
+            System.out.println(b[i]);
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output of the below code and explain your understanding?
+\begin{lstlisting}
+class SampleCodeD {
+    public static int xyz(int[] b) {
+        int r = 0; 
+        for (int i = 0; i < b.length; i++) {
+            if (b[i] % 2 == 0)
+                r += b[i];
+        }
+        return r;
+    }
+    public static void main(String[] args) {
+        int[] a = {33, 44, 54, 65, 67, 93, 246, 84, 20, 10, 26};
+        System.out.println(xyz(a));
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output of the below code?
+\begin{lstlisting}
+class SampleCodeE {
+    public static void main(String[] args) {
+        int table[][] = new int[3][3];
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                if (j == i) 
+                    table[i][j] = 1;
+                else 
+                    table[i][j] = 0;
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; i++) {
+                System.out.print(table[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output of the below code?
+\begin{lstlisting}
+class SampleCodeF {
+    public static void main(String[] args) {
+        int[][] a = {{1,2,3},{4,5,6},{7,8,9}};
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                System.out.print(a[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output of the below code?
+\begin{lstlisting}
+class SampleCodeG {
+    public static void main(String[] args) {
+        int[][] m = {{1},{1,2},{1,2,3},{1,2,3,4},{1,2,3,4,5}};
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.print(m[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output of the below code?
+\begin{lstlisting}
+class SampleCodeH {
+    public static void main(String[] args) {
+        int[][] a = {{11,12,13},{14,15,16},{17,18,19}};
+        int sum = 0;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                if (i == j)
+                    sum += a[i][j];
+            }
+        }
+        System.out.println(sum);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\end{enumerate}
+\end{document}

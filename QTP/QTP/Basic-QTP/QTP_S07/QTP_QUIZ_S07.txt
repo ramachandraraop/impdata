@@ -1,0 +1,85 @@
+By default, the all actions in QTP are
+( ) Non – reusable
+(x) Reusable 
+( ) External
+( ) None
+
+How many default actions are present in a QTP test by default?
+( ) 2
+( ) 4
+(x) 1
+( ) 3
+
+In which of the following ways can an action be called?
+( ) Call to New action
+( ) Call to Copy of an action
+(x) All of the options
+( ) Call to external action
+
+Planning for the no. of iteration for the action is done at
+( ) Action properties
+( ) Action call properties
+(x) Call to existing action
+( ) None
+
+The action that can be called multiple times by the test as well as by other tests is called
+( ) Non-reusable action
+(x) Reusable action
+( ) External action
+( ) Call action
+
+What is created, by default, with each new action?
+( ) Local Data Sheet, Global Data Sheet, Folder
+(x) Local Object Repository, Local Data Sheet, Folder
+( ) Global Data Sheet, Local Object Repository, Folder
+( ) Local Data Sheet, Global Data Sheet, Local Object Repository
+
+What is created by default when new action is created?
+( ) LocalSheet, Locar OR 
+( ) Local OR, Global sheet
+(x) Local OR and Local Sheet
+( ) Shared OR, Local sheet
+
+When an action is called into a test using Call to External action, changes can be made to the called action locally
+( ) True
+(x) False
+
+When an action is called into a test using Call to Copy of an action, the changes made to the local copy reflect in the source action
+( ) True
+(x) False
+
+Where do you define the input and output parameters of an action?
+( ) Action Call Properties
+( ) Action settings
+( ) Action run time properties
+(x ) Action properties
+
+Where do you set the action iterations for a specified action?
+( ) Action Settings
+( ) Action Properties
+( ) Action Run Properties
+(x) Action Call Properties
+
+Where do you mark an action as reusable?
+( ) Action Settings
+(x) Action Properties
+( ) Action Run Properties
+( ) Action Call Properties
+
+Which of the following Keyword is used to call an action in test?
+( ) RunAction
+( ) Call
+(x) OneIteration
+( ) Run
+
+Which one is not true about “Call of action”
+(x) Tester can edit the script
+( ) Tester can’t edit the script
+( ) Tester can view the script
+( ) None
+
+Which one is not true about “Copy of action”
+( ) Tester can edit the script
+(x) Tester can’t edit the script
+( ) Tester can view the script
+( ) None

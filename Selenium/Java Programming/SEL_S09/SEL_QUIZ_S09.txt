@@ -1,0 +1,84 @@
+  Java programs are
+() Faster than others
+(x) Platform independent
+() Not reusable
+() Not scalable
+
+
+  Java has its origin in
+() C programming language
+() PERRL
+() COBOL
+(x) Oak programming language
+
+
+
+  Which one of the following is true for Java
+(x) Java is object oriented and interpreted
+() Java is efficient and faster than C
+() Java is the choice of everyone.
+() Java is not robust.
+
+
+
+ The command javac is used to
+() debug a java program
+(x) compile a java program
+() interpret a java program
+() execute a java program
+
+
+
+ Java servlets are an efficient and powerful solution for creating ………….. for the web.
+(x) Dynamic content
+() Static content
+() Hardware
+() Both a and b
+
+
+ Filters were officially introduced in the Servlet ……………… specification.
+() 2.1
+(x) 2.3
+() 2.2
+() 2.4
+
+
+
+ Which is the root class of all AWT events
+() java.awt.ActionEvent              
+(x) java.awt.AWTEvent
+() java.awt.event.AWTEvent
+() java.awt.event.Event
+
+
+
+ OOP features are
+i) Increasing productivity                             
+ii) Reusability
+iii) Decreasing maintenance cost               
+iv) High vulnerability
+() 1,2 and 4
+(x) 1,2 and 3
+() 1, 2 and 4
+() none of the above
+
+
+
+ break statement is used to
+i) get out of method                                       
+ii) end aprogram
+iii) get out of a loop                                         
+iv) get out of the system
+() 1 and 2
+() 1,2 and 3
+() 1 and 3
+(x) 3
+
+
+
+ Native – protocol pure Java converts ……….. into the ………… used by DBMSs directly.
+(x) JDBC calls, network protocol
+() ODBC class, network protocol
+() ODBC class, user call
+() JDBC calls, user call
+

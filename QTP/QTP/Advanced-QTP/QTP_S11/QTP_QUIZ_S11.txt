@@ -1,0 +1,104 @@
+A Checkpoint checks that a text string is displayed within a defined area in a Windows application is
+() Accessibility
+(x) Text Area
+() Standard
+() Text 
+
+A step in which one or more values are captured at a specific point in your test and stored for the duration of the run session is?
+(x) Output Value
+() Checkpoints
+() Active Screen
+() None of the above 
+
+Bitmap checkpoint is supported in VB environment?
+(x) True
+() False
+
+Checkpoints statements can be manually added to the script without using menus?
+() True
+(x) False
+
+Checkpoint which is being used for verifying the web page with W3C standard is?
+() Bitmap checkpoint
+() Standard checkpoint
+(x) Accessibility checkpoint
+() XML checkpoint
+
+Database check point can be inserted without having to be on recording mode?
+() True
+(x) False
+
+In data base check point we can not set the expected value from the test?
+() True
+(x) False
+
+Quick Test adds a checkpoint statement in the Expert View as
+(x) Check Checkpoint
+() Checkpoint
+
+The checkpoint used to check the alt attribute exists for all relevant objects (such as images) is
+() DataBase CheckPoint
+(x) Accessibility checkpoint
+() Bitmap checkpoint
+() Standard checkpoint
+
+The result of the checkpoints can be stored in a variable
+(x) True
+() False
+
+To compare the values of the specified property during a run session with the values stored for the same test object property within the test.
+(x) Checkpoint
+() All the above
+() Output Value
+() Compare the object property
+
+We can access the run time objects of QTP with having to use test objects in Object repository?
+(x) True
+() False
+
+What are bitmap checkpoints sensitive to?
+() Image size and object type
+() Object type and image type
+() Screen resolution and object type
+(x) Screen Resolution and image size
+
+We can change name of checkpoint?
+() True
+(x) False
+
+We can use regular expression with checkpoints
+(x) True
+() False
+
+We can parametrize the checkpoints properties?
+(x) True
+() False
+
+Which of the following check point is used to verify text on a web based application?
+(x) Text check point
+() Standard check point
+() None of the above
+() Text area checkpoint
+
+Which of the following check point is used to verify the logo of the company on an application?
+(x) Bit map check point
+() Standard check point
+() All the options
+() Image check point
+
+What does the source property of a database checkpoint object represent?
+() The SQL query
+() The identification number of the database
+() The number of rows returned from the query
+(x) The connection string used to connect to the database
+
+What property values of an object can be verified using the standard check point?
+() Attached text
+() InnerText
+(x) All the property values of an object
+() Enabled
+() Text
+
+
+
+

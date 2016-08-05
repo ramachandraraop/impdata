@@ -1,0 +1,203 @@
+\documentclass[14pt]{beamer}
+\title[JPL:Java:02]{JPL :: Multidimensional Arrays}
+\author[TS]{TalentSprint}
+\institute[L\&D]{Licensed To Skill}
+\date{Version 1.0.4}
+\usefonttheme{serif}
+\usecolortheme{orchid}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\graphicspath{{../../Images/}}
+\beamertemplateballitem
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{TS-XP-Logo.jpg}}
+\lstset{language=Java,numbers=left, numberstyle=\tiny, basicstyle=\footnotesize, numbersep=10pt, showstringspaces=false, breaklines=true,keepspaces=true, columns=flexible}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Learning Objectives}
+By the end of this Presentation, you will be able to:
+\begin{itemize}
+\item Learn how to find Array size.
+\item Understand enhanced for loop
+\item Construct, Initialize and Manipulate Multidimensional  arrays
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+Array length
+
+We can refer to array length by using length attribute of array object i.e. array\_name.length
+\begin{lstlisting}[numbers=none]
+int arr1 = new int[10];			arr1.length - 10 
+int arr2 = new int[15];			arr2.length - 15 
+int arr3 = new int[4];			arr3.length - 4 
+for (int i = 0; i < 10; i++) {  } 
+for (int i = 0; i < arr1.length; i++) {  }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+\begin{block}{Accessing array elements one by one}
+\begin{lstlisting}[numbers=none]
+class ArrayDemo { 
+    public static void main ( String[] args ) { 
+        int[] array = { 20, 19, 12, 25} ; 
+        for (int indx = 0; indx < array.length; indx++ )
+            System.out.println(array[indx]);
+    } 
+} 
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+\begin{block}{Another way to access array elements one by one}
+\begin{lstlisting}[numbers=none]
+class Demo { 
+    public static void main ( String[] args ) { 
+        int[] array = { 20, 19, 12, 25} ; 
+        for ( int num : array )
+            System.out.println(num);
+    } 
+} 
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Multidimensional Arrays}
+\begin{enumerate}
+\item Write a Java program to store a student marks of 5 subjects
+\item Now write java program to store more than one student marks of 5 subjects
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Multidimensional Arrays}
+\textbf{Multi Dimensional  arrays}
+
+ 2 - Dimensional arrays
+
+ 3 - Dimensional arrays
+
+ Jagged arrays
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+Declaring Two Dimensional array variable
+
+We can declare 2D array either of the following way.
+<type>[][] variable\_name;
+<type>[] variable\_name[];
+<type> variable\_name[][];
+\begin{block}{Example}
+\begin{lstlisting}[numbers=none]
+int[][] cse;
+int[] cse[];
+int cse[][];
+\end{lstlisting}
+\end{block}
+Array is not created at declaration and memory not allocated
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+Defining  Two Dimensional array
+\begin{lstlisting}[numbers=none]
+variable_name = new <type>[rows][columns];
+
+Example: 
+cse = new int[3][4];
+
+Declaring and Defining in the same statement:
+int[][] cse = new int[3][4];		
+cse.length = 3
+cse[0].length = 4
+cse[1].length = 4
+cse[2].length = 4
+\end{lstlisting}
+In the above example, 3X4 = 12 integer variables will be created and 48 bytes of memory will be allocated.
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+\begin{block}{Initializing 2D array}
+\begin{lstlisting}[numbers=none]
+for (i = 0; i < cse.length; i++)
+    for (j = 0; j < cse[i].length; j++)
+        cse[i][j] = xxxxx;
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+Declaring, Defining and Initializing 2D array at the same time
+\begin{block}{Initializing an Array}
+\begin{lstlisting}[numbers=none]
+int[][] cse = { {20, 19, 12, 25},
+                {23, 12, 18, 21},
+                {16, 18, 17, 20} };
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Multidimensional Arrays}
+Write a Java program to declare, define, initialize and display 2D array
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+\begin{block}{Defining  Three dimensional array}
+\begin{lstlisting}[numbers=none]
+int[][][] college = new int[2][2][4];
+college.length = 2
+college[0].length = 2
+college[1].length = 2
+college[0][0].length = 4
+college[0][1].length = 4
+college[1][0].length = 4
+college[1][1].length = 4
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Multidimensional Arrays}
+Defining  Jagged array
+\begin{lstlisting}[numbers=none]
+int[][] cse = new int[3][];
+
+cse[0] = new int[4];
+cse[1] = new int[2];
+cse[2] = new int[3];
+
+cse.length = 2
+cse[0].length = 4
+cse[1].length = 2
+cse[2].length = 3
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Multidimensional Arrays}
+Write a Java program to declare, define, initialize and display Jagged array
+\end{frame}
+
+\begin{frame}{Multidimensional Arrays}
+\begin{enumerate}
+\item Write a Java program to transpose a given 3 X 3 matrix.
+
+\item Write a Java program to test a given matrix is lower triangle or not.
+
+\item Write a Java program to test a given matrix is upper triangle or not.
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Multidimensional Arrays}
+\begin{figure}[H]
+ \begin{center}
+   \includegraphics[scale=.3]{qa.png}   
+ \end{center}
+  \end{figure}
+\end{frame}
+\end{document}

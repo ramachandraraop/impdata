@@ -1,0 +1,156 @@
+\documentclass[14pt]{beamer}
+\title[BPT:VCS:02]{Getting Started - Git :: Session 02}
+\author[TS]{TalentSprint}
+\institute[L\&D]{Licensed To Skill}
+\date{Version 1.0.4}
+\usetheme{Madrid}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{TS-Logo.jpg}}
+%\graphicspath{{/home/tsuser/Desktop/Latex_Slides/Images/}}
+\graphicspath{{../../Images/}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Learning Objectives}
+At the end of this session you will learn
+  \begin{itemize}
+  \item what git is?
+  \item basic commands to work on local project
+  \item how to create a project
+  \item how to add, commit and check the status
+  \item how to find the difference between two versions
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What is Git?}
+Git is an open source, distributed version control system designed for speed and efficiency.
+\end{frame}
+
+\begin{frame}{Features}
+\begin{itemize}
+\item everything is local
+\pause
+\item fast
+\pause
+\item every clone is a backup
+\pause
+\item work offline
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Install Git in Linux}
+\begin{block} {Command}
+\$ sudo apt-get install git
+\end{block}
+\end{frame}
+
+\begin{frame}{Git :: init}
+To create a project follow the below steps in Terminal:
+\begin{enumerate}
+\item \$ mkdir GitRepo
+\item \$ cd GitRepo
+\item \$ git init MyGitProject 
+\end{enumerate}
+\begin{block}{}
+Empty git repository is initialized in the current directory.
+\end{block}
+\end{frame}
+
+\begin{frame}{Git :: add}
+Now add a file to project
+\begin{enumerate}
+\item \$ cd MyGitProject
+\item \$ vim DispEvenNums.c
+\item \$ git add DispEvenNums.c
+\end{enumerate}
+\begin{block}{}
+DispEvenNums.c file is added to the project.
+\end{block}
+\end{frame}
+
+\begin{frame}{Git :: status}
+check the staus of file added to the project
+\begin{itemize}
+\item \$ git status
+\end{itemize}
+\begin{block}{}
+It displays a message :-\\  changes to be committed:  new file: DispEvenNums.c 
+\end{block}
+\end{frame}
+
+\begin{frame}{Git configuration : user settings}
+now add the user details to project like username and email ID
+\begin{enumerate}
+\item git config user.name ``Bob''
+\item git config user.email ``bob@example.com''
+\end{enumerate}
+configure this globally for all your git projects:
+\begin{enumerate}
+\item git config --global user.name ``Bob''
+\item git config --global user.email ``bob@example.com''
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Git :: commit}
+now commit the added file to the project
+\begin{itemize}
+\item \$ git commit -m "Added New File"
+\end{itemize}
+\begin{block}{}
+It displays number of files added, number of lines inserted and number of lines deleted.
+\end{block}
+\begin{block}{Note }
+If we check the status again, it displays\\ nothing to commit (working directory clean) - as the project stage and file stage are same.
+\end{block}
+\end{frame}
+
+\begin{frame}{Follow the below steps}
+\begin{itemize}
+\item \$ vim DispEvenNums.c
+\item add a function to check the number is even or not and call the function
+\item \$ git add DispEvenNums.c
+\item \$ git commit -m "Added isEven Function"
+\end{itemize}
+\begin{block}{Note}
+git maintains two different versions of DispEvenNums.c
+\end{block}
+\end{frame}
+
+\begin{frame}{Git :: log}
+\begin{itemize}
+\item \$ git log
+\begin{itemize}
+\item shows a listing of commits including the corresponding details like commit, author, date and commit messages.
+\end{itemize}
+\item \$ git log - -abbrev-commit
+\begin{itemize}
+\item show only the first few characters of SHA-1 checksum instead of all 40.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Git :: diff}
+\begin{itemize}
+\item \$ git diff a2a1eb3 068b9b9
+\end{itemize}
+\begin{block}{Note}
+displays the difference between versions.
+\end{block}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{description}
+\item[init] git init creates an empty git repository.
+\item[add] add files changes in your working directory to your index.
+\item[status] git status shows you how the working tree is different from the index and how the index is different from the last commit.
+\item[commit] git commit takes the contents of the index and creates a new commit.
+\item[log] shows a listing of commits on a branch including the corresponding details.
+\item[diff] shows the difference from one commit compared to its parent or another.
+\end{description}
+\end{frame}
+
+\end{document}

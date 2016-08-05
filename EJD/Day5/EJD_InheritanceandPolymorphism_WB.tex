@@ -1,0 +1,416 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{Inheritance and Polymorphism}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item What is inheritance? 
+
+\AnswerBox
+
+\item  Why multiple inheritance is not supported in java?
+
+\AnswerBox
+
+\item  What is \texttt{super} in java?
+
+\AnswerBox
+
+\item  What is constructor chaining and how it is achieved in Java ?
+
+    \AnswerBox
+    
+\item  Why does Java not support operator overloading?
+
+    \AnswerBox
+    
+\item   Which object oriented concept is achieved by using overloading and
+overriding? \underline{\hspace{2in}}
+
+\item  What is the difference between static and dynamic polymorphism?
+
+    \AnswerBox
+
+
+
+   
+    \end{enumerate}
+
+
+
+\section*{State whether the following are True/False}
+\begin{enumerate}\itemsep2pt
+\item Java supports multiple inheritance for classes but only single inheritance for interfaces. [ ]
+\item Inheritance implies an “is-a” relationship. [   ]
+\item The private members of a superclass can be accessed by a subclass.[ ]
+\item A subclass inherit both member variables and methods. [ ]
+\item An object can be a subclass of another object. [ ]
+\item subclass can directly access protected members of a superclass. [ ]
+\item If a class is declared final, then no other class can be derived from this class. [ ]  % true
+\item You must always use the reserved word super to use a method from the superclass in the subclass. [ ]  % false
+\item The class Object is directly or indirectly the superclass of every class in Java. [ ] % true
+\item The superclass inherits all its properties from the subclass. [ ] % false
+
+\item Ploymorphism applies to static methods. [ ]
+\item Overloaded methods can be overriden. [ ]
+\item Main method can be overloaded. [ ]
+\end{enumerate}
+
+\section*{Multiple choice questions}
+\begin{enumerate}
+\item Which of these can be overloaded?
+\begin{enumerate}
+\item Methods
+\item Constructors
+\item Both a and b
+\item none
+\end{enumerate}
+\item What is the process of defining two or more methods with in same
+class that have same name but different parameters declaration?
+\begin{enumerate}
+\item method overloading
+\item method overriding
+\item method hiding
+\item none
+\end{enumerate}
+\item Which of these keywords can be used to prevent method overriding?
+\begin{enumerate}
+\item static
+\item constant
+\item protected
+\item final
+\end{enumerate}
+
+\item Which of these keyword is used to inherit a class?
+\begin{enumerate}
+\item super
+\item extends
+\item this
+\item implements
+\end{enumerate}
+\item Which of these keywords is used to refer to member of base class from a sub class?
+\begin{enumerate}
+\item upper
+\item super
+\item this
+\item none
+\end{enumerate}
+\item Which of these is correct way of inheriting class A by class B?
+\begin{enumerate}
+\item class A extends B {}
+\item class B inherits class A {}
+\item class B extends A {}
+\item class B extends class A {}
+\end{enumerate}
+\item A class member declared protected becomes member of subclass of which type?
+\begin{enumerate}
+\item public member 
+\item private member
+\item protected member
+\item static member
+\end{enumerate}
+\item  What restriction is there on using the super reference in a constructor?
+\begin{enumerate}
+\item It can only be used in the parent's constructor. 
+\item Only one child class can use it. 
+\item It must be used in the last statement of the constructor. 
+\item It must be used in the first statement of the constructor. 
+\end{enumerate}
+\item  Which of the following is not an advantage of using inheritance?
+\begin{enumerate}
+\item Code that is shared between classes needs to be written only once. 
+\item Similar classes can be made to behave consistently. 
+\item Enhancements to a base class will automatically be applied to derived classes. 
+\item One big superclass can be used instead of many little classes. 
+\end{enumerate}
+\end{enumerate}
+
+
+\section*{Exercises}
+\begin{itemize}
+    \item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+ \item Then execute the programs and check your answers.
+ \item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1]\
+    \begin{lstlisting}
+class Super { 
+    public int num = 0; 
+    public Super(String text) { /* Line 4 */
+        num = 1; 
+    } 
+} 
+class Sub extends Super {
+    public Sub(String text) {
+        num = 2; 
+    } 
+    public static void main(String args[]) {
+        Sub sub = new Sub(``Hello''); 
+        System.out.println(sub.num); 
+    } 
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What will be the output of the program?
+    \end{enumerate}
+
+\item [Program 2] \
+\begin{lstlisting}
+class Creature {
+    void grow() {
+    }
+}
+class Bird extends Creature {
+    void fly() {
+    }
+}
+class Falcon extends Bird {
+    void hunt() {
+    }
+}
+public class Tester {
+    public static void main(String[] args) {
+        Creature c1 = new Bird();
+        Falcon c2 = new Falcon();
+        // insert code here
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What inserted, independently at // insert code here , will compile?
+\end{enumerate}
+                                
+\item [Program 3] \
+\begin{lstlisting}
+class A {
+    A() {
+        System.out.println(``Hello'');
+    }
+} 
+class InitDemo extends A {
+    A ob = new A();
+    InitDemo() {
+        System.out.println(``hello 1'');
+    }
+    public static void main(String[] args){
+        System.out.println(``Hello 2'');
+        new InitDemo();
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt 
+        \item What will be the output of the above code?
+    \end{enumerate}
+
+\item[Program 4] \
+    \begin{lstlisting}
+class Base {
+    int value = 0;
+    Base() {
+        addValue();
+    }
+    void addValue() {
+        value += 10;
+    }
+    int getValue() {
+        return value;
+    }
+}
+class Derived extends Base {
+    Derived() {
+        addValue();
+    }
+    void addValue() {
+        value +=  20;
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Base b = new Derived();
+        System.out.println(b.getValue());
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+  \item What will the above program prints?
+\end{enumerate}
+
+\item [Program 5] \
+
+\begin{lstlisting}
+class Plant {
+    Plant() {
+        System.out.println(``Plant created'');
+    }
+}
+class Tree extends Plant {
+    Tree() {
+        System.out.println(``Tree created'');
+        super();
+    }
+}
+public class Test {
+    public static void main(String args[]) {
+        Tree tree = new Tree();
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item What will the above program print out?
+\end{enumerate}
+
+\item [Program 6] \
+\begin{lstlisting}
+public class Profile {
+    private Profile(int w) { // line 1
+        System.out.println(w);
+    }
+    public static Profile() { // line 5
+        System.out.println(10);
+    }
+    public static void main(String args[]) {
+        Profile obj = new Profile(50);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item What will the above program prints?
+\end{enumerate}
+
+\item [Program 7] \
+\begin{lstlisting}
+class A {
+    final public int GetResult(int a, int b) { 
+        return 0; 
+    } 
+} 
+class B extends A { 
+    public int GetResult(int a, int b) {
+        return 1; 
+    } 
+} 
+public class Test {
+    public static void main(String args[]) { 
+        B b = new B(); 
+        System.out.println(``x = '' + b.GetResult(0, 1));  
+    } 
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What will be the output of the program?
+\end{enumerate}
+
+\item [Program 8] \
+\begin{lstlisting}
+class BoxVar {
+    static void call(Integer... i) {
+        System.out.println(``hi'' +i);
+    }
+    static void call(int... i ) {
+        System.out.println(``hello''+i);
+    }
+    public static void main(String... args) {
+        call(10);
+    }
+} 
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the program?
+\end{enumerate}
+
+
+\item [Program 9] \
+\begin{lstlisting}
+class Test {
+    public static void main(String arg[]) {
+        Number n = 10;
+        int i = 10;
+        System.out.println(n == i);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the program?
+    \end{enumerate}
+
+\item [Program 10] \
+\begin{lstlisting}
+class Creature {
+    Creature getIt() {
+        return this;
+    }
+}
+class Bird extends Creature {
+    // insert code here
+}
+class Falcon extends Bird {
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Which statement(s), inserted independently at // insert code here, will compile?
+\end{enumerate}
+
+\end{description}
+
+\end{document}
+

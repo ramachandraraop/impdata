@@ -1,0 +1,68 @@
+You can parameterize values ..... in your test.
+() in Steps
+() in Checkpoints
+() of Action Parameters
+() Both A and B
+(x) All of above
+
+You can parameterize values in steps and checkpoints while ...... your test.
+() recording
+() editing
+(x) Both A and B
+
+There are four types of parameters: Test/Action, Random number, Environment Variable, Regular Expression.
+() True
+(x) False
+
+While using Test and Action Input Parameters,you can enter the parameter name in the Expert View using the Parameter utility object, in the format: ............ for the current action.
+(x) Parameter("ParameterName")
+() ParameterName("Parameter")
+() Parameter("Parameter-Name")
+() Parameter("Parameter_Name")
+
+..... parameters are available only for top-level actions.
+() Action
+() Environment Variable
+(x) Test
+() None
+
+...... parameters are available for subsequent steps and for nested actions. They are defined in the action containing the steps or in the action that calls the nested action.
+() Action
+() Environment Variable
+() Test
+(x) Parent action
+
+When specifying the name for data table parameter, the first character of the parameter name must be a ......
+() letter
+() underscore
+() number
+(x) both A and b
+
+By outputting values to the global Data Table sheet from one action and using them as input parameters in another action, you can easily pass values from one action to another.
+
+(x) True
+() False
+
+....... parameters are especially useful for localization testing, when you want to test an application where the user interface strings change, depending on the selected language.
+
+() Action
+(x) Environment
+() Test
+() Parent action
+
+You can also store environment variable files in Quality Center.
+
+(x) True
+() False
+
+....... built-in environment variable that tells version of the OS on which you are working.
+
+() OS
+() OS_Ver
+() OSVER
+(x) OSVersion
+
+Random number parameters are appropriate for non-numeric values, such as text or hypertext links.
+
+() True
+(x) False

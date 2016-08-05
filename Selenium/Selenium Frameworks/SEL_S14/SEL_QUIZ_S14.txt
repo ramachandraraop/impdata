@@ -1,0 +1,35 @@
+1. What is testNG?
+
+a) TestNextGeneration
+b) TestNewGenerlization
+c) TestNewGeneration
+d) TestNextGenerations
+
+ans: a
+
+2. Which of the below annatation not used in testNG?
+
+a) Before
+b) Aftermethod
+c) Beforemethod
+d) Test
+
+ans : a
+
+3. Which statement about testNG is not true from the below?
+
+a) Execution patterns can set
+b) Concurrent execution of test scripts
+c) Test case dependencies can be set
+d) testNG doesn't support WebDriver
+
+ans: d
+
+4. Using which annatation we can write a test cases in testNG?
+
+a) Before
+b) Aftermethod
+c) Beforemethod
+d) Test
+
+ans: d

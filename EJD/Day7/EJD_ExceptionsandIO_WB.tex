@@ -1,0 +1,333 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{Exceptions \& IO}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item What if there is a \texttt{break} or \texttt{return} statement in try block followed by finally block?
+
+\AnswerBox
+
+\item Explain different types of exceptions in Java.
+
+\AnswerBox
+
+\item How to create custom exceptions?
+
+\AnswerBox
+
+\item Why runtime exceptions are not checked?
+
+\AnswerBox
+
+\item What is the use of finally block? 
+
+\AnswerBox
+
+\item  What is meant by Stream and what are the types of Streams and classes of the Streams?
+
+\AnswerBox
+
+\item What is the difference between the Reader/Writer class hierarchy and the InputStream/OutputStream class hierarchy?
+
+\AnswerBox
+
+\item What an I/O filter?
+
+\AnswerBox
+
+\item What is serialization?
+
+\AnswerBox
+
+\end{enumerate}
+
+\section*{State whether the following are True/False}
+\begin{enumerate}
+\item The File class contains a method that changes the current working directory. [   ]
+\item  Readers have methods that can read and return floats and doubles. [   ]
+\item The InputStream and OutputStream classes are byte-oriented. [   ]
+\item The Serializable interface extends the Externalizable interface. [   ]
+\item Writer classes can be used to write Unicode characters to output streams. [   ]
+\item  We can have catch block with out try block. [   ]
+\item  Exceptions can be caught or rethrown to a calling method. [   ]
+\item  The toString ( ) method in the user-defined exception class is overridden.[     ]
+
+\end{enumerate}
+\section*{Multiple Choice Questions}
+\begin{enumerate}
+\item When does Exceptions in Java arises in code sequence?
+\begin{enumerate}
+\item Run time
+\item Compilation time
+\item Can occur any time 
+\item None
+\end{enumerate}
+\item Which of these keywords must be used to monitor for exceptions?
+\begin{enumerate}
+\item try
+\item finally
+\item catch
+\item throw
+\end{enumerate}
+\item Which of these keywords is used to manually throw an exception?
+\begin{enumerate}
+\item throw
+\item throws
+\item catch
+\item finally
+\end{enumerate}
+\item Which of these class is used to read from byte array?
+\begin{enumerate}
+\item InputStream.
+\item BufferedInputStream.
+\item ArrayInputStream.
+\item ByteArrayInputStream.
+\end{enumerate}
+\item Which of these classes are used by byte streams for input and output operation?
+\begin{enumerate}
+\item InputStream
+\item InputOutputStream
+\item Reader
+\item All the above
+\end{enumerate}
+\item Which of these class contains the methods print() and  println()?
+\begin{enumerate}
+\item System
+\item System.out
+\item BufferedOutputStream
+\item PrintStream
+\end{enumerate}
+\item Which of these classes are used by character streams output operations?
+\begin{enumerate}
+\item InputStream
+\item Writer
+\item ReadStream
+\item InputOutputStream
+\end{enumerate}
+\end{enumerate}
+\section*{Exercises}
+\begin{itemize}
+    \item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1] \
+\begin{lstlisting}
+public class Tester {
+    public static void main(String[] args) {
+        System.out.print(``1'');
+        try {
+            return;
+        } catch (Exception e) {
+            System.out.print(``2'');
+        } finally {
+            System.out.print(``3'');
+        }
+        System.out.print(``4'');
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the result of compiling and running the above code?
+\end{enumerate}
+
+\item [Program 2] \
+\begin{lstlisting}
+import java.io.IOException;
+class AirPlane {
+    public AirPlane() throws IOException, RuntimeException {
+        System.out.println(``AirPlane'');
+    }
+}
+class AirJet extends AirPlane {
+
+}
+public class Tester {
+    public static void main(String args[]) throws IOException { 
+        new AirPlane(); 
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the expected output of compiling and running the above code?
+\end{enumerate}
+
+\item [Program 3] \
+\begin{lstlisting}
+public class Tester {
+    static void method() {
+        throw new Exception();
+    }
+    public static void main(String[] args) {
+        try {
+            method();
+        } catch (Throwable e) {
+            try {
+                throw new Exception() ;
+            } catch (Exception ex) {
+            System.out.print(``exception'');
+            } finally {
+                System.out.print(``finally'');
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the result of compiling and running the above code?
+    \end{enumerate}
+
+\item [Program 4] \
+\begin{lstlisting}
+interface Foldable {
+    public void fold() throws Exception ;
+}
+class Paper implements Foldable {
+    public void fold() {
+        System.out.print(``Fold'');
+    }
+}
+public class Tester {
+    public static void main(String args []) {
+        Foldable obj1 = new Paper();
+        obj1.fold(); 
+        Paper obj2 = new Paper(); 
+        obj2.fold();
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the output of the above code?
+\end{enumerate}
+
+\item [Program 5] \
+\begin{lstlisting}
+class Father {
+    public Father() throws RuntimeException {
+        System.out.print(``Father'');
+        throw new RuntimeException();
+    }
+}
+class Son extends Father {
+    public Son() throws RuntimeException {
+        System.out.print(``Son'');
+    }
+}
+public class Tester {
+    public static void main(String[] args) {
+        new Son(); 
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the expected output of compiling and running this code?
+    \end{enumerate}
+
+
+\item [Program 6] \
+\begin{lstlisting}
+try {
+    File file = new File(``file.dat'');
+    file.createNewFile();
+} 
+catch (// INSERT EXCEPTION TYPE e) {
+    e.printStackTrace();
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Given the above code segment enclosed within a try/catch block, what valid Exception types can be catched causing no compilation error? 
+\end{enumerate}
+
+\item [Program 7] \
+\begin{lstlisting}
+try { 
+    int x = 0; 
+    int y = 5 / x; 
+} 
+catch (Exception e) {
+    System.out.println(``Exception''); 
+} 
+catch (ArithmeticException ae) {
+    System.out.println(``Arithmetic Exception''); 
+} 
+    System.out.println(``finished'');
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What will be the output of the program?
+    \end{enumerate}
+
+\item [Program 8] \
+\begin{lstlisting}
+public class Foo {  
+    public static void main(String[] args) {
+        try { 
+            return; 
+        } 
+        finally {
+            System.out.println(``Finally''); 
+        } 
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the program?
+\end{enumerate}
+\end{description}
+
+\end{document}
+

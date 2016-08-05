@@ -1,0 +1,24 @@
+The ............ contains all the virtual object collections defined on your computer.
+()Virtual Objects Manager
+()Virtual Manager
+(x)Virtual Object Manager
+()Virtual Object Wizard
+
+You cannot insert any type of checkpoint on a virtual object
+(x)True
+()False
+
+You can use the Object Spy to view virtual object properties.
+()True
+(x)False
+
+In the test results, the virtual object is displayed as though it is a standard class object.
+(x)True
+()False
+
+If you have a Virtual Object Collection stored on your machine, and you don’t want to use it what you must do?
+() Disable Virtual Objects in Test Settings 
+() Remove the Collection from your machine 
+(x) Disable Virtual Objects in General Options 
+() Remove the Collections from the Resources list 
+

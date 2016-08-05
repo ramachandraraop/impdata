@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Working With DRL-Subqueries}}}
+
+\vspace{1pc}
+
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+\begin{enumerate}\itemsep10pt
+\item  Write a query to retrieve `Emp\_Name' which starts with `R' from ``EMP'' table. \underline{\hspace{3cm}}
+
+\item The following query retrieves \underline{\hspace{3cm}} records.
+
+\texttt{SELECT * FROM emp WHERE ename NOT LIKE `A\%';}
+
+\item \underline{\hspace{3cm}} is a SQL statement to retrieve employee names whose second letter is `U' from ``Emp'' table.
+
+\item Write a query to retrieve employee from ``EMP'' whose name ends with `i'.\underline{\hspace{3cm}}
+
+\item Write a query to retrieve employees from ``EMP'' table whose salary is between 2000 and 5000.\underline{\hspace{3cm}}
+
+\item Write a query to retrieve records from ``Emp'' table where second letter of Country is `O' and ends with `ON'.\underline{\hspace{3cm}}
+
+\item Write a query to retrieve employees from ``EMP'' table whose empno is 7912, 7576, 7788.\underline{\hspace{3cm}}
+
+\item Write a query to retrieve ``FirstName'' column records from ``Persons'' table. \underline{\hspace{3cm}}
+
+\item Write a query to retrieve ``FirstName'' column records from ``Persons'' table in descending order .\underline{\hspace{3cm}}
+
+\item The result of a \texttt{SELECT} statement can contain duplicate rows. (True / False)
+
+\item Write a query to retrieve the number of records from the ``Persons'' table \underline{\hspace{3cm}}
+
+\item \underline{\hspace{3cm}} keyword is used to retrieve unique values.
+
+
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs.
+\end{itemize}
+\begin{description}
+\item[Program 1]\
+\begin{verbatim}
+SQL> SELECT *FROM CHECKS;
+
+CHECK#   PAYEE                AMOUNT   REMARKS
+-------- -------------------- -------- ------------------
+       1 Ma Bell                   150 Have sons next time
+       2 Reading R.R.           245.34 Train to Chicago
+       3 Ma Bell                200.32 Cellular Phone
+       4 Local Utilities            98 Gas
+       5 Joes Stale $ Dent         150 Groceries
+      16 Cash                       25 Wild Night Out
+      17 Joans Gas                25.1 Gas
+7 rows selected.
+\end{verbatim}
+
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write a query to find all the checks with a value of more than 100 dollars?
+\item What will be the output of the following query ?\newline
+\texttt{UPDATE CHECKS SET AMOUNT = (select max (AMOUNT) from CHECKS where CHECK\# = 4);}
+\end{enumerate}
+
+\item [Program 2]\ 
+\begin{verbatim}
+SQL> SELECT *FROM CHECKS;
+
+CHECK#   PAYEE                AMOUNT   REMARKS
+-------- -------------------- -------- ------------------
+       1 Ma Bell                   150 Have sons next time
+       2 Reading R.R.           245.34 Train to Chicago
+       3 Ma Bell                200.32 Cellular Phone
+       4 Local Utilities            98 Gas
+       5 Joes Stale $ Dent         150 Groceries
+      16 Cash                       25 Wild Night Out
+      17 Joans Gas                25.1 Gas
+7 rows selected.
+\end{verbatim}
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the query given below?\newline
+\texttt{SELECT amount  FROM checks;}
+\item What will be the output of the following query?\newline
+\texttt{SELECT DISTINCT amount FROM checks;}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT ALL amount FROM checks;}
+\item What will be the output  of the query given below?\newline
+\texttt{SELECT * FROM checks WHERE check\# = 16;}
+\end{enumerate}
+
+\item [Program 3]\ 
+\begin{verbatim}
+SQL> SELECT *FROM CUSTOMERS;
+
+CUSTOMER_ID  CUSTOMER_NAME         CITY
+------------ --------------------- ------
+1            Alfreds Futterkiste   Berlin
+2            Ana Trujillo          Mexico 
+3            Antonio Moreno        Mexico 
+4            Around the Horn       London
+5            Berglunds snabbköp    Lulea
+5 rows selected.
+\end{verbatim}
+%\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write a query to select all customers with a CITY starting with the letter ``M''?
+\item Write a query to select all customers with a CITY ending with the letter ``N''?
+\item What will be the output of the query given below?\newline
+\texttt{SELECT * FROM CUSTOMERS WHERE CITY LIKE `\%e\%';}
+\item What will be the output of the query given below?\newline
+\texttt{SELECT * FROM CUSTOMERS WHERE Customer\_Name LIKE `A\%';}
+\end{enumerate}
+
+\end{description}
+
+\end{document}

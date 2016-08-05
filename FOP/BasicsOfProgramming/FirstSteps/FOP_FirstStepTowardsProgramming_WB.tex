@@ -1,0 +1,56 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../../TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{First Step Towards Programming}}}
+\vspace{1pc}
+\centerline{\Large{\textbf{Workbook}}}
+\vspace{1pc}
+\section*{Answer the following}
+\begin{enumerate}
+\item List four primitive data types
+\begin{itemize}
+\item \  
+\item \ 
+\item \ 
+\item \ 
+\end{itemize}
+\item Every statement in a program must be terminated by \underline{\hspace{5cm}}
+\item Write a statement to declare a variable $``p\_age"$ of \emph{int} type and assign a value 20? \underline{\hspace{5cm}}
+\item What is the name of the java file containg the class name as \\ \textbf{SampleProgram}? \underline{\hspace{5cm}}
+\item Predict the output for the below code?
+
+\begin{lstlisting}
+ public class MyMain {
+     public static void main(String args[]) {
+         int a = 10;
+         int b = 20;
+         System.out.println(a + b);  
+    }  
+}
+\end{lstlisting}
+\AnswerBox
+
+
+\item Predict the output for the below code?
+
+\begin{lstlisting}
+ public class Test {
+    public static void main(String args[]) {
+       int a = 30;
+       int b = 70;
+       System.out.println("Result " + a + b);  
+    }   
+}
+\end{lstlisting}
+\AnswerBox
+\end{enumerate}
+\end{document}

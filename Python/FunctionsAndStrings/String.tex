@@ -1,0 +1,283 @@
+\documentclass[11pt,a4paper]{article}
+\author{TalentSprint}
+\date{}
+\usepackage{verbatim}
+\usepackage{fancyhdr}           % For header and footer
+\usepackage{multicol}
+\usepackage{colortbl}           % For coloured tables
+\usepackage{setspace}           % For line height
+\usepackage{seqsplit}           % Splits long words.
+\usepackage{amsmath} 
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[tikz]{bclogo}
+\usepackage{textcomp}
+\usepackage{listings}
+\lstset{language=python,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\headheight=14pt
+\lhead{\nouppercase{}}
+\rhead{\nouppercase{\leftmark}}
+
+\graphicspath{{../Images/} {../ScreenShots/}}
+\setcounter{tocdepth}{1}
+\setlength\parindent{0pt}
+\parskip=4pt
+\newcommand{\Code}[1]{\textbf{\texttt{#1}}}
+%\thispagestyle{empty}
+\begin{comment}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+
+\vspace{1.5pc}
+\topskip0pt
+\vspace*{\fill}
+\centerline{\Huge Modern Programming}
+\vspace{2pc}
+\centerline{\Huge Practice}
+\vspace{2pc}
+\centerline{\Large using Python}
+\vspace*{\fill}
+\centerline{Prepared by TalentSprint WISE Team} 
+\setcounter{page}{1}
+
+
+\end{comment}
+%========================================================================
+
+% Lengths and widths
+\addtolength{\textwidth}{5cm}
+\addtolength{\hoffset}{-1cm}
+\setlength{\headsep}{-12pt} % Reduce space between header and content
+\setlength{\headheight}{85pt} % If less, LaTeX automatically increases it
+\renewcommand{\footrulewidth}{2pt} % Remove footer line
+\renewcommand{\headrulewidth}{1pt} % Remove header line
+\renewcommand{\seqinsert}{\ifmmode\allowbreak\else\-\fi} % Hyphens in seqsplit
+% This two commands together give roughly
+% the right line height in the tables
+\renewcommand{\arraystretch}{1.3}
+\onehalfspacing
+
+
+
+% Commands
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}} % Shortcut for row colour
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{white}}#2}{#3}} % For coloured multi-cols
+\newcolumntype{x}[1]{>{\raggedright}p{#1}} % New column types for ragged-right paragraph columns
+\newcommand{\tn}{\tabularnewline} % Required as custom column type in use
+
+% Font and Colours
+\definecolor{HeadBackground}{HTML}{333333}
+\definecolor{FootBackground}{HTML}{666666}
+\definecolor{TextColor}{HTML}{333333}
+\definecolor{DarkBackground}{HTML}{6B8E23} %{FD1AA8}
+\definecolor{LightBackground}{HTML}{E8FED8} %D3FDC8
+\definecolor{tit}{HTML}{FF6600}
+\renewcommand{\familydefault}{\sfdefault}
+\color{TextColor}
+ \headsep = 25pt
+% Header and Footer
+\pagestyle{fancy}
+\usepackage[headheight=110pt]{geometry}
+\fancyhf{}% Clear header/footer
+
+\fancyhead[r]{\includegraphics[width = 4cm, height = 2cm]{TS-Logo.png}\hspace{0cm}}
+
+%=================================TITLE=====================================
+\fancyhead[l]{\Large{\bf{\textcolor{tit}{\textrm{Strings}}}}}
+%===========================================================================
+
+\renewcommand{\headrulewidth}{0.4pt}% Default \headrulewidth is 0.4pt
+\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+
+\rfoot{Page \thepage}
+\lfoot{COPYRIGHT \textcopyright TALENTSPRINT, 2015. ALL RIGHTS RESERVED.}
+
+
+
+
+\begin{document}
+%\chapter*{Strings}
+A string in Python is a sequence of characters. For Python to recognize a sequence of characters, like \emph{hello}, as a string, it must be enclosed in quotes. The string can be enclosed in single or double quotes.
+
+Example:
+\begin{verbatim}
+>>> ``Hello World''
+`Hello World'
+>>> `Hello World'
+`Hello World'
+\end{verbatim}
+
+\emph{Note: Python interpreter displays the string with single quotes.}
+
+Having two sorts of quotes can be useful in certain circumstances. If you want text itself to include quotes of one type can define it surrounded by other type.
+
+Example:
+\begin{verbatim}
+>>> print(``This is `Use of Single Quotes'.'')
+This is `Use of Sungle Quotes'.
+>>> print(`This is ``Use of Double Quotes''.')
+This is ``Use of Double Quotes''.
+\end{verbatim}
+
+
+\textbf{Triple Quoted String Literals}
+
+Strings delimited by single or double quote character are required to lie within a single line. It is sometimes convenient to have a multi-line string, which can be delimited with triple quotes
+
+Example:
+\begin{verbatim}
+>>> str1 = '''Hello
+...  "Good Morning!!!"
+...  Have a cup of coffee.'''
+>>> print(str1)
+Hello
+"Good Morning!!!"
+Have a cup of coffee.
+\end{verbatim}
+\section*{String Operations}
+\subsection*{Concatenation}
+
+The plus operation with strings means concatenate the strings. Python looks at the type of operands before
+deciding what operation is associated with the +.
+
+The plus ( + ) sign is the string \emph{concatenation operator} which is used to combine number of strings and returns the new string.
+
+Example:
+\begin{verbatim}
+>>> str1 = "Hello World"
+>>> print(str1 + " 'Can Be Joined'")   # Prints concatenated string 
+Hello World 'Can Be Joined'
+\end{verbatim}
+
+\subsection*{Repetition Operator}
+
+The asterisk( * ) sign is the \emph{repetition operator} which is use to repeat the string as many times as specified.
+
+Example:
+\begin{verbatim}
+>>> str1 = "Hello World"
+>>> print(str1 * 3)   # Prints string 3 times
+Hello WorldHello WorldHello World
+\end{verbatim}
+
+\section*{Accessing Characters In String}
+We can access a character from the string by specifying the index of the character. Index starts from '0' indicates the beginning of the string and working their way from -1 at the end.
+
+\subsection*{For Example:}
+\begin{verbatim}
+>>> str1 = "Strings In Python"
+>>> print(str1)       # Prints complete string
+Strings In Python
+>>> print(str1[0])    # Prints first character of the string
+S
+>>> print(str1[5])    # Prints sixth character of the string
+g
+>>> print(str1[-1])   # Prints the last character of the string
+n
+>>> print(str1[-3])   # Prints the third character from the last
+h
+>>> print(str1[-8])   # Prints the eigth character from the last
+n
+\end{verbatim}
+
+\section*{Slicing the String}
+
+We can access the subsets of a string using slice operator ([:]) with indexes starting at 0 in the beginning of the string and working their way from -1 at the end.
+
+\subsection*{For Example: }
+\begin{verbatim}
+>>> str2 = "Slicing the String"
+>>> print(str2[4:])   # Prints string starting from the 5th character
+ing the String
+>>> print(str2[:4])   # Prints the first four characters
+Slic
+>>> print(str2[2:8])  # Prints characters starting from 3rd to 7th
+icing
+>>> printt(str2[4:-3]) # Prints characters from 5th to 3rd character from last
+ing the Str
+\end{verbatim}
+
+\section*{String Methods}
+string methods performs operations on strings.
+
+Strings have their own set of functions. In this section we will go through few of them:
+
+\begin{description}
+\item[len()]\
+
+The \emph{len()} function returns the length of a string as an integer.
+\texttt{\emph{len}("String")}
+
+\textbf{Example}\\
+\begin{verbatim}
+>>> len("Hello World") # This returns the value as 11.
+>>>
+>>> name = "TalentSprint" 
+>>> len(name) # 12
+\end{verbatim}
+
+\item[lower()]\
+Converts all uppercase letters in string to lowercase and return the new string.
+\begin{verbatim}
+>>> s1 = "PYTHON"
+>>> s1.lower()
+'python'
+\end{verbatim}
+
+\item[upper()]\
+Converts lowercase letters in string to uppercase and return the new string.
+\begin{verbatim}
+>>> s2 = "python"
+>>> s2 = name.upper()
+>>> print(s2)
+'PYTHON'
+\end{verbatim}
+
+\item[replace()]\
+The function \emph{replace()} returns a copy of the string with all occurrences of substring old replaced by new.
+
+\textbf{Syntax:}
+\begin{verbatim}
+str.replace(old, new)
+old - This is the old substring to be replaced
+new - This is new substring, which would replace old substring.
+\end{verbatim}
+\textbf{Example:}
+\begin{verbatim}
+>>> str = "This is example for replace function"
+>>> str.replace('is', 'was')
+'Thwas was example for replace function' 
+\end{verbatim}
+
+\item[split()]\
+The method \emph{split()} is used to split on the whitespaces (blanks, newline) and returns the list of sub strings as items.
+
+\textbf{Example: }
+\begin{verbatim}
+>>> str1 = "Engineering Student"
+>>> str1.split()
+['Engineering', 'Student']
+>>> str1.split("i")
+['Eng', 'neer', 'ng Student']
+\end{verbatim}
+
+\item[strip()]\
+By using \emph{strip()} function, It returns a copy of the string with the leading and trailing characters removed.
+
+\textbf{Example: }
+As it treats the argument as a set of characters. In this example, we specify all digits, and some punctuation chars.
+% Program that uses  strip with argument.%
+\begin{verbatim}
+>>> value = "543210=Data,123"
+# strip all digits
+# Also remove equals sign and comma.
+>>> result = value.strip("0123456789=,")
+>>> print(result)
+Data
+\end{verbatim}
+
+\end{description}
+\end{document}

@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{TDD and Junit}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item What is Junit TestCase?
+
+\AnswerBox
+
+\item What is Junit TestSuite?
+
+\AnswerBox
+
+\item How to write a simple Junit test class?
+
+\AnswerBox
+
+\item What is test driven development?
+
+\AnswerBox
+
+\item  What is @Ignore and when it’s used?
+
+\AnswerBox
+
+\item What is the use of @Rule annotation?
+
+\AnswerBox
+
+\item Why do you use Junit to test your code?
+
+\AnswerBox
+
+\end{enumerate}
+
+\section*{State whether the following are True/False}
+\begin{enumerate}
+\item We can change return type of JUnit test method from void to some other type. [   ]
+\item It is possible to pass command-line arguments to a test execution. [   ]
+\item The goal of unit testing is to isolate each part of the program and show that the individual parts are correctly. [   ]
+\item Unit testing is commonly automated, but cannot still be performed manually. [    ]
+\item To ensure testing robustness and simplify maintenance, tests should never rely on other tests nor should they depend on the ordering in which tests are executed. [   ]
+\item Unit tests should be written without explicit knowledge of the environment context in which they are executed so that they can be run anywhere at anytime. [   ]
+\item The most common approach to unit testing requires drivers and stubs to be written. [   ]
+\end{enumerate}
+
+\section*{Multiple Choice Questions}
+\begin{enumerate}
+\item Internal and unit testing can be automated with the help of  \underline{\hspace{2cm}} tools.
+\begin{enumerate}
+\item Testing
+\item Coverage
+\item Scaffolding
+\item None
+\end{enumerate}
+\item The exact scope of a unit testing is left to interpretation. Supporting test code, sometimes called  \underline{\hspace{2cm}} may be necessary to support an individual test.
+\begin{enumerate}
+\item Conjucture
+\item RemUnit
+\item Scaffolding
+\item All the above
+\end{enumerate}
+\item As a consequence, unit testing is traditionally a motivator for programmers to create  \underline{\hspace{2cm}} and  \underline{\hspace{2cm}} code bodies. This practice promotes healthy habits in software development.
+\begin{enumerate}
+\item uncoupled, uncohesive
+\item decoupled, cohesive
+\item decohesive, coupled
+\item uncoupled, cohesive
+\end{enumerate}
+\item Select all unit testing frameworks.
+\begin{enumerate}
+\item ASUnit
+\item ASPUnit
+\item FCTX
+\item MinUnit
+\item All the above
+\end{enumerate}
+\end{enumerate}
+\end{document}
+ 

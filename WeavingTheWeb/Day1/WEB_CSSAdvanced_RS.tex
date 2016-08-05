@@ -1,0 +1,240 @@
+\documentclass[14pt]{beamer}
+\title{WEB :: CSS}
+\author[TS]{TalentSprint}
+\institute[L\&D]{Licensed To Skill}
+\usefonttheme{serif}
+\usecolortheme{orchid}
+\usepackage{bookman}
+\usepackage{multirow}
+\usepackage{fancybox}
+\usepackage[percent]{overpic}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\graphicspath{{../Images/}}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage{color}
+\beamertemplateballitem
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{TS-XP-Logo.jpg}}
+\lstset{language=html, numbers=left, numbers=none, basicstyle=\footnotesize, numberstyle=\tiny,  numbersep=10pt, showstringspaces=false, breaklines=true,keepspaces=true, columns=flexible}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{CSS}
+At the end of this session, the participants will be able to:
+  \begin{itemize}
+  \item Understand CSS selectors
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{CSS}
+\textbf{Classes}
+\begin{itemize}
+ \item CSS class allows you to style items within the same (X)HTML element differently.
+ \item A class selector begins with a (.) period
+\end{itemize}
+\begin{lstlisting}[xleftmargin=30pt]
+p {
+    font-size: small;
+    color: #FF0000
+}
+
+.greenboldtext{
+    font-size: small;
+    color: #00FF00;
+    font-weight: bold;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{CSS}
+\begin{lstlisting}[xleftmargin=20pt]
+p {
+    font-size: small;
+    color: #FF0000
+}
+.greenboldtext {
+    font-size: small;
+    color: #00FF00;
+    font-weight: bold;
+}
+<p>
+To put it more simply, this <span class = ``greenboldtext''> sentence </span> you are reading is styled in my CSS file by the following.
+</p>
+\end{lstlisting}
+\small
+\textbf{Preview:}
+\color{red}{To put it more simply, this} \textbf{\color{green}{sentence}} you are reading is styled in my CSS file by the following.
+\end{frame}
+
+\begin{frame}{CSS}
+\textbf{IDs}
+\begin{itemize}
+ \item CSS IDs are similar to the classes, except that once a specific ID has been declared, it cannot be used again within the same (X)HTML file.
+ \item IDs are used to style the layout elements of a page that are required only once.
+ \item Classes are used to style text such that they may be declared multiple times.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{CSS}
+\textbf{IDs}
+\begin{lstlisting}
+#container {
+     width: 80%;
+   padding: 20px;
+    border: 1px solid blue;
+background: yellow;
+}
+<div id = ``container''>
+    Everything within my document is inside this division.
+</div>
+\end{lstlisting}
+\begin{figure}[H]
+\includegraphics[scale=.25]{css-Id.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{CSS}
+\textbf{Divisions}
+\begin{itemize}
+ \item Divisions are a block level (X)HTML element used to define sections of an (X)HTML file.
+ \item It can contain all the parts that are required to build a website.
+\end{itemize}
+\begin{lstlisting}[xleftmargin=32pt]
+<div id = ``container''>
+    Site contents go here
+</div>
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{CSS}
+\textbf{Divisions}
+\begin{block}{The CSS file contains:}
+\begin{lstlisting}
+#container {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #666;
+    background: #ffffff;
+}
+\end{lstlisting}
+\end{block}
+You can use both classes and IDs with a division tag to style the sections of a website.
+\end{frame}
+
+\begin{frame}[fragile]{CSS}
+\textbf{Spans}
+\begin{itemize}
+ \item Spans are very similar to divisions except they use an inline element declaration.
+ \item Span tag can also style certain areas of the text:
+\end{itemize}
+\begin{lstlisting}[xleftmargin=32pt]
+<span class = ``italic''> This text is italic </span>
+
+.italic {
+    font-style: italic;
+}
+\end{lstlisting}
+\textbf{Result:} \em{This text is italic}
+\end{frame}
+
+\begin{frame}{CSS}
+\textbf{Borders}
+
+\vspace{1pc}
+\begin{tabular}{|p{3.5cm} | p{6cm} |}
+\hline
+\textbf{Property} & \textbf{values}\\ \hline
+border-color & color name hexadecimal number RGB color code\\ \hline
+border-style & dashed, dotted, double, groove, hidden, inset, none, outset, ridge, solid \\ \hline
+border-width &  medium, thin, thick, length  \\ \hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]{CSS}
+\textbf{Borders}
+
+\small
+\vspace{.5pc}
+We can use the following properties in any combination:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.35]{css-borders.png}
+\end{figure}
+\begin{block}{For Example}
+\begin{lstlisting}
+border: #FF00FF 15px dotted; (For All Borders)
+border-color: #FF00FF; (For all Borders color is red)
+border-left: #FF00FF 15px dotted;  (Only Left Border)
+border-bottom-style: dashed;
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{CSS}
+\textbf{Margins}
+
+\begin{itemize}
+ \item Clear(gap) an area around an element (outside the border)
+ \item Do not have a background color, and they are completely transparent.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{CSS}
+\textbf{Padding}
+\begin{itemize}
+ \item Clears(gap) an area around an element (outside the border)
+ \item Does not have a background color, and is completely transparent.
+\end{itemize}
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=.5]{margins-padding.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{CSS}
+\textbf{Miscellaneous Tags}
+
+\small
+\begin{tabular}{|p{4cm} | p{5cm} |}
+ \hline
+ \textbf{Property} & \textbf{Value} \\ \hline
+ Height\newline max-height\newline min-height& Number \\ \hline
+ Width\newline max-width\newline min-width & Number \\ \hline
+ Cursor & auto crosshair default help move pointer text url wait e-resize ne-resize nw-resize n-resize se-resize sw-resize w-resize \\ \hline
+ Float & left, right and none \\ \hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}{CSS}
+\textbf{Miscellaneous Tags}
+
+\vspace{.5pc}
+\begin{tabular}{|p{4cm} | p{5cm} |}
+ \hline
+ \textbf{Property} & \textbf{Value} \\ \hline
+ Left & Number \\ \hline
+Right & Number \\ \hline
+Top & Number \\ \hline
+Bottom & Number \\ \hline
+Position & Absolute, Relative, Fixed and None \\ \hline
+Overflow & Auto, Hidden, Visible, Scroll \\ \hline
+Visibility & Hidden, Visible \\ \hline
+Z-index & Number \\ \hline
+ \end{tabular}
+\end{frame}
+
+\begin{frame}{CSS}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[scale=.3]{qa.png}   
+ \end{center}
+  \end{figure}
+\end{frame}
+\end{document}

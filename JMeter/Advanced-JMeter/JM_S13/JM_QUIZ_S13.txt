@@ -1,0 +1,40 @@
+1. What are the concepts of Remote Testing ?
+a) Remote Testing is done by controlling remote and multiple JMeter engines from a single JMeter client
+b) By running JMeter remotely, you can replicate a test across many low-end computers and thus simulate a large load on the server
+c) A and B 
+d) None
+
+Ans: C
+
+2. What are the features of Remote Testing in JMeter?
+a) Saving of test samples to the local machine
+b) Management of multiple JMeter Engines from a single machine
+c) No need to copy the test plan to each server - the client sends it to all the servers
+d) All of the above
+
+Ans: D
+
+3. Where should we add the IP address of Slave's Machine in JMeter?
+a) jmeter.properties
+b) user.properties
+c) upgrade.properties
+d) system.properties
+
+Ans: A
+
+4. How to run JMeter remote testing from non-GUI Client?
+a) jmeter -n -l .jmx -r 
+b) jmeter -n -t .jmx -R server1,server2....
+c) Jmeter -n -t .jmx -r 
+d) None
+
+Ans: B
+
+
+5. How will we check the IP address in Command Prompt?
+a) ifconfig
+b) configip
+c) ipconfig
+d) configif
+
+Ans: C

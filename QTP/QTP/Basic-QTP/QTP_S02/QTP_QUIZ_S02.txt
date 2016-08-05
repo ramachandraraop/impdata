@@ -1,0 +1,36 @@
+QTP Stands for
+     (x) QuickTest Professional
+     ( ) QuickTesting Professional
+     ( ) QuickTest Programming
+     ( ) None of the above 
+     
+QTP is a Product of 
+     (x) HP
+     ( ) Microsoft
+     ( ) SunMicro Systems
+     ( ) None of the above 
+     
+Does QTP support testing of SAP applicatio?
+
+     (x ) True
+     ( ) False
+     
+QTP can be Installed on which of the below platform?
+     (x) Windows
+     ( ) Linux 
+     ( ) Solaris
+     ( ) MAC
+     
+     
+What type of  tool is QTP?
+
+     (x) Execution 
+     ( ) Performance
+     ( ) Configuration 
+     ( ) Test Management 
+     
+Does QTP supports Performance Testing?
+
+     (x) Yes
+     () No
+     

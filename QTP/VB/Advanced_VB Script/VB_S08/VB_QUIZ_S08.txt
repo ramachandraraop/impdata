@@ -1,0 +1,63 @@
+Is key value can be changed from a dictionary object?
+A. Yes
+B. No
+Answer :A
+
+What is the source for Dictionary object?
+A. Scripting.Dictionary
+B. Scripting.FileSystemobject
+c. Scripting.Databaseobjet
+D. None of the above 
+Answer :A
+
+What is the use of key property in dictionary object concept?
+A. To change a key name
+B. To get the item value of a particular key
+C. To change a particular item value
+Answer: A
+
+What is the use of item property in dictionary object concept?
+A. To change a key name
+B. To get the item value of a particular key
+C. To change a particular item value
+Answer : B
+
+What is the use of itemS method in dictionary object concept?
+A. To get all the items in dictionary
+B. To get all the key names in dictionary
+C. To remove all the keys from dictionary 
+D. None of the above
+Answer : A
+
+What is the use of keys method in dictionary object concept?
+A. To get all the items in dictionary
+B. To get all the key names in dictionary
+C. To remove all the keys from dictionary 
+D. None of the above
+Answer : B
+
+What is the use of Remove method in dictionary object concept?
+A. Remove a particular key
+B. Remove all the keys 
+Answer : A
+
+Which of the following statement is true?
+None of the above .
+Dictionary objects are not multidimensional but arrays are multidimensional.
+Dictionary objects are multidimensional and arrays also multidimensional.
+Dictionary objects are multidimensional but arrays are not multidimensional.
+Answer: B
+
+Which statement is not correct about the dictionary object from the following?
+A. Dictionary objects are multidimensional
+B. Dictionary object has both key and item
+C. Resizing a dictionary object is easy rather than an array
+D. When deleting an Item from dictionary,the reaming Items are shifted -up automatically
+Answer: A
+
+What is the use of Remove Method in Dictionary object ?
+A. Removes only key
+B. Removes only items 
+C. Removes a key, item pair
+D. Removes all keys, items pair
+Answer: C

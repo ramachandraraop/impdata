@@ -1,0 +1,74 @@
+If you do not want QuickTest to perform a step or checkpoint until an object in your application achieves a certain status, you should insert a .......... point to instruct QuickTest to pause the test until the object property achieves the value you specify
+
+(x) Synchronization
+() Check
+() Smart Identification
+() none of above
+
+
+
+Where do we Specify the Maximum Time to Wait for a Web Page to Load
+
+(x) File->Settings, Web Ta()
+() Tools->Options, Web Ta()
+() Resources->Settings, Web Tab
+() None of above
+
+
+You can insert ........ statements that instruct QuickTest to wait until an object exists
+
+() Exist
+() Wait
+(x) Both A and B
+() None
+
+
+...... Method Waits for the browser to complete the current navigation.
+
+() Exist
+() Wait
+() WaitProperty
+(x) Sync
+
+
+
+.....Property- The period of time QuickTest waits before checking the emulator status (in milliseconds).
+
+(x) SyncTime
+() Syn()Time
+() TimeSync
+() Time.Sync
+
+
+
+....... Property- Indicates whether QuickTest beeps after performing each Sync function during a run session.
+
+() BeepAfterSync
+(x) BeepOnSync
+() BeepSync
+() Beep.Sync
+
+
+
+Unlike the Exist method, the ....... method enables you to synchronize the test run based on a specific object property.
+
+(x) WaitProperty
+() Wait
+() Sync
+() Exit
+
+
+...... Statement - Initiates a pause during a run session.
+
+() WaitProperty
+(x) Wait
+() Sync
+() Exit
+
+
+........... Property - The maximum time (in milliseconds) that QuickTest waits for a Web page to load before running a step.
+
+() BrowserTimeout
+() Browser_Navigation_Timeout
+(x) BrowserNavigationTimeout
+() Browser_Timeout

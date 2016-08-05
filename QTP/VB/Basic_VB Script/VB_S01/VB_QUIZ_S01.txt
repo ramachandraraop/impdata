@@ -1,0 +1,62 @@
+>>Which statement to force user to explicitly declare variables?<<
+(x) Option Explicit
+() Dim
+() Redim
+() Preserve
+
+
+>>What is the importance on stating Option Explicit in the top of the script?<<
+() To restore the elements
+() For error handling
+(x) we have to specifically declare every variable we work with
+() None of the above
+
+
+>>What are the types of variables in VB Script?<<
+() Scalar variables only 
+(x) Scalar and Array variables
+() Array variables only
+() None of the above 
+
+() IBM
+() Sun Microsystem
+(x) Microsoft
+() Google
+
+
+1. VBScript stands for
+(x) Visual Basic Scripting Edition
+() Visual Basic Scripting Education
+() Visual Basic Scripting Explorer
+() Visual Basic Scripting Execution
+
+
+2. VBScript is an
+(x) Active Scripting Language
+() Passive Scripting Language
+() Both Active and Passive Scripting Language
+
+
+
+3. What is the use of a keyword Nothing in VBScript?
+(x) To release system resources
+() Used to test if a value is an initialized object
+() Used to indicate that a variable contains no valid data
+() Used to test if a value contains invalid dat()
+
+
+4. VB Script code is processed by ?
+(x) Wscript.exe
+() Cscript.ext
+() Dscript.exe
+() Fscript.exe
+
+
+5. In VB Script variable names cannot contain a period(.)
+(x) True
+() False
+
+
+6. In VBScript, all variables are of type variant
+(x) True
+() False

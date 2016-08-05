@@ -1,0 +1,27 @@
+1.Does automation testing is time consuming?
+     ( ) Yes
+     (x ) No
+     
+2.Choose the benfits of automation testing from the below?
+     ( ) Consistency
+     ( ) Required less time
+     ( ) Required less resources
+     (x )All the above 
+     
+3.Do we use automation tool for regression testing?
+      (x ) Yes
+      ( ) No
+      
+4.Does adhoc based test cases are suitable for automation?
+       ( ) Yes
+       (x) No
+     
+5.Does newly designed test cases are suitable for automation?
+       ( ) Yes
+       (x) No
+       
+6.Does regression test cases are suitable for automation?
+       ( x) Yes
+       () No
+   
+     

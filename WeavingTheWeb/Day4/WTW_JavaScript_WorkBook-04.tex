@@ -1,0 +1,207 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\begin{document}
+\section*{\center{Practice Exercises}}
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+\item What are the built-in objects in JavaScript?\underline{\hspace{3cm}}.
+\item What are the different ways to create objects in JavaScript?\underline{\hspace{3cm}}.
+\item Does JavaScript has a built-in concept of inheritance?\underline{\hspace{3cm}}.
+\item How do you create an object in JavaScript?\underline{\hspace{3cm}}.
+\item How to you assign a value to an object?\underline{\hspace{3cm}}.
+\item  What does ``1'' + 2 + 4 evaluate to?\underline{\hspace{3cm}}.
+\item A string function which returns the character at the specified position is\underline{\hspace{3cm}}.
+\item Given the following line of code, what would be the output?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var x1 = ``Hello RAM'';
+document.write(``indexOf '' + x1.indexOf(``RAM''));
+\end{lstlisting} 
+\item Given the following line of code, what would be the output?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var x1 = ``Hello World''; 
+document.write(x1.substring(5)); 
+document.write(x1.substring(3,6));
+\end{lstlisting}
+\item What is the use of Math function in JavaScript?\underline{\hspace{3cm}}.
+\item What's Math Constants using JavaScript?\underline{\hspace{3cm}}.
+\item \texttt{Math.ceil(29.89);} returns\underline{\hspace{3cm}}.
+\item A Math function which rounds a number downward to its nearest integer is\underline{\hspace{3cm}}.
+\item \texttt{Math.pow(4, Math.pow(2,3));} returns\underline{\hspace{3cm}}.
+\item How to create a Date object in JavaScript?\underline{\hspace{3cm}}.
+\item Given the following line of code, what would be the output?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var d = new Date(); 
+document.write (d.getDay());
+\end{lstlisting}
+\item How does JavaScript store dates in a date object?\underline{\hspace{3cm}}.
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item[program 1]\
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    var s_prim = ``foo'';
+    var s_obj = new String(s_prim);  
+    document.write(typeof s_prim + ``<br>''); 
+    document.write(typeof s_obj);  
+</script>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the outupt for the above code snippet?
+\item What happens if line 5 is changed to \texttt{document.write(s\_obj);}?
+
+\end{enumerate}
+
+\item[Program 2]\
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    document.write(String(`Hello') = = = `Hello');
+    document.write(new String(`Hello') = = = `Hello');
+    document.write(new String(`Hello') = = `Hello');
+</script>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What happens if line 1 is changed to \texttt{document.write(String(`Hello') == `Hello');}?
+\end{enumerate}
+\item [Program 3]\ 
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    var num1 = ``10'', num2 = ``9'';
+</script>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the value of num1 $<$ num2?
+\item What is the value of +num1 $<$ num2?
+\item What is the value of num1 + num2?
+\item What is the value of +num1 + num2?
+\end{enumerate}
+
+\item [Program 4]\
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    var message = ``Hello world!'';
+</script>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the value of message.substring(1, 4)?
+\item What is the value of message.substr(1, 4)?
+\end{enumerate}
+
+\item [Program 5]\
+
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    var ts = ``wise module'';
+    var result = ts.lastIndexOf(``s''); 
+    document.write(result);
+</script>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What happens if line 3 is changed to \texttt{var result = ts.substring(5);}?
+\item What will be the output if line 3 is changed to \texttt{var result = ts.charAt(2);}?
+\end{enumerate}
+
+\item [Program 6]\
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    var text = prompt (``Enter Integer for var N '',``'') 
+    var num1 = parseInt(text)
+    var text = prompt (``Enter decimal number for var x '',``'') 
+    var num2 = parseInt(text)
+    result = Math.pow(num1, num2)
+    document.write(``power of numbers is = '' + result);
+</script>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What happens if the input value for num1 = ``2'' and num2 = 3?
+\item What happens if the input value for num1 = 2.5 and num2 = 3.9?
+\end{enumerate}
+
+\item [Program 7]\
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    var ran_number = Math.random() * 5;
+    document.write(ran_number); 
+</script>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the above code snippet?
+\item Rewrite the code such that it prints only integer values between 0 and 4?
+\end{enumerate}
+
+\item [Program 8]\
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    var d = new Date();
+    document.write(d.getHours() + ``<br>'');
+    document.write(d.getDate() + ``<br>'');
+    document.write(d.getDay() + ``<br>'');
+    document.write(d.getFullYear() + ``<br>'');
+</script>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the above code snippet?
+\end{enumerate}
+\end{description}
+\subsection*{Additional Exercises}
+\begin{enumerate}
+\item Given a string of numbers in sequence order. Find the missing number.\
+\texttt{Input: "9899100101103104105"\newline
+        Output: 102}
+
+\item A string of characters are given, find the highest occurance of the character and display it.\
+
+\texttt{Input: MISSISIPI\newline
+        Output: I}
+\item Write a JavaScript that receives a string composed by words separated by spaces and returns a string where words appear in the same order but than the original string, but every word is inverted.\
+
+\texttt{Input: the boy ran\newline
+        Output: eht yob nar}
+\item Write a JavaScript to reverse the words in a given sentence.
+\item Write a JavaScript to search for the existence of a string(target) in another string. The program takes two strings as the input and returns the index where the second string is found. If the target string cannot be found, then return -1.
+\item You have a string str = ``I love you''. Write a program to print the output as ``you love I''.
+\item Write a JavaScript to remove the characters from string1 which are present in string2 and display the resultant string.
+\item How to write a random number from 0 to 10, using the round and the random method.
+\item Write JavaScript to find out the circumference of a circle using Math.PI .
+\item Write JavaScript to display today's date including date, month, and year. Note that the getMonth method returns 0 in January, 1 in February etc. So add 1 to the getMonth method to display the correct date.
+\item Write JavaScript to display the current local time including hour, minutes, and seconds. To return the GMT time use getUTCHours, getUTCMinutes etc.
+\item How to write a complete date with the name of the day and the name of the month.
+\end{enumerate}
+\end{document}

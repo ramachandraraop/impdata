@@ -1,0 +1,40 @@
+1. Which of the following is invalid Perfromance Bottleneck in JMeter?
+a) Extended Response Time
+b) High CPU Usage
+c) Invalid Data Returns
+d) Hits Per Second
+
+Ans: D
+
+
+2. Why do we do Performance testing?
+a) To identify the bottlenecks
+b) To identify the functional issues
+c) To identify the Scenarios
+d) To identify the testing bugs
+
+Ans: A
+
+3. What are the core performance testing activities:
+a) Identify Test Environment
+b) Identify Performance Criteria
+c) Plan and Design
+d) All of the above
+
+Ans: D
+
+4. What do we achieve through application performance?
+a) Scalability
+b) Speed
+c) A and B
+d) None
+
+Ans: C
+
+5. What are Scalability related risks in Performance Testing:
+a) Can the application provide consitent and acceptable response times for the entire userbase ?
+b) Can the application store all of the data that will be collected over the life of the application ?
+c) Are there warning signs to indicate that the application is approaching peak capacity ?
+D) All of the above
+
+Ans: D

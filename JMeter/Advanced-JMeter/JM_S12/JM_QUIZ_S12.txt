@@ -1,0 +1,58 @@
+﻿1. Correlation in JMeter is used for ?
+a) To handle static data
+b) To handle dynamic data
+c) To make the test data driven
+d) None
+
+Ans: B
+
+2. What is the formula to capture dynamic values ?
+a) (.*?)
+b) (.+?)
+c) Both A and B
+d) None
+
+Ans: C
+
+3. "." Indicates?
+a) beginning of string
+b) end of string
+c) any character except newline
+d) match 0 or more times
+
+Ans: C
+
+4. "*" Indicates?
+a) beginning of string
+b) end of string
+c) any character except newline
+d) match 0 or more times
+
+Ans: D
+
+5. "?" Indicates?
+a) beginning of string
+b) match 0 or 1 times; or: shortest match
+c) any character except newline
+d) match 0 or more times
+
+Ans: B
+
+6. "()" Indicates?
+a) grouping; “storing”
+b) match 0 or 1 times; or shortest match
+c) any character except newline
+d) match 0 or more times
+
+Ans: A
+
+
+7. If you want to capture the dynamic value from Sampler result. Which option do you need to check from Field to check options?
+a) Body
+b) Response Header
+c) Request Header
+d) Response Code
+
+Ans: B
+
+

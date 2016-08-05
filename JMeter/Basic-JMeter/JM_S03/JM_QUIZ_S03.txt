@@ -1,0 +1,56 @@
+1. Which is invalid testing type in Performance Testing?
+a) load Testing
+b) Stress Testing
+c) Helpful Testing
+d) Volume Testing
+
+Ans: C
+
+2. Why we do Load Testing?
+a) To identify the Performance bottlenecks
+b) To identify the functional issues
+c) To identify the Scenarios
+d) To identify the testing bugs
+
+Ans: A
+
+3. Why we do Stress Testing?
+a) To identify the Performance bottlenecks
+b) To identify the functional issues
+c) To identify the Scenarios
+d) To identify the break point of an application
+
+Ans: D
+
+4. Why we do Endurance Testing?
+a) To identify the Performance bottlenecks
+b) To identify the functional issues
+c) Can handle expected load over a long period of time
+d) To identify the break point of an application
+
+Ans: C
+
+5. Why we do Volume Testing?
+a) To identify the Performance bottlenecks
+b) To identify the Software application performance under varying database volumes
+c) To identify the Scenarios
+d) To identify the break point of an application
+
+Ans: B
+
+
+6. Which is the open source tool from the following?
+a) Diesel Test 
+b) Grinder
+c) JMeter
+d) All of the above
+
+Ans: D
+
+7. Which is the Commercial tool from the following?
+a) TestMaker 
+b) LoadSim
+c) Rational Performance Tester
+d) All of the above
+
+Ans: C

@@ -1,0 +1,135 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{verbatim}
+\usepackage{fancyhdr}           % For header and footer
+\usepackage{multicol}           % Allows multicols in tables
+\usepackage{graphicx}           % For images
+\usepackage{xcolor}             % For hex colours
+\usepackage{colortbl}           % For coloured tables
+\usepackage{setspace}           % For line height
+\usepackage{seqsplit}           % Splits long words.
+\usepackage{amsmath}            % Symbols
+
+\graphicspath{{../Images/}}
+% Lengths and widths
+\addtolength{\textwidth}{5cm}
+\addtolength{\hoffset}{-1cm}
+\setlength{\headsep}{-12pt} % Reduce space between header and content
+\setlength{\headheight}{85pt} % If less, LaTeX automatically increases it
+\renewcommand{\footrulewidth}{2pt} % Remove footer line
+\renewcommand{\headrulewidth}{1pt} % Remove header line
+\renewcommand{\seqinsert}{\ifmmode\allowbreak\else\-\fi} % Hyphens in seqsplit
+% This two commands together give roughly
+% the right line height in the tables
+\renewcommand{\arraystretch}{1.3}
+\onehalfspacing
+
+
+
+% Commands
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}} % Shortcut for row colour
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{white}}#2}{#3}} % For coloured multi-cols
+\newcolumntype{x}[1]{>{\raggedright}p{#1}} % New column types for ragged-right paragraph columns
+\newcommand{\tn}{\tabularnewline} % Required as custom column type in use
+
+% Font and Colours
+\definecolor{HeadBackground}{HTML}{333333}
+\definecolor{FootBackground}{HTML}{666666}
+\definecolor{TextColor}{HTML}{333333}
+\definecolor{DarkBackground}{HTML}{6B8E23} %{FD1AA8}
+\definecolor{LightBackground}{HTML}{E8FED8} %D3FDC8
+\definecolor{tit}{HTML}{FF6600}
+\renewcommand{\familydefault}{\sfdefault}
+\color{TextColor}
+ \headsep = 25pt
+% Header and Footer
+\pagestyle{fancy}
+\usepackage[headheight=110pt]{geometry}
+\fancyhf{}% Clear header/footer
+
+\fancyhead[r]{\includegraphics[width = 4cm, height = 2cm]{TS-Logo.png}\hspace{0cm}}
+\fancyhead[l]{\Large{\bf{\textcolor{tit}{\textrm{Data Defination Language}}}}}
+
+\renewcommand{\headrulewidth}{0.4pt}% Default \headrulewidth is 0.4pt
+\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+
+\rfoot{Page \thepage}
+\lfoot{COPYRIGHT \textcopyright TALENTSPRINT, 2015. ALL RIGHTS RESERVED.}
+
+\begin{document}
+\vspace{5in}
+
+\subsubsection*{How to connect to MySql}
+ \$  mysql u root p
+      
+    Enter password: root
+\subsubsection*{How to display available Databases}
+ mysql$>$SHOW databases;
+\subsubsection*{How to create a new Database}
+ mysql$>$ CREATE DATABASE demo;
+\subsubsection*{How to connect to a particular Database}
+mysql$>$ USE employee;\newline
+
+mysql$>$ CONNECT employee;
+\subsubsection*{How to know which Database user is connected}
+ mysql$>$SELECT DATABASE() FROM DUAL;
+\subsubsection*{How to display all tables available in connected Database}
+ mysql$>$SHOW TABLES;
+\subsubsection*{Creating a Table}
+mysql$>$ CREATE TABLE employee (empid INT, ename VARCHAR (20), salary FLOAT (10, 2));
+\subsubsection*{How to create a table by copying the structure and data of an existing Table}
+mysql$>$ CREATE TABLE student AS SELECT * FROM employees;
+\subsubsection*{How to create a table by copying the structure only not the data of an existing Table}
+mysql$>$ CREATE TABLE student AS SELECT * FROM employees where 1=2;
+\subsubsection*{How to describe the structure of a Table}
+mysql$>$DESC employee;
+\subsubsection*{Alter}
+\subsubsection*{How to add a new column to existing Table}
+mysql$>$ALTER TABLE employee add address varchar(20);\newline
+mysql$>$ALTER TABLE employee add address varchar(20),add phone int; 
+\subsubsection*{How to modify structure of exisiting column of a Table}
+mysql$>$ ALTER TABLE employee MODIFY address VARCHAR (40);\\
+mysql$>$ ALTER TABLE employee MODIFY ename VARCHAR (22), MODIFY city VARCHAR (22);
+\subsubsection*{How to drop exisiting column from a Table}
+mysql$>$ ALTER TABLE employee DROP phone;\\
+mysql$>$ ALTER TABLE employee DROP ename, DROP salary;
+\subsubsection*{How to rename existing column of a Table}
+mysql$>$ ALTER TABLE employee CHANGE address newaddress VARCHAR(30) ;\\
+mysql$>$ ALTER TABLE employee CHANGE empid id VARCHAR (100), CHANGE newaddress address VARCHAR (100);
+\subsubsection*{How to rename an exisiting Table}
+mysql$>$ RENAME TABLE employee TO newemployee;\\
+mysql$>$ RENAME TABLE newemployee TO employees,student TO students, department TO departments;
+\subsubsection*{Drop}
+\subsubsection*{How to drop existing Table}
+mysql$>$DROP TABLE employee;
+\subsubsection*{How to delete all records of a table permanently}
+mysql$>$TRUNCATE employee;
+\subsubsection*{Data Types}
+\begin{itemize}
+\item{\textbf{SMALLINT}: A small integer. The signed range is -32768 to 32767. The unsigned range
+is 0 to 65535.}
+
+\item{\textbf{MEDIUMINT}}: A medium-sized integer. The signed range is -8388608 to 8388607. The unsigned range is 0 to 16777215.
+
+\item{\textbf{INT}}: A normal-size integer. The signed range is -2147483648 to 2147483647. The unsigned range is 0 to 4294967295.
+
+\item{\textbf{BIGINT}}: A large integer. The signed range is -9223372036854775808 to 9223372036854775807. The unsigned range is 0 to 18446744073709551615.
+
+\item{\textbf{FLOAT}}: A small (single-precision) floating-point number. Permissible values are -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38. These are the theoretical limits, based on the IEEE standard. The actual range might be slightly smaller depending on your hardware or operating system.
+
+\item{\textbf{DATE}}: A date. The supported range is '1000-01-01' to '9999-12-31'. MySQL displays DATE values in 'YYYY-MM-DD' format.
+
+\item{\textbf{TIME}} : A time. The range is '-838:59:59' to '838:59:59'. MySQL displays TIME values in 'HH:MM:SS' format.
+
+\item{\textbf{DATETIME}}: A date and time combination. The supported range is '1000-01-01 00:00:00' to '9999-12-31 23:59:59'. MySQL displays DATETIME values in 'YYYYMM-DD HH:MM:SS' format.
+
+\item{\textbf{YEAR[(2|4)]}}: A year in two-digit or four-digit format. The default is four-digit format.In four-digit format, the permissible values are 1901 to 2155, and 0000. In two-digit format, the permissible values are 70 to 69, representing years from 1970 to 2069.MySQL displays YEAR values in YYYY format.
+
+\item{\textbf{TIMESTAMP}}: A timestamp. The range is '1970-01-01 00:00:01' UTC to '2038-01-19 03:14:07' UTC.
+
+\item{\textbf{CHAR}} :The length of a CHAR column is fixed to the length that you declare when you create the table. The length can be any value from 0 to 255.
+
+\item{\textbf{VARCHAR}}: The length can be specified as a value from 0 to 255 before MySQL 5.0.3, and 0 to 65,535 in 5.0.3 and later versions.
+
+\end{itemize}
+\end{document}

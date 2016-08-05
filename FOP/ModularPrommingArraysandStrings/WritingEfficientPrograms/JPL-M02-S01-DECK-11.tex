@@ -1,0 +1,245 @@
+\documentclass[14pt]{beamer}
+\title[JPL:Java:02]{JPL :: Writing Efficient Programs}
+\author[TS]{TalentSprint}
+\institute[L\&D]{Licensed To Skill}
+\date{Version 1.0.4}
+\usefonttheme{serif}
+\usecolortheme{orchid}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\graphicspath{{../../Images/}}
+\usepackage{tikz}
+\beamertemplateballitem
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{TS-XP-Logo.jpg}}
+\lstset{language=Java,numbers=left, numberstyle=\tiny, basicstyle=\footnotesize, numbersep=10pt, showstringspaces=false, breaklines=true,keepspaces=true, columns=flexible}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Learning Objectives}
+The content in this presentation is aimed at teaching  learners to:
+  \begin{itemize}
+  \item Provide alternative solutions to the same problem
+  \item Optimize solutions to problems
+  \item Write elegant and structured code for problems
+  \item Write programs to problems by decomposing functionality into methods and using the methods
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+Let's re-look at the solution to find Prime Numbers
+\begin{block}{Solution}
+ \begin{lstlisting}[numbers=none]
+Read the number into n.
+for i from 2 to n-1, 
+    if n % i = 0, then print ("n not prime").
+        print("n prime");
+ \end{lstlisting}
+\end{block}
+Alternatively, we can also Count the number of divisors of the given number. If it is more than 2, it is not a prime number. Else, it is a prime number.
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+  \begin{block}{Here is an alternative solution}
+  \begin{lstlisting}[numbers=none]
+Read the number into n.
+for i from 1 to n, 
+    if n % i = 0, then increment count
+if count is 2, Print ("n prime");
+else print ("n not prime")
+  \end{lstlisting}
+
+ \end{block}
+Now, let us write Java code for the same. 
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+ \begin{lstlisting}
+public class PrimeNumber2 {
+    public static void main(String[] args) {
+        int i;
+        int n = Integer.parseInt(args[0]);
+        int factorCount = 2;
+        for (i = 2; i <= n - 1; i++) {
+            if (n % i == 0) {
+                factorCount++;
+            }
+        }
+        if (factorCount == 2) {
+            System.out.println(n + " is prime");
+        } else {
+            System.out.println(n + " is not prime.");
+        }
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+\begin{block}{Code}
+\begin{lstlisting}[numbers=none]
+for (i = 2; i <= n - 1; i++)  
+    if (n % i == 0) 
+        factorCount++; 
+if (factorCount == 2)
+    System.out.println(n + " is prime");
+else
+    System.out.println(n + " is not prime.");
+\end{lstlisting}
+\end{block}
+\hspace{3cm}$\downarrow$
+
+\vspace{.2pc}
+\colorbox{orange}{Instead of `n-1' why not `n/2' ! }
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+ \begin{block}{Solution}
+  \begin{lstlisting}[numbers=none]
+public class PrimeNumber3 {
+    public static void main(String[] args) {
+        int n = Integer.parseInt(args[0]);
+        int factorCount = 2;
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                factorCount++;
+            }
+        }
+        if (factorCount == 2) {
+            System.out.println(n + " is prime");
+        } else
+            System.out.println(n + " is not prime.");
+    }
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Writing Efficient Programs}
+ \begin{center}
+  \begin{minipage}{10cm}
+   Do we really need to loop thru  `n/2' ?
+   
+   \vspace{.5pc}
+   Can we do better?
+   
+   \vspace{.5pc}
+   How about sqrt(n)? Is it sufficient? If yes, why? 
+  \end{minipage}
+ \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+ \begin{block}{Solution}
+ \begin{lstlisting}[numbers=none]
+public class PrimeNumber3 {
+    public static void main(String[] args) {
+        int n = Integer.parseInt(args[0]);
+        int factorCount = 2;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                factorCount++;
+            }
+        }
+        if (factorCount == 2) {
+            System.out.println(n + " is prime");
+        } else 
+            System.out.println(n + " is not prime.");
+    }
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+ \begin{block}{Our earlier solution for finding Perfect Square}
+  \begin{lstlisting}[numbers=none]
+public class PerfSquare {
+    public static void main(String[] args) {
+        int i = 1;
+        int givenNumber = Integer.parseInt(args[0]);
+        while (i < givenNumber) {
+            if(i * i == givenNumber) { 
+                System.out.println(givenNumber + " is perfect square.");
+                return;
+            }
+            i++; 
+        }
+        System.out.println(givenNumber + " is not perfect square.");
+    }
+}
+\end{lstlisting}
+
+ \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+ \begin{block}{A Better Solution for Finding Perfect Square:}
+  \begin{lstlisting}[numbers=none]
+public class PerfSquare {
+    public static void main(String[] args) {
+        int i = 1;
+        int n = Integer.parseInt(args[0]);
+        while (i * i < n) {
+            i++;
+        }
+        if (i * i == n)
+            System.out.println(n + " is perfect square.");
+        else
+            System.out.println(n + " is not perfect square.");
+    }
+} 
+\end{lstlisting}
+
+ \end{block}
+\end{frame}
+
+\begin{frame}{Writing Efficient Programs}
+ \begin{minipage}{8cm}
+ \begin{enumerate}
+  \item Write a program for perfect square using \lstinline!sqrt()! function.
+
+  
+  \item Print all perfect squares between 1 and a given number `n'.
+  \end{enumerate}
+ \end{minipage}
+ \quad
+ \begin{minipage}{2cm}
+  \includegraphics[scale=.4]{exercise.png}
+ \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Writing Efficient Programs}
+ \begin{block}{Solution for Finding Perfect Square upto `n':}
+  \begin{lstlisting}[numbers=none]
+public class PerfSquareRange {
+    public static void main(String[] args) {
+        int i , j;
+        int n = Integer.parseInt(args[0]);
+        for (i = 1; i <= n; i++) {
+            j = 1;
+            while (j * j < i) j++;
+            if (j * j == i) 
+                System.out.println(i + " is perfect square.");
+        } 
+    }
+}
+\end{lstlisting}
+
+ \end{block}
+\end{frame}
+
+\begin{frame}{Writing Efficient Programs}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[scale=.3]{qa.png}   
+ \end{center}
+  \end{figure}
+\end{frame}
+
+\end{document}

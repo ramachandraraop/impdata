@@ -1,0 +1,34 @@
+Which scripting language is used in QTP ?
+() Test Script Language (TSL)
+() Java Script
+() ASP
+(x) VB Script
+
+Select the Browsers Supported by QTP by Default ?
+(x) IE
+() Netscape
+() Safari
+() AOL
+
+The command used to invoke other application from QTP,
+
+() InvokeApplication
+() SystemUtil.Run
+() Run
+() Both b and  c
+(x) Both a and  b
+
+
+The QTP script files are stored in the extension of
+
+(X) *.mts
+()  *.usr
+()  *.mtr
+()  *.vbs
+
+
+“Active Screen” Technology in QTP gives
+()  Test Data 
+()   Checkpoints 
+(x)   Screenshots of Application Under Test (AUT) 
+()   Object Repository 

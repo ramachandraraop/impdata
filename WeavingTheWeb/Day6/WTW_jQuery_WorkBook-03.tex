@@ -1,0 +1,219 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\begin{document}
+\section*{\center{Practice Exercises}}
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+\item Name some of the methods of jQuery used to provide effects?\underline{\hspace{3cm}}.
+\item Which jQuery method is used to hide selected elements?\underline{\hspace{3cm}}.
+\item Which jQuery method is used to switch between adding/removing one or more classes (for CSS) from selected elements?\underline{\hspace{3cm}}.
+\item The \texttt{hide()} function hides an element by setting “display” inline style attribute of that element to ``none''. (True / False)\underline{\hspace{3cm}}.
+\item The \texttt{show()} method can show a hidden element. (True / False)\underline{\hspace{3cm}}.
+\item The functionality of \texttt{toggle()} method is\underline{\hspace{3cm}}.
+\item The\underline{\hspace{3cm}}function slides down a hidden HTML element, so it becomes visible.
+\item The\underline{\hspace{3cm}}function shows an HTML element if it is hidden, or hides it if visible.
+\item \texttt{fadeToggle()} and \texttt{slideToggle()} are having the same functionality. (True / False
+)\underline{\hspace{3cm}}.
+\item Which function enables you to fade an HTML element partially in or out, making it transparent?\underline{\hspace{3cm}}.
+\item SlideToggle attaches two functions, what are they?\underline{\hspace{3cm}}.
+\item FadeToggle attaches two functions, what are they?\underline{\hspace{3cm}}.
+\item Possible values of the speed parameter of \texttt{fadeToggle()} function are\underline{\hspace{3cm}}.
+\item Speed is an optional parameter in \texttt{fadeToggle()} function?. (Yes / No)\underline{\hspace{3cm}}.
+\end{enumerate}
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item[program 1]\
+\begin{lstlisting}
+<script>
+    $(document).ready(function() {
+        $(``#jbtnShow'').click(function() {
+            $(``#jShow'').show(``slow'');
+        });
+        $(``#jbtnHide'').click(function() {
+            $(``#jShow'').hide();
+        });
+    });
+</script>
+<div id = ``jShow'' class = ``demoBlock'' style = ``display:none;''>
+    This is the hiddent text</div>
+    <input type = ``button'' value = ``Show Text'' 
+    id = ``jbtnShow'' />
+    <input type = ``button'' value = ``Hide Text'' 
+    id = ``jbtnHide'' /> |
+    <input type = ``button'' value = ``Show Fast'' 
+    id = ``jbtnShowFast'' />
+    <input type = ``button'' value = ``Hide Normal'' 
+    id = ``jbtnHideNormal'' />
+</div>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item When will \texttt{show()} and \texttt{hide()} functions get's invoked?
+\item What happens if line 4 is changed to \texttt{\$(``\#jShow'').show(``fast'');}?
+\item What happens if value \texttt{``normal''} is passed to \texttt{hide()} function at line 7?
+\end{enumerate}
+
+\item[Program 2]\
+\begin{lstlisting}
+<script>
+    $(``#jbtnSCount'').click(function() {
+        $(``#jShow'').show(3000);
+    });
+    $(``#jbtnHCount'').click(function() {
+        $(``#jShow'').hide(3000);
+    });
+    $(``#jbtnTog'').click(function() {
+        $(``#jShow'').toggle(``slow'');
+    });
+</script>
+<body>
+    <input type = ``button'' value = ``Show''  id = ``jbtnSCount'' />
+    <input type = ``button'' value = ``Hide''  id = ``jbtnHCount'' /> 
+    <input type = ``button'' value = ``Click''  id = ``jbtnTog'' />
+</body>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item When will \texttt{toggle()} function get's invoked?
+\item What will be the output for the above code snippet?
+\item What does \texttt{show(3000)} and \texttt{hide(3000)} will do in the above code snippet?
+\item What happens if parameter value of \texttt{toggle()} function is changed to 3000 at line 9?
+\end{enumerate}
+\item [Program 3]\ 
+\begin{lstlisting}
+<script>
+    $(document).ready(function() {
+        $(``#jbtnSlideDown'').click(function() {
+            $(``#jdivWelcome'').slideDown();
+        });
+        $(``#jbtnSlideUp'').click(function() {
+            $(``#jdivWelcome'').slideUp();
+        });
+    });
+</script>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write HTML declaration for the above code snippet?
+\item When will \texttt{slideDown()} and \texttt{slideUp()} be executed?
+\item What happens if the value \texttt{``normal''} is passed to \texttt{slideDown()} function at line 4?
+\item What happens if the value \texttt{``fast''} is passed to \texttt{slideUp()} function at line 7?
+\end{enumerate}
+
+\item [Program 4]\ 
+\begin{lstlisting}
+$(``#jbtnSlideToggle'').click(function() {
+    $(``#jdivWelcome'').slideToggle();
+});
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What does \texttt{slideToggle()} will do in the above code snippet?
+\item What does \texttt{\$(``\#jbtnSlideToggle'')} wil select?
+\item What does \texttt{\$(``\#jdivWelcome'')} wil select?
+\item Will \texttt{slideToggle()} have the same functionalities of both \texttt{slideDown()} and \texttt{slideUp()}?
+\item What happens if the value \texttt{``fast ''} is passed to \texttt{slideToggle()} at line 2?
+\end{enumerate}
+
+\item [Program 5]\ 
+\begin{lstlisting}
+<script>
+    $(document).ready(function() {
+        $(``#btnFadeIn'').click(function() {
+            $(``#jDivFade'').fadeIn();
+        });
+        $(``#btnFadeOut'').click(function() {
+            $(``#jDivFade'').fadeOut();
+        });
+        $(``#btnFadeLimited'').click(function() {
+            $(``#jDivFade'').fadeTo(``slow'', 0.40);
+        });        
+    });
+</script>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write HTML declaration for the above jQuery code?
+\item What does \texttt{fadeIn()} and \texttt{fadeOut()} will do in above code snippet?
+\item What is the type of second paraemter in \texttt{fadeTo()} function at line 10?
+\end{enumerate}
+
+\item [Program 6]\ 
+\begin{lstlisting}
+<script src = ``jquery−1.11.1.js''></ s c r i p t>
+<script>
+    $(document).ready(function() {
+        $(``#flip'').click(function(event) {
+            $(``#para1'').css(``color'', ``green'');
+            $(``#para1'').css(``font−weight'', ``bold'');
+            $(``#panel'').fadeToggle(2000);
+        });
+    });
+</script>
+<body>
+    <p id = ``para1''>The only thing that interferes with 
+    my learning is my education.
+    <span style = ``color : red''>``Albert Einstien''</span><p>
+    <div id = ``panel''>Click to slideDown</div>
+    <button id = ``flip''>Slide Effect</button>
+</body>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What does \texttt{\$(``\#para1'')} wil select?
+\item What does \texttt{\$(``\#panel'')} wil select?
+\item Will \texttt{fadeToggle()} have the same functionalities of both \texttt{fadeIn()} and \texttt{fadeOut()}?
+\item What happens if the value \texttt{``fast ''} is passed to \texttt{fadeToggle()} at line 7?
+\item What is the difference between \texttt{slideToggle()} and \texttt{fadeToggle()}?
+\end{enumerate}
+
+\end{description}
+\subsection*{Additional Exercises}
+\begin{enumerate}
+\item Write code, so that user can click the button (the h2 tag in this case) and the instructions will fade in/fade out of view in half a second.
+\begin{lstlisting}
+<body>
+    <h2 id = ``button''>Instructions</h2>
+    <div id = ``instructions''>
+        <p>Turn the knob</p>
+    </div>
+</body>
+\end{lstlisting}
+\item Write jQuery code, When someone clicks on a selector, you want a (currently invisible) DIV with an ID of submenu to appear.  Clicking the selector again hides the submenu.
+\item When someone mouses over the h1 tag, you want a (currently invisible) div with an ID of submenu to appear. Moving the mouse off the h1 tag hides the submenu again. Write the code with anonymous functions.
+\item Fade the \texttt{$<$p$>$} tag below on to the screen over the course of three seconds.
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fade In</title>
+    </head>
+    <body>
+        <p>This text will fade in over three seconds</p>
+    </body>
+</html>
+\end{lstlisting}
+\end{enumerate}
+\end{document}

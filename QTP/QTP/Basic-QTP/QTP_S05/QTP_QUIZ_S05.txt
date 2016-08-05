@@ -1,0 +1,73 @@
+Objects spy is used to see the test object properties in the object repository?
+(x) False
+() True
+
+The list of test objects and their properties and values are stored in the
+() Object Repository
+() Object Identification
+(x) Smart Identification
+() Ordinal Identifier
+
+To differentiate similar objects in one screen, QTP uses
+() object identification
+(x) Smart identification
+() Object repository
+() Object spy
+
+To use a specific property to identify your object, but that property is not listed in the properties list. Then how do you identify that object?
+(x) Add the specific property to the list
+() Use the Default property
+() Use some other property to identify your object
+() None 
+
+To use the non-standard windows object, we can go for
+() Object spy
+(x) Virtual objects
+() Object identification
+() None
+
+We can add Test object methods, function calls into the Test using
+() Function generator
+(x) Step generator
+() Object repository
+() Object Spy
+
+We can access the objects of the application without using object repository.
+(x) True
+() False
+
+What are container objects in QTP?
+() Windows
+() Objects that have tables inside it
+() Browsers
+(x) Objects with child objects inside it
+
+What are the categories in the Step Generator?
+() Object, Operation, Value
+() Library, Built-in, Local Script
+() Operation, Arguments, Return Value
+(x) Test Objects, Utility Objects, Functions
+
+What are the two most commonly used ADO objects?
+() Fields
+() Execute
+(x) Connection, RecordSet
+() Open, ConnectionString
+
+What is the default ordinal identifier?
+(x) The location
+() The object id
+() The native class
+() The index number
+
+When a test is run in update mode, what is updated?
+() The test results
+(x) The object descriptions
+() The action names in the test
+() The logical names in the test
+
+Where are virtual object collections stored?
+() In a Function Library
+(x) In the local Object Repository
+() In the Object Repository Manager
+() Dat folder inside of the QTP installation directory

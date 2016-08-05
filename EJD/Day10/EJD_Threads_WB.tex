@@ -1,0 +1,328 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{Multi-Threading}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+\item What is multithreading?
+
+\AnswerBox
+
+\item  What are the two ways to create the thread?
+
+\AnswerBox
+
+\item  What is the signature of the constructor of a thread class?
+
+\AnswerBox
+
+\item  What are the methods used for Inter Thread communication and in which class these methods are defined?
+
+\AnswerBox
+
+\item  What is difference between wait() and sleep() method?
+
+\AnswerBox
+
+\item What is the purpose of synchronized block?
+
+\AnswerBox
+
+\item What are the states of thread?
+
+\AnswerBox
+
+\item What is meant by daemon thread? In java runtime, what is it's role?
+
+\AnswerBox
+
+\item When should we interrupt a thread?
+
+\AnswerBox
+
+\item What is the difference between preemptive scheduling and time slicing?
+
+\AnswerBox
+
+\item What is deadlock?
+
+\AnswerBox
+
+\end{enumerate}
+
+\section*{State whether the following are True/False}
+\begin{enumerate}
+\item It is possible to start a thread twice. [   ]
+\item We can make the user thread as daemon thread if thread is started. [  ]
+\item The word synchronized can be used with only a method. [  ]
+\item The suspend() method is used to teriminate a thread. [  ]
+\item Garbage collector thread belongs to high priority. [   ]
+\item Among wait(), notify(), notifyall() the wait() method only throws IOException. [   ]
+\item  wait(), notify(), notifyall() are defined as final and can be called only from with in a synchronized method. [   ]
+\end{enumerate}
+\section*{Multiple Choice Questions}
+\begin{enumerate}
+\item Which of these method can be used to make the main thread to be executed last among all the threads?
+\begin{enumerate}
+\item stop()
+\item sleep()
+\item join()
+\item call()
+\end{enumerate}
+\item Which of these method is used to find out that a thread is still running or not?
+\begin{enumerate}
+\item run()
+\item alive()
+\item isAlive()
+\item checkRun()
+\end{enumerate} 
+\item What is the default value of priority variable MIN\_PRIORITY AND MAX\_PRIORITY?
+\begin{enumerate}
+\item 1 and 10 
+\item 0 and 1
+\item 1 and 256
+\item 0 and 256
+\end{enumerate}
+
+\item Which of these method waits for the thread to treminate?
+\begin{enumerate}
+\item stop()
+\item join()
+\item isAlive()
+\item sleep()
+\end{enumerate}
+\item Which of these interface is implemented by Thread class?
+\begin{enumerate}
+\item Runnable
+\item Connections
+\item Set
+\item MapConnections
+\end{enumerate}
+\item Which of these method is used to begin the execution of a thread?
+\begin{enumerate}
+\item run()
+\item start()
+\item runThread()
+\item startThread()
+\end{enumerate}
+\item Which of these statement is incorrect?
+\begin{enumerate}
+\item A thread can be formed by implementing Runnable interface only.
+\item A thread can be formed by a class that extends Thread class.
+\item start() method is used to begin execution of the thread.
+\item run() method is used to begin execution of a thread before start() method in special cases.
+\end{enumerate}
+\item Which of these method of Thread class is used to find out the priority given to a thread?
+\begin{enumerate}
+\item get()
+\item ThreadPriority()
+\item getPriority()
+\item getThreadPriority()
+\end{enumerate}
+\item Which of these are types of multitasking?
+\begin{enumerate}
+\item Process based
+\item Thread based
+\item Process and Thread based
+\item None
+\end{enumerate}
+\end{enumerate}
+\section*{Exercises}
+\begin{itemize}
+    \item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1] \
+\begin{lstlisting}
+public class Test implements Runnable {
+    public static void main(String[] args) {
+        Test test = new Test();
+        Thread thread = new Thread(test);
+        thread.start();
+        thread.join();
+        System.out.print(``main'');
+    }
+    public void run() {
+        System.out.print(``run'');
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the program?
+\end{enumerate}
+
+\item [Program 2] \
+\begin{lstlisting}
+public class Test{
+    public static void main(String[] args) {
+        Painter painter1 = new Painter();
+        painter1.start();
+        Painter painter2 = new Painter();
+        painter2.start();
+    }
+}
+class Painter implements Runnable {
+    public void run() {
+        System.out.println(``we are painting'');
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item How many times the statement ``we are painting'' would be printed in this program?
+    \end{enumerate}
+
+\item [Program 3] \
+\begin{lstlisting}
+public class Test implements Runnable {
+    Integer id;
+    public static void main(String[] args) {
+        new Thread(new Test()).start();
+        new Thread(new Test()).start();
+    }
+    public void run() {
+        press(id);
+    }
+    synchronized void press(Integer id) {
+        System.out.print(id.intValue());
+        System.out.print((++id).intValue());
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the possible result of compiling and running the code?
+\end{enumerate}
+
+\item [Program 4] \
+\begin{lstlisting}
+class Swimmer implements Runnable {
+    String name ;
+    Swimmer(String name) {
+        this.name = name;
+    } 
+    public void run() {
+        new Test().swim(name);
+    }
+}
+public class Test {
+    public void swim(String name) {
+        System.out.print(name);
+        System.out.print(name);
+    }
+    public static void main(String[] args) {
+        new Thread(new Swimmer("Tom")).start();
+        new Thread(new Swimmer("Hanks")).start();
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What are the possible outputs of running this program once as it is, and second with marking swim() synchronized?
+    \end{enumerate}
+
+\item [Program 5] \
+\begin{lstlisting}
+public class Tester extends Thread {
+    public void run() {
+        System.out.print(``run'');
+    }
+    public static void main(String[] args) {
+        Tester thread = new Tester();
+        new Thread(thread).start();
+        new Thread(thread).start();
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the result of compiling and running the code?
+\end{enumerate}
+
+\item [Program 6] \
+\begin{lstlisting}
+class Test {
+    public static void main(String [] args) {
+        printAll(args);
+    }
+    public static void printAll(String[] lines) {
+        for(int i = 0; i < lines.length; i++) {
+            System.out.println(lines[i]);
+            Thread.currentThread().sleep(1000);
+        }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What will be the output of the above code?
+    \end{enumerate}
+\item [Program 7] \
+\begin{lstlisting}
+class MyThread extends Thread {
+    public static void main(String [] args) {
+        MyThread t = new MyThread();
+        Thread x = new Thread(t);
+        x.start();
+    }
+    public void run() {
+        for(int i = 0; i < 3; ++i) {
+            System.out.print(i + "..");
+        }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item What will be the output of the above code?
+\end{enumerate}
+\end{description}
+
+
+\end{document}
+

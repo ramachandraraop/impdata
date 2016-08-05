@@ -1,0 +1,48 @@
+﻿1. Which listner does consume a lot of resources (Memory and CPU)?
+a) View results in table
+b) View results in tree
+c) View results tree
+d) Summary report
+
+Ans: C
+
+
+2. Which of the following is not a “Listener”?
+a) View result in table
+b) View result tree
+c) Monitor graph
+d) Assertion result
+
+Ans: C
+
+3. Which of the following is a Status Code for Page not Found Error?
+a) 200
+b) 404
+c) 302
+d) 502
+
+Ans: B
+
+4. Which of the following is a Status Code for Internal Server Error? 
+a) 200
+b) 404
+c) 302
+d) 500
+
+Ans: D
+
+5. Which of the following option is invalid in View Results Tree?
+a) Sampler Result
+b) Request
+c) Response Time
+d) Response Data
+
+Ans: C
+
+6. In which listner you can find the 90%Line?
+a) Aggregate Graph
+b) Aggregate Report
+c) Assertion Results
+d) Aggregate Results
+
+Ans: B

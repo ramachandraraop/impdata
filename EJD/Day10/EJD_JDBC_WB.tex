@@ -1,0 +1,191 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=JAVA,numbers=left, numberstyle=\tiny, numbersep=10pt, showstringspaces=false, breaklines=true}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{JDBC}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item Explain basic steps in writing a Java program using JDBC?
+
+\AnswerBox
+
+\item What is ResultSet?
+
+\AnswerBox
+
+\item What is the need of BatchUpdates?
+
+\AnswerBox
+
+\item What is the difference between a Statement and a PreparedStatement?
+
+\AnswerBox
+
+\item What does the connection object represents?
+
+\AnswerBox
+
+\item How do I load a database driver in JDBC?
+
+\AnswerBox
+
+\end{enumerate}
+
+\section*{State whether the following are True/False}
+\begin{enumerate}
+\item MySQL is an open source DBMS product that runs on UNIX, Linux and Windows. [   ]
+\item By using PreparedStaement interface, we can store and retrieve images. [   ]
+\item The ResultSet object represents a column of a table. [   ]
+\item The DatabaseMetaData interface returns the information of the database. [  ]
+\item The Connection interface maintains a session with the database.[   ]
+
+\end{enumerate}
+\section*{Multiple Choice Questions}
+\begin{enumerate}
+\item The \underline{\hspace{2cm}} method executes a simple query and returns a single ResultSet object. 
+\begin{enumerate}
+\item executeUpdate()
+\item executeQuery()
+\item execute()
+\item noexecute()
+\end{enumerate}
+\item The \underline{\hspace{2cm}} method sets the query parameters of the PreparedStatement Object.
+\begin{enumerate}
+\item putString()
+\item insertString()
+\item setString()
+\item setToString()
+\end{enumerate}
+\item Connection object can be initialized using the \underline{\hspace{2cm}} method of the Driver Manager class.
+\begin{enumerate}
+\item putConnection()
+\item setConnection()
+\item Connection()
+\item getConnetion()
+\end{enumerate}
+\item The \underline{\hspace{2cm}} object provides you with methods to access data from the table.
+\begin{enumerate}
+\item ResultSet 
+\item Parametrized
+\item TableStatement
+\item Condition
+\end{enumerate}
+\item The \underline{\hspace{2cm}} object allows you to execute parametrized queries.
+\begin{enumerate}
+\item ResultSet 
+\item Parametrized
+\item PreparedStatement
+\item Condition
+\end{enumerate}
+\item  The \underline{\hspace{2cm}} package contains classes that help in connecting to a database, sending SQL statements to the database, and processing the query results.
+\begin{enumerate}
+\item connection.sql
+\item db.sql
+\item pkg.sql
+\item java.sql
+\end{enumerate}
+\end{enumerate}
+\section*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1]\
+\begin{lstlisting}
+Class.forName(``com.mysql.jdbc.Driver'');
+Connection conection = DriverManager.getConnection( ___, ____, ____);
+Statement statement = conection.createStatement( );
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the exception thrown by a statement at line 1?
+\item Fill the blanks with suitable parameters in line 2?
+\item what is the actual class of \texttt{Connection} and \texttt{Statement}?
+\end{enumerate}
+
+\item [Program 2]\
+\begin{lstlisting}
+Statement statement = connection.createStatement();
+ResultSet result = statement.executeQuery(``select * from people'');
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Rewrite above two statements using \texttt{PreparedStatement} ?
+\end{enumerate}
+
+\item [Program 3]\
+\begin{lstlisting}
+String sql = ``select * from people where firstname=? and lastname=?'';
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item How can you insert parameters at the location of the question mark in the above?.
+
+\end{enumerate}
+
+\item [Program 4]\
+\begin{lstlisting}
+Statement statement = connection.createStatement();
+ResultSet result = statement.executeQuery(``select * from people'');
+while(result.next()) {
+    String name = result.getString(``name'');
+    long   age  = result.getLong  (``age'');
+    System.out.println(name + ``, '' + age);
+}
+\end{lstlisting}
+\begin{verbatim}
+Assume one record in table `people' is,
+name      age
+-----   --------
+James     45
+\end{verbatim}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the above program?
+
+\item What happens if line 4 changed as \texttt{String name = result.getString(1); } ?
+
+\item What happens if line 5 changed as \texttt{long age = result.getLong(2); } ?
+\end{enumerate}
+
+\end{description}
+\end{document}
+

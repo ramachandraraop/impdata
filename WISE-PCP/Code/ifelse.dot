@@ -1,0 +1,10 @@
+digraph ifelse {
+    a[shape=diamond, label="Condition"];
+    b1[shape=rectangle,label="Statements\ninside if\nExecuted when condition is true"];
+    b2[shape=rectangle,label="Statements\ninside else\nExecuted when condition is false"];
+    c[shape=rectangle,label="Statements\nafter if-else"];
+    a->b1[label="True"];
+    a->b2[label="False"];
+    b1->c;
+    b2->c;
+    };

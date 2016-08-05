@@ -1,0 +1,354 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{Advanced Class Design}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item What is `this' in java?
+
+\AnswerBox
+
+\item  What is the purpose of default constructor?
+
+\AnswerBox
+
+\item What is a package?
+
+    \AnswerBox
+
+\item What is the impact of declaring a method as final?
+
+    \AnswerBox
+
+\item  What is the access scope of a protected method?
+
+    \AnswerBox
+
+\item I want to print "Hello" even before main() is executed. How will you acheive that?
+
+    \AnswerBox
+
+\item What is constructor?
+
+    \AnswerBox
+
+\item Explain the purpose of Garbage collection.
+
+    \AnswerBox
+
+
+   \end{enumerate}
+
+  \section*{State whether the following are True/False}
+  \begin{enumerate}\itemsep2pt
+      \item Static variables can be serialized. [         ]
+      \item You use this() and super() both in a constructor. [ ]
+      \item We can override static methods. [ ]
+      \item We can make a constructor as final. [ ]
+      \item Constructor returns a value [ ]
+      
+
+  \end{enumerate}
+  \section*{Multiple Choice Questions}
+  \begin{enumerate}
+    \item Which statement is true?
+        \begin{enumerate}
+            \item Programs will not run out of memory.
+            \item Objects that will never again be used are eligible for garbage collection.
+            \item Objects that are referred to by other objects will never be garbage collected.
+            \item Objects that can be reached from a live thread will never be garbage collected.
+        \end{enumerate}
+    \item Which statement is true?
+        \begin{enumerate}
+            \item Calling Runtime.gc() will cause eligible objects to be garbage collected.
+            \item The garbage collector uses a mark and sweep algorithm.
+            \item If an object can be accessed from a live thread, it can't be garbage collected.
+            \item If object 1 refers to object 2, then object 2 can't be garbage collected.
+        \end{enumerate}
+    \item Which operator is used by Java run time implementations to free the memory of an object when it is no longer needed?
+        \begin{enumerate}
+        \item delete
+        \item free
+        \item new
+        \item none
+    \end{enumerate}
+\item Which of the folowing statements are incorrect?
+    \begin{enumerate}
+        \item Default constructor is called at the time of declaration of the object if a constructor has not been defined.
+        \item Constructor can be parameterized.
+        \item finalize() method is called when a object goes out of scope and is no longer needed.
+        \item finalize() method must be declared protected.
+    \end{enumerate}
+\item Which of these is used as default for a member of a class if no access specifier is used for it?
+    \begin{enumerate}
+        \item private
+        \item public
+        \item public, within its own package
+        \item protected
+    \end{enumerate}
+\item Which of the following is a method having same name as that of it’s class?
+    \begin{enumerate}
+        \item finalize
+        \item delete
+        \item class
+        \item constructor
+    \end{enumerate}
+
+\item Which method can be defined only once in a program?
+    \begin{enumerate}
+        \item main method
+        \item finalize method
+        \item static method
+        \item private method
+    \end{enumerate}
+
+    \end{enumerate}
+
+    \section*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1] \
+\begin{lstlisting}
+public class Test {
+    static {
+        print(10);
+    }
+    static void print(int x) {
+        System.out.println(x);
+        System.exit(0);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What will happen if you try to compile and run above code?
+    \end{enumerate}
+
+\item [Program 2] \
+    \begin{lstlisting}
+package source;
+class Test {
+    public static void main(String args[]) {
+        StringBuffer sb = new StringBuffer(``Hello World'');
+        sb.insert(6 , ``Good '');
+        System.out.println(sb);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output if Test class is not in source package?
+\end{enumerate}
+
+\item [Program 3] \
+\begin{lstlisting}
+package source;
+class Display {
+    int x;
+    void show() {
+        if (x > 1)
+            System.out.print(x + `` '');
+    }
+}
+class Test {
+    public static void main(String args[]) {
+        Display[] arr = new Display[3];
+        for(int i = 0; i < 3; i++)
+            arr[i] = new Display();
+        arr[0].x = 0;      
+        arr[1].x = 1;
+        arr[2].x = 2;
+        for (int i = 0; i < 3; ++i)
+            arr[i].show();
+    }
+}
+\end{lstlisting}
+                       
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What will be the output if Test class is in source package?
+    \end{enumerate}
+
+\item [Program 4] \
+    \begin{lstlisting}
+void start() {  
+    A a = new A(); 
+    B b = new B(); 
+    a.s(b);  
+    b = null; /* Line 5 */
+    a = null;  /* Line 6 */
+    System.out.println(``start completed''); /* Line 7 */
+} 
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item When is the B object, created in line 3, eligible for garbage collection?
+\end{enumerate}
+
+
+\item [Program 5] \
+    \begin{lstlisting}
+public class X {
+    public static void main(String [] args) {
+        X x = new X();
+        X x2 = m1(x); /* Line 6 */
+        X x4 = new X();
+        x2 = x4; /* Line 8 */
+        doComplexStuff();
+    }
+    static X m1(X mx) {
+        mx = new X();
+        return mx;
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item After line 8 runs. how many objects are eligible for garbage collection?
+         \end{enumerate}
+
+
+\item [Program 6] \
+    \begin{lstlisting}
+public class A { 
+    void A() {  /* Line 3 */
+        System.out.println(``Class A''); 
+    } 
+    public static void main(String[] args) { 
+        new A(); 
+    } 
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item What will be the output of the above program?
+ \end{enumerate}
+
+ \item [Program 7] \
+\begin{lstlisting}
+public class Profile {
+    private Profile(int w) { // line 1
+        System.out.println(w);
+    }
+    public static Profile() { // line 5
+        System.out.println(10);
+    }
+    public static void main(String args[]) {
+        Profile obj = new Profile(50);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the above program?
+\end{enumerate}
+
+
+\item [Program 8] \
+\begin{lstlisting}
+public class Tester {
+    Tester() { } // line 1
+    static void Tester() { this(); } // line 2
+    public static void main(String[] args) { // line 3
+        Tester(); // line 4
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item The above code contains one compilation error, where could it be?
+\end{enumerate}
+
+
+\item [Program 9] \
+\begin{lstlisting}
+public class Tester {
+    public static void main(String[] args) {
+        int x = 1;
+        int y;
+        while(++x<5) y++;
+        System.out.println(y);
+    }
+}
+\end{lstlisting}
+
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What is the result of compiling and running the above program?
+    \end{enumerate}
+
+\item [Program 10] \
+\begin{lstlisting}
+public class Tester {
+    public static void main(String[] args) {
+        if(true) {
+            int x = 5;
+            System.out.print(x);
+        } else {
+            ++x;
+            System.out.print(x);
+        }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+                    \item What is the result of compiling and running the above code?
+                            \end{enumerate}
+
+
+\end{description}
+    \end{document}
+

@@ -1,0 +1,26 @@
+Does QTP support Data Driven Framework ?
+(x)  YES 
+()  QTP supports only Modular Framework 
+()  QTP is only Keyword Driven Framework 
+()  No 
+
+Which framework is also called as Table Driven Framework?
+()Linear Scripting Framework
+()Data Driven Framework
+(x)Keyword Driven Framework
+()Modular Framework
+
+
+Which Framework allows us to write the scripts in more abstract manner?
+()Linear Scripting Framework
+()Data Driven Framework
+(x)Keyword Driven Framework
+()Modular Framework
+
+
+Which framework allows us to execute the code with multiple sets of data?
+()Linear Scripting Framework
+(x)Data Driven Framework
+()Keyword Driven Framework
+()Modular Framework
+

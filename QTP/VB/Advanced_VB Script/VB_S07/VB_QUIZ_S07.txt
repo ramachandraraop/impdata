@@ -1,0 +1,27 @@
+Which statement we use to disable the error handling in VB Script?
+A. On Error goto 0 
+B. On Error goto 1
+C. On Error goto Next
+D. On Error Resume Next
+Answer : A
+
+What are the types of errors in VB Script?
+A. RunTime errors 
+B. Run time errors and Syntax errors
+C. None of the above
+D. Syntax errors
+Answer: B
+
+What is the use of On Error Resume Next statement in VB Script?
+A. For handling Syntax errors
+B. For handling Runtime errors
+C. For handling Runtime errors and  handling Syntax errors
+D. None of the above
+Answer: B
+
+How to see the description of an error occurred during the execution process?
+A. None of the above 
+B. Err.Number
+C. Err.Description
+D. Err.Source
+Answer: C

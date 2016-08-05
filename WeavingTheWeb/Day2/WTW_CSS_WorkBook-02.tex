@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\begin{document}
+\section*{Practice Exercise}
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+\item Class is specified by including a period\underline{\hspace{3cm}}before the selector name.
+\item The syntax for declaring a Class selector is\underline{\hspace{3cm}}.
+\item You can use the same class on multiple elements.( True / False )\underline{\hspace{3cm}}.
+\item You can use multiple classes on the same element.(True / False)\underline{\hspace{3cm}}.
+\item ID is specified by\underline{\hspace{3cm}}before the selector name.
+\item The syntax for declaring an ID selector is\underline{\hspace{3cm}}.
+\item Each element can have only one ID.(True / False)\underline{\hspace{3cm}}.
+\item Each page can have only one element with that ID.(True / False)\underline{\hspace{3cm}}.
+\item .para represents\underline{\hspace{3cm}}.
+\item \#para represents\underline{\hspace{3cm}}.
+\item The difference between ID and class is that an ID selector can be called only once in a document, while a class selector can be called multiple times in a document.(True / False)\underline{\hspace{3cm}}.
+\item Which selectors are used when you want to redefine the general look for an entire HTML tag?\underline{\hspace{3cm}}.
+\item Which selectors are used when you want to define a style that does not redefine an HTML tag entirely?\underline{\hspace{3cm}}.
+\item $<$DIV$>$ is what kind of tag ?\underline{\hspace{3cm}}.
+\item When referring to a Class selector you simply add the class to what?\underline{\hspace{3cm}}.
+\item Selectors that will share some of the same styles can be\underline{\hspace{3cm}}.
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item[program 1]\
+\begin{lstlisting}
+<h1 class = ``something''>Read books, take notes and study</h1>
+<p class = ``something''>Read, read, read</p>
+<p>But spend more time hacking, hacking, hacking</p>
+<p class = ``something''>This is</p>
+<p>the story of a girl</p>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Color all page elements with the class ``something'' \texttt{red} in the above HTML snippet?
+\item Color the $<$p$>$ tag with the class ``something'' \texttt{blue} in the above HTML snippet?
+\item Color all the $<$p$>$ tags in the above html snippet \texttt{green}?
+\end{enumerate}
+
+\item[Program 2]\
+\begin{lstlisting}
+<h5 id = ``bling''>Assets</h5>
+<p>Liabilities</p>
+<strong class = ``meaning-of-life''>Equity</strong>
+<h5>Current assets</h5>
+<strong>Quick ratio</strong>
+<p id = ``blah''>This is something</p>
+<p>I like Ethiopian food</p>
+\end{lstlisting}
+\AnswerBox
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Color the element with the id tag of ``blah'' \texttt{red} in the above HTML snippet?
+\item Style the ``bling'' id, $<$p$>$ tag, and ``meaning-of-life'' class to be \texttt{blue} in the above HTML snippet?
+\item Color all the $<$p$>$ tags in the above html snippet \texttt{green}?
+\end{enumerate}
+
+
+\item [Program 3]\
+\begin{lstlisting}
+<html>
+    <head>
+        <title>Keesha</title>
+    </head>
+    <body>
+        <h1>Tik Tok</h1>
+        <p>I like <strong>mango</strong> and 
+        <strong>drink</strong> </p>
+    </body>
+</html>
+\end{lstlisting}
+\AnswerBox
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Identify the children elements of the $<$body$>$ tag?
+\item Identify the children elements of the $<$p$>$ tag?
+\item Identify the parent of the $<$h1$>$ tag?
+\item Identify the siblings of the $<$head$>$ tag?
+\end{enumerate}
+
+\item [Program 4]\
+\begin{lstlisting}
+<div class = ``something''>
+    <p>In Jersey, we are <strong>STRONG</strong> </p>
+    <p>In US, we have <strong>strong</strong> personalities </p>
+</div>
+<p>In Ireland, we have a <strong>strong</strong> will</p>
+<h1>Tik Tok <strong>Great songs!</strong></h1>
+\end{lstlisting}
+\AnswerBox
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Color the text in the $<$strong$>$ tags contained in the \texttt{.something} class \texttt{red}, but do not color the other $<$strong$>$ tags?
+\item Color the text ``Great songs!'' \texttt{red} in the above HTML snippet?
+\item Increase teh font size of all the $<$p$>$ tags?
+\item Apply the font family for all the tags in the above HTML snippet using CSS?
+\end{enumerate}
+
+\item [Program 5]\
+\begin{lstlisting}
+<a href = ``http://www.talentsprint.com/WISE''>Modules</a>
+\end{lstlisting}
+\AnswerBox
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Color the above link \texttt{red} if the user has not visited it yet?
+\item Color the above link \texttt{green} if the user has already visited it?
+\item Color the above link \texttt{pink} if the user has the mouse over the link?
+\item Make the background color \texttt{blue} when a use clicks on a link?
+\end{enumerate}
+
+\item [Program 6]\
+\begin{lstlisting}
+<ul class = ``majors''>
+    <li>Math</li>
+    <li>Bio</li>
+    <li>Chemistry</li>
+</ul>
+\end{lstlisting}
+\AnswerBox
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Color the math majors \texttt{green}, but don't color the other $<$li$>$s?
+\item Color the chemistry $<$li$>$ \texttt{red}, but don't color the other $<$li$>$s?
+\end{enumerate}
+
+\item [Program 7]\
+\begin{lstlisting}
+h1.highlight {
+    background: yellow;
+    color: #000;
+ }
+#content p {
+}
+#footer p {
+}
+\end{lstlisting}
+\AnswerBox
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What would the html tag look like for the above CSS snippet to be applied?
+\item Why would we use the above two \texttt{p} selectors?
+\item Apply the font style for all the selectors in the above CSS snippet?
+\end{enumerate}
+
+\end{description}
+\subsection*{Additional Exercises}
+\begin{enumerate}
+\item Apply the style for a selector within a selector.
+\item Write HTML and CSS code to assign multiple classes to an element and also apply the style for them?
+\item Write HTML and CSS code to describe Grouping selectors.
+\end{enumerate}
+\end{document}

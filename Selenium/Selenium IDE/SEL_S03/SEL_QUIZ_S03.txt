@@ -1,0 +1,64 @@
+5.	Selenium IDE stands for
+a)	Selenium Initialization Development Environment
+b)	Selenium Interrelated Development Environment
+c)	Selenium Integrated development Environment
+d)	Selenium Information development environment
+
+ans: c
+
+6.	Select the browser which is supported by selenium IDE
+a)	Google Chrome
+b)	Internet Explorer
+c)	Mozilla Firefox
+d)	Opera Mini 
+
+ans: c
+
+7.	Select the operating system which is not supported by selenium IDÉ
+a)	Linux
+b)	Unix
+c)	Windows
+d)	Solaris
+
+ans: a
+
+9.	Selenium IDE is used 
+a)	To create customized test results
+b)	To create Tests across multiple environments using selenium Grid
+c)	To test with Html Unit
+d)	To Test web application against Firefox only
+
+ans: d
+
+
+12.	Select the command which is not a type of assertion in selenium IDE 
+a)	Assert
+b)	Verify
+c)	Wait For 
+d)	Wait 
+
+ans: d
+
+17.	Can Unix operating system be supported by Selenium IDE
+a)	Yes
+b)	No
+
+ans: b
+
+
+25.	select a command which is used to print a string value or variable in selenium IDE
+a)	The ‘display’ command
+b)	The ‘echo’ command
+c)	The ‘Print’ command
+d)	The ‘Printr’ command
+
+ans: b
+
+
+38.	Select the tab that shows which command in selenium IDE is currently executing
+a)	Variable
+b)	Data
+c)	Information
+d)	Info
+
+ans: d

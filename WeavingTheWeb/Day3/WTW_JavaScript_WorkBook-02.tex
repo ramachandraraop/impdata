@@ -1,0 +1,185 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\begin{document}
+\section*{\center{Practice Exercise}}
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+\item The three forms of \texttt{if} statement in JavaScript are\underline{\hspace{3cm}}.
+\item The syntax of JavaScript \texttt{if} statement is\underline{\hspace{3cm}}.
+\item How to write an \texttt{if} statement for executing some code if ``i'' is NOT equal to 5?\underline{\hspace{3cm}}.
+\item The syntax of JavaScript \texttt{if-else} statement is\underline{\hspace{3cm}}
+\item What does the following expression return?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+4 > 1;
+\end{lstlisting}
+\item What does the following expression return?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+``chatty'' = = = ``chatty'';
+\end{lstlisting} 
+\item What does the following expression return?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+!false
+\end{lstlisting}
+\item What does the following code return?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var blue = [``da ba dee da ba die''];
+blue = = = blue;
+\end{lstlisting}
+\item What does the following statement return?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+[1, 89] = = = [1, 89];
+\end{lstlisting}
+\item The loops are used to iterate the piece of code.( Yes / No)\underline{\hspace{3cm}}.
+\item The syntax of \texttt{for} loop is\underline{\hspace{3cm}}.
+\item The JavaScript \texttt{while} loop iterates the elements for the infinite number of times mostly.(True / False)\underline{\hspace{3cm}}.
+\item The syntax of \texttt{do while} loop is\underline{\hspace{3cm}}.
+\item What are the three important manipulations done in a \texttt{for} loop on a loop variable?\underline{\hspace{3cm}}.
+\item A ? B : C is equivalent to\underline{\hspace{3cm}}.
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item[program 1]\
+\begin{lstlisting}
+if (5 > 10) {
+    document.write(``Not so sure about this'');
+} else {
+    document.write(``walking dead'');
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What will be the output if condition in \texttt{if} is changed to \texttt{5 === 10}?
+\item What will be the output if condition in \texttt{if} is changed to \texttt{5 >= 10}?
+\end{enumerate}
+
+\item[Program 2]\
+\begin{lstlisting}
+if (``candy'' === 8) {
+    document.write(``do something with your life'');
+} else if (``blah'' === ``blah'') {
+    document.write(``just chill, have fun'');
+} else {
+    document.write(``people are strange'');
+}\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What will be the output if condition in \texttt{if} is changed to \texttt{"candy" === "8"}?
+\end{enumerate}
+\item [Program 3]\ 
+\begin{lstlisting}
+if (``'') {
+    document.write(``program more'');
+} else if (``cool'') {
+    document.write(``party hard!'');
+} else {
+    document.write(``blah'');
+}
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What happens if line 1 is changed to \texttt{if("hard") \{}?
+\end{enumerate}
+
+\item [Program 4]\
+\begin{lstlisting}
+var result = 0;
+for (var i = 0; i < 5; i++) {
+    result += i;
+}
+document.write(result);
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What happens if the expression in \texttt{for} loop is changed to \texttt{i $>$ 5}?
+\item What will be the output if line 3 is changed to \texttt{result *= i;}?
+\item What happens if line 2 is changed to \texttt{for (var i = 0; i < 5;) \{}?
+\end{enumerate}
+
+\item [Program 5]\
+
+\begin{lstlisting}
+while (a != 0) {
+    if (a == 1) 
+        continue;
+    else 
+        a++;
+    document.write(a);
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the role of the \texttt{continue} keyword in the above code snippet?
+\item What will be the output if a = 2?
+\item What will be the output if line 5 is changed to \texttt{a--;} for a = 3?
+\end{enumerate}
+
+\item [Program 6]\
+\begin{lstlisting}
+var i = 2 ;
+while (i <= 10) {
+    i = i + 3;
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the value of i at the end of \texttt{while} loop?
+\end{enumerate}
+
+\item [Program 7]\
+\begin{lstlisting}
+<script>  
+    var i = 21;  
+    do{  
+        document.write(i + ``<br/>'');  
+        i++;  
+    }while (i <= 25);  
+</script>  
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\item What will be the output if the condition in line 6 is changed to \texttt{i >= 25}?
+\item What happens if line 5 is changed to \texttt{i--;}?
+\end{enumerate}
+
+\end{description}
+\subsection*{Additional Exercises}
+\begin{enumerate}
+\item Use a \texttt{for} loop to print out the odd numbers from 1 to 20.
+\item Use a \texttt{while} loop to print out the even numbers from 1 to 20.
+\item Given a number, if the number is a multiple of 3 print ``Fizz". If the number i multiple of 5 print ``Buzz". If the number is multiple of 3 and 5 print ``FizzBuzz". In all other cases, print the number it-self.
+\item  Write a program to print sum of digits of a given number. 
+\item Write a program to check whether a particular number is perfect square or not.
+\item Write a program to print prime numbers in a given range.
+\item Write a program that prints fibonacci series.
+\end{enumerate}
+\end{document}

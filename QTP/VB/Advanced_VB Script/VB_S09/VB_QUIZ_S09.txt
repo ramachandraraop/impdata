@@ -1,0 +1,25 @@
+Which one is not a method of filesystem object from the below?
+A. Read
+B. Exists
+c. Write
+D. FileExists
+Answer : B
+
+File System Object acts as an interface between testing tools, like QTP and computer' file system.
+A. True
+B. False
+Answer: A
+
+Which of the following is the syntax for creating a file system object?
+A. CreateObject(“Scripting.FileSystemObject”)
+B. CreateObject(Scripting.FileSystemObject)
+C. None of the above
+D. CreateObject(“FileSystemObject.Scripting”)
+Answer: A
+
+Which of the following is one of the method to read text from a text file? 
+A. ReadTo
+B. ReadOnly
+C. ReadLine
+D. ReadFrom
+Answer: C

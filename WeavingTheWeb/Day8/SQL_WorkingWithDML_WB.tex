@@ -1,0 +1,167 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+\begin{document}
+\centerline{\huge{\textbf{Working With DML}}}
+\vspace{1pc}
+\centerline{\Large{ \textbf{Workbook}}}
+\subsection*{Answer the following}
+\begin{enumerate}\itemsep10pt
+\item What does DDL stands for\underline{\hspace{3cm}}.
+\item \underline{\hspace{3cm}} are DML statements.
+
+\item Emp table is having three column Ename, Eno and Age. Write the correct insert statements to insert a row? \underline{\hspace{3cm}}
+
+\item Can we insert multiple values to a table at a time? (Yes / No)
+
+\item We can update more than one value using update statement.(True /
+False)
+
+
+\item \underline{\hspace{3cm}} is a query to delete whole records from table Dept?
+
+
+\item \underline{\hspace{3cm}} command is used to change the existing data in a table.
+
+
+\item \underline{\hspace{3cm}} keyword is used to specify conditional search.
+
+
+\item The FROM keyword is used to\underline{\hspace{3cm}}.
+
+
+\item \underline{\hspace{3cm}}command is used to add records to a table.
+
+\item \underline{\hspace{3cm}}command is used to remove rows from a table.
+
+\item \underline{\hspace{3cm}}clause is used to restrict the rows returned by a query
+
+\end{enumerate}
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs.
+\end{itemize}
+\begin{description}
+\item[program 1]\
+\begin{verbatim}
+SQL> DESC employees;
+ Name                    Null?    Type
+ ----------------------- -------- ----------------
+ EMPLOYEE_ID             NOT NULL INT(6)
+ FIRST_NAME                       VARCHAR(20)
+ LAST_NAME               NOT NULL VARCHAR(25)
+ EMAIL                   NOT NULL VARCHAR(25)
+ PHONE_NUMBER                     VARCHAR(20)
+ HIRE_DATE               NOT NULL DATE
+ JOB_ID                  NOT NULL VARCHAR(10)
+ SALARY                           FLOAT(11)
+ COMMISSION_PCT                   FLOAT(12)
+ MANAGER_ID                       INT(6)
+ DEPARTMENT_ID                    INT(4)
+
+EMPLOYEE_ID         FIRST_NAME         JOB_ID 
+------------------- ------------------ --------
+5100                 BRUCE             CLERK
+5101                 JESSICA           SALESMAN
+5102                 DEBBY             SALESMAN
+\end{verbatim}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item \texttt{INSERT INTO EMPLOYEES (employee\_id, first\_name, job\_id) VALUES (5100, `BRUCE', `CLERK');}\newline Assuming that there is a duplicate value check constraint on the EMPLOYEE\_ID column, what will be the outcome of the above statement?
+\item \texttt{INSERT INTO EMPLOYEES (employee\_id, first\_name, job\_id) VALUES (51003, `BRUCE', `CLERK');}\newline What will be the output of above statement?
+\item \texttt{INSERT INTO EMPLOYEES (employee\_id, first\_name, job\_id ) VALUES (51003, `BRUCE', NULL);}\newline What will be the output of this statement?
+\end{enumerate}
+
+\item [Program 2]\ 
+\begin{verbatim}
+SQL> DESC departments;
+ Name                    Null?    Type
+ ----------------------- -------- ----------------
+ DEPARTMENT_ID           NOT NULL INT(6)
+ DEPARTMENT_NAME         NOT NULL VARCHAR(30)
+ MANAGER_ID                       INT(11)
+ LOCATION_ID                      INT(11)
+\end{verbatim}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item \texttt{INSERT INTO departments (department\_id, department\_name, manager\_id, location\_id)
+VALUES (100, `Human Resources', 121, 1000); }\newline How many rows will be inserted by the above statement?
+\item In which order the values will get inserted with respect to the above INSERT statement?
+\item \texttt{INSERT INTO departments VALUES (100, `Human Resources', 121, 1000);}\newline What will be the outcome of this modification?
+\end{enumerate}
+
+\item[Program 3]\
+\begin{verbatim}
+SQL> DESC employees;
+ Name                    Null?    Type
+ ----------------------- -------- ----------------
+ EMPLOYEE_ID             NOT NULL INT(6)
+ FIRST_NAME                       VARCHAR(20)
+ LAST_NAME               NOT NULL VARCHAR(25)
+ EMAIL                   NOT NULL VARCHAR(25)
+ PHONE_NUMBER                     VARCHAR(20)
+ HIRE_DATE               NOT NULL DATE
+ JOB_ID                  NOT NULL VARCHAR(10)
+ SALARY                           FLOAT(11)
+ COMMISSION_PCT                   FLOAT(12)
+ MANAGER_ID                       INT(6)
+ DEPARTMENT_ID                    INT(4)
+\end{verbatim}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item \texttt{INSERT INTO EMPLOYEES (employee\_id, hire\_date) VALUES (210, ``21-JUN-2013'');}\newline What will be the outcome of the above INSERT statement?
+\item \texttt{INSERT INTO EMPLOYEES (employee\_id, first\_name) VALUES (210, ``Bryan'');}\newline What will be the outcome of the above INSERT statement?
+\item Suppose we need to insert the name \texttt{O'Callaghan} as the last name of the employees table. Which query will give you the required results?
+\item \texttt{INSERT INTO EMPLOYEES (employee\_id, first\_name) VALUES (``210'', `Bryan');}\newline What will be the outcome of the above INSERT statement?
+\end{enumerate}
+
+\item [Program 4]\ 
+\begin{verbatim}
+SQL> DESC departments;
+ Name                    Null?    Type
+ ----------------------- -------- ----------------
+ DEPARTMENT_ID           NOT NULL INT(6)
+ DEPARTMENT_NAME         NOT NULL VARCHAR(30)
+ MANAGER_ID                       INT(11)
+ LOCATION_ID                      INT(11)
+\end{verbatim}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item \texttt{INSERT INTO departments VALUES (200, `Accounts', NULL, NULL);}\newline What will be the outcome of the above INSERT statement?
+\item \texttt{INSERT INTO departments VALUES (NULL, `Accounts', NULL);}\newline What will be the outcome of the above INSERT statement?
+\item \texttt{INSERT INTO departments VALUES (100, `Human Resources', 121, 1000);}\newline What will be the outcome of this modification?
+\end{enumerate}
+
+\item [Program 5]\ 
+\begin{verbatim}
+SQL> desc countries;
+ Name                    Null?    Type
+ ----------------------- -------- ----------------
+ COUNTRY_ID              NOT NULL INT
+ COUNTRY_NAME                     VARCHAR(40)
+ REGION_ID                        INT
+\end{verbatim}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item \texttt{INSERT INTO COUNTRIES (1, `INDIA', 99);}\newline How many rows will be inserted by the above statement?
+\item Which sql query update the column \texttt{region\_id} to 101 where country\_id = 1? 
+\item Which query deletes a record from the table ``COUNTRIES'' where country\_id = 1?
+\end{enumerate}
+\end{description}
+\end{document}
+

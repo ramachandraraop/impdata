@@ -1,0 +1,51 @@
+How do you know if Smart Identification has been used in a test?
+(x) The Smart Identification icon appears in the test results.
+( ) The test results will show a run error, causing a test failure.
+( ) The properties used by the object repository will be changed
+( ) The Object Repository will show the Smart Identification icon.
+
+If the object is present both in shared object repository andlocal object repository, which test object will be used by QTP?
+( ) Shared
+( ) Throws an error
+( ) Fails the test
+(x) Local
+
+If you are typing in Expert View and you type an object followed by a dot, what does the QuickTest display?
+( ) Nothing
+( ) The arguments for that object
+( ) The methods and properties for that object
+(x) The child objects and methods for that object
+
+If you have a Virtual Object Collection stored on your machine, and you don’t want to use it. what you must do?
+( ) Disable Virtual Objects in Test Settings
+( ) Remove the Collection from your machine
+(x) Disable Virtual Objects in General Options
+( ) Remove the Collections from the Resources list
+
+In the Smart Identification dialog box, which properties can be viewed?
+(x) The base filter and optional properties
+( ) The mandatory and optional properties
+( ) The base filter and assistive properties
+( ) The mandatory and assistive properties 
+
+In the Object Identification dialog box, which properties can be viewed?
+( ) The base filter and optional properties
+( ) The mandatory and optional properties
+( ) The base filter and assistive properties
+(x) The mandatory and assistive properties
+
+Objects spy is used to see the test object properties in the object repository?
+(x) False
+( ) True
+
+Which of the following are settable in object identification screen of QTP?
+( ) Assistive properties
+(x) Mandatory, Assistive Properties and Ordinal identifier
+( ) Mandatory and Assistive Properties
+( ) Mandatory properties
+
+Which of the following is by default used by QTP to identify the objects on the application?
+( ) None 
+( ) Both test object model and smart identification
+( ) Test Object model
+(x) Smart identification

@@ -1,0 +1,309 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=JAVA,numbers=left, numberstyle=\tiny, numbersep=10pt, showstringspaces=false, breaklines=true}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{ Getting Started with Java}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item What is the most importanat feature of Java? \underline{\hspace{4cm}}
+\item What is the base class for all classes? \underline{\hspace{4cm}}
+\item Which package is imported by default?  \underline{\hspace{4cm}}
+\item Why is the main method declared static?  \underline{\hspace{4cm}}
+\item Why is String class considered immutable? 
+
+    \AnswerBox
+
+\item What do you mean by Object?
+    
+    \AnswerBox
+
+\item Expain JVM?
+    
+    \AnswerBox
+
+\item Define class.
+    
+    \AnswerBox
+
+\item What is the difference between StringBuffer and StringBuilder class?
+    
+    \AnswerBox
+
+\item What is jagged array?
+    
+    \AnswerBox
+
+\end{enumerate}
+\section*{State whether the following are True/False}
+\begin{enumerate}\itemsep2pt
+        \item JVM is platform independent. [         ]
+        \item Java Supports pointers. [ ]
+        \item Arrays are primitive data types. [    ]
+        \item A source file can contain more than one class declaration. [    ]
+        \item Is empty .java file name a valid source file name? [    ]
+        \item If I don't provide any arguments on the command line, then the String array of Main method will be empty. [   ]
+        
+\end{enumerate}
+\section*{Multiple Choice Questions}
+\begin{enumerate}
+    \item What is the range of data type short in Java?
+        \begin{enumerate}
+            \item -128 to 127
+            \item -32768 to 32767
+            \item -2147483648 to 2147483647
+            \item None
+        \end{enumerate}
+    \item Which of these is an incorrect array declaration?
+        \begin{enumerate}
+            \item int arr[] = new int[5]
+            \item int [] arr = new int[5]
+            \item int arr[]
+                arr = new int[5]
+            \item int arr[] = int [5] new
+        \end{enumerate}
+    \item Which of the following loops will execute the body of loop even when condition controlling the loop is initially false?\begin{enumerate}
+            \item do-while
+            \item while
+            \item for
+            \item None
+        \end{enumerate}
+    \item Which of the following statements are incorrect?
+        \begin{enumerate}
+            \item String is a class.
+            \item Strings in java are mutable.
+            \item Every string is an object of class String.
+            \item Java defines a peer class of String, called StringBuffer, which allows string to be altered.
+                      \end{enumerate}
+    \item Which of these keywords is used to make a class?
+        \begin{enumerate}
+            \item class
+            \item struct
+            \item int
+            \item None
+        \end{enumerate}
+\end{enumerate}
+\section*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1]\
+\begin{lstlisting}
+int i = 10;
+int n = i++ % 5;
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What are the values of i and n after the code is executed?
+\item What are the final values of i and n if instead of using the postfix increment operator (i++), you use the prefix version (++i))?
+\end{enumerate}
+
+\item [Program 2]\
+\begin{lstlisting}
+public class NumberHolder {
+    public int anInt;
+    public float aFloat;
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write some code that creates an instance of the class `NumberHolder'?
+\item Write some code that initializes its two member variables, and then displays the value of each member variable?
+\end{enumerate}
+
+\item [Program 3]\
+\begin{lstlisting}
+public class IdentifyMyParts {
+    public static int x = 7; 
+    public int y = 3; 
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item How many class variables does the \texttt{IdentifyMyParts} class contain? What are their names?
+
+\item How many instance variables does the \texttt{IdentifyMyParts} class contain? What are their names?
+
+\item What is the output from the following code:
+\begin{verbatim}
+IdentifyMyParts a = new IdentifyMyParts();
+IdentifyMyParts b = new IdentifyMyParts();
+a.y = 5;
+b.y = 6;
+a.x = 1;
+b.x = 2;
+System.out.println("a.y = " + a.y);
+System.out.println("b.y = " + b.y);
+System.out.println("a.x = " + a.x);
+System.out.println("b.x = " + b.x);
+\end{verbatim}
+\end{enumerate}
+
+\item [Program 4]\
+\begin{lstlisting}
+public class EqualsTest {
+    public static void main(String[] args) {
+        // code goes here
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What if the \texttt{static} modifier is removed from the signature of the main method?
+\item What if I do not provide the String array as the argument to the method?
+\item What happend if line 2 changed as \texttt{static public void main(String args[]) \{ }
+\end{enumerate}
+
+\item [Program 5]\
+\begin{lstlisting}
+int key = 1;
+switch (key + 1) {
+    case 1:
+        System.out.println("Cake");
+        break;
+    case 2:
+        System.out.println("Pie");
+        break;
+    case 3:
+        System.out.println("Ice cream");
+    case 4:
+        System.out.println("Cookies");
+        break;
+    default:
+        System.out.println("Diet time");
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What would be the output of the above code?
+\item What would be the output if the value of key is 3?
+\item What would be the output if the value of key is 5?
+\end{enumerate}
+
+\item [Program 6]\
+\begin{lstlisting}
+for (int n = 1; n <= 5; n++) {
+    if (n == 3)
+        break;
+    System.out.println(``Hello'');
+}
+System.out.println(``After the loop'');
+\end{lstlisting}
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What would be the output of the above code?
+\item What would be the output if line 3 is changed to \texttt{System.exit(0);}?
+\end{enumerate}
+\item [Program 7]\
+\begin{lstlisting}
+String[] skiResorts = {``Whistler Blackcomb'', ``Squaw Valley'', ``Brighton'', ``Snowmass'', ``Sun Valley'', ``Taos'' };
+\end{lstlisting}
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the index of \texttt{Brighton} in the following array?
+\item What is the value of the expression \texttt{skiResorts.length}?
+\item What is the index of the last item in the array?
+\item What is the value of the expression \texttt{skiResorts[4]}?
+\end{enumerate}
+
+\item [Program 8]\
+\begin{lstlisting}
+String hannah = ``Did Hannah see bees? Hannah did.'';
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the value displayed by the expression \texttt{hannah.length()}?
+\item What is the value returned by the method call \texttt{hannah.charAt(12)}?
+\item What is the value returned by the method call \texttt{hannah.substring(9, 12)}?
+\end{enumerate}
+
+\item [Program 9]\
+\begin{lstlisting}
+public class BasicsDemo {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int current = 1; current <= 10; current++) {
+            sum += current;
+        }
+        System.out.println(``Sum = '' + sum);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the name of each variable declared in the program? Remember that method parameters are also variables.
+\item What is the data type of each variable?
+\item What is the scope of each variable?
+\end{enumerate}
+
+\item [Program 10]\
+\begin{lstlisting}
+public class CheckSign {
+    public static void main(String args[]) {
+        int number = 7;
+        boolean isPositive = (number > 0);
+        if (number > 0);
+            number = -100;
+        if (isPositive)
+            System.out.println("Positive.");
+        else
+            System.out.println("Not positive.");
+        System.out.println(number);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the above code?
+\item What will be the output if line 4 is changed to \texttt{boolean isPositive = false;}?
+\item What will happen if line 3 is changed to \texttt{int number;}? 
+\end{enumerate}
+\end{description}
+\end{document}
+
+
+
+http://www.math.uni-hamburg.de/doc/java/tutorial/java/TOC.html#data

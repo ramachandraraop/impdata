@@ -1,0 +1,212 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\begin{document}
+\section*{\center{Practice Exercise}}
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+\item In JavaScript, array is an object that represents a collection of similar types of elements.(True / False)\underline{\hspace{3cm}}.
+\item The 3 ways to construct array in JavaScript are\underline{\hspace{3cm}}.
+\item What property tells you the length of a JavaScript array?\underline{\hspace{3cm}}.
+\item If the array ``foo'' has a length of 10, what is the index of the first element in the array?\underline{\hspace{3cm}}.
+\item If the array ``foo'' has a length of 10, what is the index of the last element in the array?\underline{\hspace{3cm}}.
+\item What is the syntax you would use to assign the first element in the array ``foo'' to the variable ``bar''?\underline{\hspace{3cm}}.
+
+\item Given the following line of code, what is the length of the array ``foo''?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var foo = [];
+\end{lstlisting} 
+\item Given the following line of code, what would be the output?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var foo = new Array(3);
+document.write(foo);
+\end{lstlisting}
+\item What is this?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var myArray = [[[]]];
+\end{lstlisting}
+\item If an array with name as ``names'' contain three elements then how you will print the third element of this array?\underline{\hspace{3cm}}.
+\item The JavaScript statement a = new Array(2, 4) defines\underline{\hspace{3cm}}.
+\item What would be the output for the following code?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var my_array = [1, ``bob''];
+document.write(my_array[1]);
+\end{lstlisting}
+\item What would be the output for the following code?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+[``uno'', ``dos'', ``tres''].length;
+\end{lstlisting}
+\item Print the last element of my\_array on the web page.\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var my_array = [``horse'', ``pig'', ``cow''];
+\end{lstlisting}
+\item What would be the output for the following code?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var writing_tools = [``pencil'', ``pen'', ``marker''];
+document.write(writing_tools[writing_tools.length - 1]);
+\end{lstlisting}
+\item What does the following statement return?\underline{\hspace{3cm}}.
+\begin{lstlisting} 
+typeof([``cats'']);
+\end{lstlisting}
+\item Update the ``shots'' element in the following array to be ``don't do it''.\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var beverages = [``beer'', ``wine'', ``shots''];
+\end{lstlisting}
+\item Create an array with the following elements:\
+
+\texttt{"bob", 23, false}\
+
+\underline{\hspace{3cm}}.
+\item What would be the output for the following code?\underline{\hspace{3cm}}.
+\begin{lstlisting}
+var q = ``quack'';
+var num = 555666;
+document.write([num, q, true]);
+\end{lstlisting}
+\item After executing the JavaScript statement \texttt{a = (new Array(10)).toString()}, what's the value of a?\underline{\hspace{3cm}}.
+\item Which browser supports the \texttt{sort()} method for arrays?\underline{\hspace{3cm}}.
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item[program 1]\
+\begin{lstlisting}
+var numbers = [2, 4, 6, 8];
+var counter = 0;
+var sum = 0;
+while (counter < numbers.length) {
+    sum += numbers[counter];
+    counter++;
+}
+document.write(sum);
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the outupt for the above code snippet?
+\end{enumerate}
+
+\item[Program 2]\
+\begin{lstlisting}
+var words = [``teenage'', ``mutant'', ``ninja'', ``turtles''];
+var great_show = ``'';
+for (var i = 0; i < words.length; i++) {
+    great_show += words[i] + `` '';
+}
+document.write(great_show);
+}\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\end{enumerate}
+\item [Program 3]\ 
+\begin{lstlisting}
+var a1 = [,,,]; 
+var a2 = new Array(3); 
+0 in a1 
+0 in a2
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the result for the above code snippet?
+\end{enumerate}
+
+\item [Program 4]\
+\begin{lstlisting}
+<script type = ``text/javascript'' language = ``javascript''>
+    var tsw = new Array();
+    tsw[0] = ``WebDevelopment'';
+    tsw[1] = ``ApplicationDevelopment''
+    tsw[2] = ``Testing''
+    tsw[3] = ``Web technologies'';
+    document.write(tsw[0, 1, 2, 3]);
+</script>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output for the above code snippet?
+\end{enumerate}
+
+\item [Program 5]\
+
+\begin{lstlisting}
+while (a != 0) {
+    a = new Array();
+    b = new Array();
+    a[1] = 3;
+    b[2] = 5;
+    a = b;
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Which values are contained in a[1] and a[2] after this code executes? 
+\end{enumerate}
+
+\item [Program 6]\
+\begin{lstlisting}
+a = new Array(1, 2, 3);
+for (i in a) 
+    alert(``a[i] = '' + a[i]);
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item How many times will the alert box appear? 
+\end{enumerate}
+
+\item [Program 7]\
+\begin{lstlisting}
+a = new Array();
+a[0] = 12;
+a[1] = false;
+a[2] = ``text'';
+a[3] = a; 
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Which line in this code will cause an error? 
+\end{enumerate}
+
+\end{description}
+\subsection*{Additional Exercises}
+\begin{enumerate}
+\item Sum all the elements in the following array if they are numbers, otherwise ignore the element.  Print the result to the web page.\
+
+\texttt{var weird = [1, 40, "bob", [], false, 89];}
+
+\item Concatenate all the elements in the following array that begin with the letter ``b'' and print the resulting sentence to the web page.\
+
+\texttt{var heaven = [34, [], "bodacious", "barbecues", "begin", "whatever", "by", "battering", true, "bacon"];}
+
+\item Build a mock Username registration program with the following requirements:
+\begin{itemize}
+\item The user can \texttt{enter a Username in the inputbox}, and click a button to register;
+\item If the Username already exists, the program informs the user;
+\item If the Username is not already stored in the program, the new Username is added, the user is informed, and all stored Usernames are displayed on the page in alphabetical order.
+\end{itemize}
+\item Write a program to sort array elements using JavaScript.
+\end{enumerate}
+\end{document}

@@ -1,0 +1,253 @@
+\documentclass[11pt,a4paper]{article}
+\author{TalentSprint}
+\date{}
+\usepackage{fancyhdr}
+\usepackage{latexsym}
+\usepackage{soul}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{enumerate}
+%\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[tikz]{bclogo}
+\usepackage{textcomp}
+\usepackage{latexsym}
+\usepackage{seqsplit} 
+\usepackage{setspace}
+\usepackage{listings}
+\lstset{language=html,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{fancyhdr}
+\headheight=14pt
+\lhead{\nouppercase{}}
+\rhead{\nouppercase{\leftmark}}
+
+\graphicspath{{../Images/}}
+
+%\pagestyle{fancy}
+
+%========================================================================
+
+% Lengths and widths
+\addtolength{\textwidth}{2.5cm}
+\addtolength{\hoffset}{0cm}
+\setlength{\headsep}{-12pt} % Reduce space between header and content
+\setlength{\headheight}{85pt} % If less, LaTeX automatically increases it
+\renewcommand{\footrulewidth}{2pt} % Remove footer line
+\renewcommand{\headrulewidth}{1pt} % Remove header line
+\renewcommand{\seqinsert}{\ifmmode\allowbreak\else\-\fi} % Hyphens in seqsplit
+% This two commands together give roughly
+% the right line height in the tables
+\renewcommand{\arraystretch}{1.3}
+\onehalfspacing
+
+
+
+% Commands
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}} % Shortcut for row colour
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{white}}#2}{#3}} % For coloured multi-cols
+\newcolumntype{x}[1]{>{\raggedright}p{#1}} % New column types for ragged-right paragraph columns
+\newcommand{\tn}{\tabularnewline} % Required as custom column type in use
+
+% Font and Colours
+\definecolor{HeadBackground}{HTML}{333333}
+\definecolor{FootBackground}{HTML}{666666}
+\definecolor{TextColor}{HTML}{333333}
+\definecolor{DarkBackground}{HTML}{6B8E23} %{FD1AA8}
+\definecolor{LightBackground}{HTML}{E8FED8} %D3FDC8
+\definecolor{tit}{HTML}{FF6600}
+\renewcommand{\familydefault}{\sfdefault}
+\color{TextColor}
+ \headsep = 25pt
+% Header and Footer
+\pagestyle{fancy}
+\usepackage[headheight=110pt]{geometry}
+\fancyhf{}% Clear header/footer
+
+\fancyhead[r]{\includegraphics[width = 4cm, height = 2cm]{TS-Logo.png}\hspace{0cm}}
+
+%=================================TITLE=====================================
+\fancyhead[l]{\Large{\bf{\textcolor{tit}{\textrm{Validating form using JavaScript}}}}}
+%===========================================================================
+
+\renewcommand{\headrulewidth}{0.4pt}% Default \headrulewidth is 0.4pt
+\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+
+\rfoot{Page \thepage}
+\lfoot{COPYRIGHT \textcopyright TALENTSPRINT, 2015. ALL RIGHTS RESERVED.}
+
+
+
+
+\begin{document}
+
+
+\section*{Regular Expressions and RegExp Object}
+
+Regular Expressions provide pattern matching and control operators for extracting information from strings which may be retrieved for reuse. Regex expressions can also be evaluated using methods of the Javascript String Object like match, replace and search. 
+
+Each Javascript RegExp also has a scope defintion which controls the range of the regular expression to a single, multi-line or global (all lines).
+
+Strings can also be directly executed by methods of the Regular Expression Object.
+
+\subsection*{RegExp Definition}
+
+Regular Expressions accepts two(2) definition formats:
+
+\begin{itemize}
+
+\item RegExp expressions can be entered into a Javascript variable and must be bracketed by right slash (/) as shown below:\\
+
+\hspace{1cm}\texttt{var regexp = /regular expression/,scope defintion;}
+
+\item A RegExp can also be created using the RegExp Javascript Object. 
+   It has two(2) parameters:
+
+\begin{description}
+\item[Syntax]\
+
+\begin{verbatim}
+    var pattern = new RegExp(pattern, attributes);
+                  (or) simply
+    var pattern = /pattern/attributes;
+\end{verbatim}
+\end{description}
+\end{itemize}
+
+\subsection*{Parameters}
+\begin{description}
+\item[pattern] A string that specifies the pattern of the regular expression or another regular expression.
+\item[attributes] An optional string containing any of the ``g'', ``i'', and ``m'' attributes that specify global, case-insensitive, and multiline matches, respectively.
+\end{description}
+
+\subsection*{Brackets}
+
+Brackets ([]) have a special meaning when used in the context of regular expressions. They are used to find a range of characters.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| c | c |}\hline
+\textbf{Expression} & \textbf{Description}\\ \hline
+[...] &  Any one character between the brackets.\\ \hline
+[\^...] & Any one character not between the brackets.\\ \hline
+[0-9] &  It matches any decimal digit from 0 through 9.\\ \hline
+[a-z] & It matches any character from lowercase a through lowercase z.\\ \hline
+[A-Z] & It matches any character from uppercase A through uppercase Z.\\ \hline
+[a-Z] & It matches any character from lowercase a through uppercase Z.\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection*{Quantifiers}
+
+The frequency or position of bracketed character sequences and single characters can be denoted by a special character. Each pecial character having a specific connotation. The +, *, ?, and \$ flags all follow a character sequence.
+
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| c | c |}\hline
+\textbf{Expression} & \textbf{Description}\\ \hline
+p+ & It matches any string containing at least one p.\\ \hline
+p* & It matches any string containing zero or more p's.\\ \hline
+p? &  It matches any string containing one or more p's.\\ \hline
+p{N} &  It matches any string containing a sequence of N p's\\ \hline
+p{2,3} & It matches any string containing a sequence of two or three p's.\\ \hline
+p{2, } & It matches any string containing a sequence of at least two p's.\\ \hline
+p\$ & It matches any string with p at the end of it.\\ \hline
+\^p &  It matches any string with p at the beginning of it.\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection*{Examples}
+
+Following examples will clear your concepts about matching chracters.
+\begin{description}
+\item[[\^a-zA-Z]] -  It matches any string not containing any of the characters ranging from a through z and A through Z.
+\item[p.p] -  It matches any string containing p, followed by any character, in turn followed by another p.
+\item[\^.\{2\}\$] - It matches any string containing exactly two characters.
+\item[$<b>(.*)</b>$] -  It matches any string enclosed within $<b> and </b>$.
+\item[p(hp)*] - It matches any string containing a p followed by zero or more instances of the sequence hp.
+\end{description}
+
+\subsection*{Literal characters}
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| c | c |}\hline
+\textbf{Character} & \textbf{Description}\\ \hline
+Alphanumeric & Itself\\ \hline
+\textbackslash 0 & The NUL character (\textbackslash u0000)\\ \hline
+\textbackslash t & Tab (\textbackslash u0009)\\ \hline
+\textbackslash n & Newline (\textbackslash u000A)\\ \hline
+\textbackslash v &  Vertical tab (\textbackslash u000B)\\ \hline
+\textbackslash f & Form feed (\textbackslash u000C)\\ \hline
+\textbackslash r & carriage return (\textbackslash u000D)\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection*{Metacharacters}
+
+A metacharacter is simply an alphabetical character preceeded by a backslash that acts to give the combination a special meaning.
+
+Following is the list of metacharacters which can be used in Regular Expressions.
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| c | c |}\hline
+\textbf{Character} & \textbf{Description}\\ \hline
+.   &    A single character\\ \hline
+\textbackslash s & A whitespace character (space, tab, newline)\\ \hline
+\textbackslash S & non-whitespace character\\ \hline
+\textbackslash d  & A digit (0-9)\\ \hline
+\textbackslash D &  A non-digit\\ \hline
+\textbackslash w & A word character (a-z, A-Z, 0-9, \_)\\ \hline
+\textbackslash W & A non-word character\\ \hline
+[\textbackslash b] & A literal backspace (special case).\\ \hline
+[aeiou]  &  Matches a single character in the given set\\ \hline
+[\^aeiou]  &   Matches a single character outside the given set\\ \hline
+(foo$|$bar$|$baz)  &  Matches any of the alternatives specified\\ \hline
+\end{tabular}
+\caption{Metacharacters}
+\end{center}
+\end{table}
+
+\subsection*{Modifiers}
+
+Several modifiers are available that can make your work with regexps much easier, like case sensitivity, searching in multiple lines etc.
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| c | c |}\hline
+\textbf{Modifier} & \textbf{Description}\\ \hline
+i & Perform case-insensitive matching.\\ \hline
+m &Specifies that if the string has newline\\
+    & or carriage return characters,\\
+    & the \^ and \$ operators will now match\\
+    & against a newline boundary\\
+    & instead of a string boundary\\ \hline
+g & Perform a global matchthat is,\\
+   & find all matches rather than stopping\\  
+   & after the first match.\\ \hline
+\end{tabular}
+\caption{Modifiers}
+\end{center}
+\end{table}
+
+\subsection*{RegExp Methods}
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| c | c |}\hline
+\textbf{Method} &	\textbf{Description}\\ \hline
+exec() & Executes a search for a match in its string parameter.\\ \hline
+test() & Tests for a match in its string parameter.\\ \hline
+toSource() & Returns an object literal representing the specified \\
+                & object; you can use this value to create a new object.\\ \hline
+toString() & Returns a string representing the specified object.\\ \hline
+\end{tabular}
+\caption{RegExp Methods}
+\end{center}
+\end{table}
+
+
+\end{document}

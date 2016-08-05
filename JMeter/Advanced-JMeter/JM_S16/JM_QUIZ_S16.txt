@@ -1,0 +1,40 @@
+1. What are the Elements are required to create a LDAP Test Plan on LDAP Server?
+a) Thread Group
+b) LDAP Request
+c) LDAP Request Defaults
+d) View Request in Table
+e) All of the above
+
+Ans: E
+
+2. What are the options of Test Configuration in LDAP Request?
+a) Add Test
+b) Delete Test
+c) Search Test
+d) All of the above
+
+Ans: D
+
+3. How many different types of fields you have in Test Configuration of LDAP Extended Request?
+a) 1
+b) 2
+c) 3
+d) 4
+
+Ans: D
+
+4. What are the fields do you have in Server name of LDAP Request?
+a) Port
+b) DN
+c) Both A and B 
+d) None
+
+Ans: C
+
+5. Where do you find LDAP Request Defaults?
+a) Logical Controllers
+b) Config Elements
+c) Samplers
+d) Pre-Processor
+
+Ans: B

@@ -1,0 +1,391 @@
+\documentclass[14pt]{beamer}
+\title{WEB :: JavaScript}
+\author[TS]{TalentSprint}
+\institute[L\&D]{Licensed To Skill}
+\usefonttheme{serif}
+\usecolortheme{orchid}
+\usepackage{bookman}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\graphicspath{{./../Images/}}
+\usepackage[tikz]{bclogo}
+\usepackage{soul}
+ \definecolor{light-gray}{gray}{0.80}
+ \usepackage{color}
+\beamertemplateballitem
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{TS-XP-Logo.jpg}}
+\lstset{language=html, numbers=left, numbers=none, basicstyle=\footnotesize, numberstyle=\tiny,  numbersep=10pt, showstringspaces=false, breaklines=true,keepspaces=true, columns=flexible}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Learning Objectives}
+The content in this presentation is aimed at teaching  learners to:
+  \begin{itemize}
+  \item Deploy event driven code
+  \item Get the data from the form controls
+  \item Dynamically change the page content
+  \item Validate HTML WebPages
+  \item Use JavaScript built-in objects 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Accessing HTML Elements}
+We can access HTML Elements from Javascript to perform following action:
+\begin{enumerate}
+ \item Change content
+ \item Change Style 
+ \item Change CSS Classes
+ \item Setting and Getting Values
+ \item Changing Attribute values
+\end{enumerate}
+\begin{block}{}
+\lstinline!var object = document.geElementById(``element_id'')!
+\end{block}
+\end{frame}
+
+\begin{frame}{CSS to JavaScript}
+\begin{tabular}{|p{4cm} | p{6.5cm} |}
+\hline \textbf{CSS Property} & \textbf{Javascript Property} \\ \hline
+color & object.style.color \\ \hline
+text-align & object.style.textAlign \\ \hline
+text-decoration  & object.style.textDecoration \\ \hline
+white-space & object.style.whiteSpace \\ \hline
+text-transform & object.style.textTransform \\ \hline
+letter-spacing & object.style.letterSpacing \\ \hline
+text-indent & object.style.textIntent \\ \hline
+line-height & object.style.lineHeight \\ \hline
+word-spacing & object.style.wordSpacing \\ \hline
+\end{tabular}
+Similarly we can work with all CSS Properties in Javascript
+\end{frame}
+
+\begin{frame}{CSS to JavaScript}
+\begin{tabular}{|p{4cm} | p{6.5cm} |}
+\hline \textbf{Element Type} & \textbf{Javascript Property} \\ \hline
+Input & object.value\newline object.name\newline object.type \\ \hline
+Img & object.src \\ \hline
+Select & object.selectedIndex \\ \hline
+Form & object.name\newline object.action\newline object.elements \\ \hline
+Div, span, td etc. & object.innerHTML\newline object.className \\ \hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{The String Object}
+
+\vspace{1pc}
+Javascript Automatically converts between string primitives and String objects.
+\begin{block}{Syntax}
+\lstinline!var val = new String(``string'');!
+
+\lstinline!var txt = ``string'';!
+\end{block}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{String Object Methods}
+
+\vspace{1pc}
+\begin{description}
+ \item [charAt()] returns the character at the specified index (position)
+ \item [charCodeAt()] returns the Unicode of the character at the specified index
+ \item [concat()] joins two or more strings, and returns a copy of the joined strings
+ \item [valueOf()] returns the primitive value of a String object
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{String Object Methods}
+
+\vspace{1pc}
+\begin{description}
+ \item [indexOf()] returns the position of the first found occurrence of a specified value in a string
+ \item [lastIndexOf()] returns the position of the last found occurrence of a specified value in a string
+ \item [match()] searches a string for a match against a regular expression, and returns the matches
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{String Object Methods}
+
+\vspace{1pc}
+\small
+\begin{description}
+ \item [replace()] searches a string for a value and returns a new string with the value replaced
+ \item [search()] searches a string for a value and returns the position of the match
+ \item [substring()] extracts a part of a string between two specified positions
+ \item [toLowerCase()] converts a string to lowercase letters
+ \item [toUpperCase()] converts a string to uppercase letters
+ \end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{String HTML Wrapper Methods}
+
+\begin{description}
+ \item [anchor()] creates an HTML anchor that is used as a hypertext target.
+ \item [big()] creates a string to be displayed in a big font as if it were in a <big> tag.
+ \item [blink()] creates a string to blink as if it were in a <blink> tag.
+ \item [bold()] creates a string to be displayed as bold as if it were in a <b> tag.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{String HTML Wrapper Methods}
+
+\begin{description}
+ \item [fixed()] causes a string to be displayed in fixed-pitch font as if it were in a <tt> tag
+ \item [fontcolor()] causes a string to be displayed in the specified color as if it were in a <font color="color"> tag
+ \item [Fontsize()] causes a string to be displayed in the specified font size as if it were in a <font size="size"> tag
+ \item [italics()] causes a string to be italic, as if it were in an <i> tag
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{String HTML Wrapper Methods}
+\small
+\begin{description}
+ \item [link()] creates an HTML hypertext link that requests another URL
+ \item [small()] causes a string to be displayed in a small font, as if it were in a <small> tag
+ \item [strike()] causes a string to be displayed as struck-out text, as if it were in a <strike> tag
+ \item [sub()] causes a string to be displayed as a subscript, as if it were in a <sub> tag
+ \item [sup()] causes a string to be displayed as a superscript, as if it were in a <sup> tag
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{The Array Object}
+\begin{itemize}
+ \item Store multiple values in a single variable
+ 
+ \lstinline!var fruits = new Array(``apple'', ``orange'', ``mango'');!
+ \item The Array parameter is a list of strings or integers
+ \item The maximum length allowed for an array is 4,294,967,295
+ \item You can create array by simply assigning values as follows:
+ 
+ \lstinline!var fruits = [``apple'', ``orange'', ``mango''];!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Array Methods}
+\begin{description}
+ \item [concat()] returns a new array comprised of this array joined with other array(s) and/or value(s).
+ \item [every()] returns true if every element in this array satisfies the provided testing function.
+ \item [filter()] creates a new array with all of the elements of this array for which the provided filtering function returns true.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Array Methods}
+\begin{description}
+ \item [indexOf()] returns the first (least) index of an element within the array equal to the specified value or 1 if none is found.
+ \item [join()] joins all elements of an array into a string.
+ \item [lastIndexOf()] returns the last (greatest) index of an element within the array equal to the specified value or 1 if none is found.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Array Methods}
+\begin{description}
+ \item [map()] creates a new array with the results of calling a provided function on every element in this array.
+ \item [pop()] removes the last element from an array and returns that element.
+ \item [push()] adds one or more elements to the end of an array and returns the new length of the array.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Array Methods}
+\begin{description}
+ \item [reduce()] apply a function simultaneously against two values of the array (from left- to-right) as to reduce it to a single value.
+ \item [reduceRight()] apply a function simultaneously against two values of the array (from right- to-left) as to reduce it to a single value.
+ \item [reverse()] reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Array Methods}
+\begin{description}
+ \item [shift()] removes the first element from an array and returns that element.
+ \item [slice()] extracts a section of an array and returns a new array.
+ \item [some()] returns true if at least one element in this array satisfies the provided testing function.
+ \item [toSource()] represents the source code of an object
+ \end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Array Methods}
+\begin{description}
+ \item [sort()] sorts the elements of an array.
+ \item [splice()] adds and/or removes elements from an array.
+ \item [toString()] returns a string representing the array and its elements.
+ \item [unshift()] adds one or more elements to the front of an array and returns the new length of the array.
+ \item [forEach()] calls a function for each element in the array.
+\end{description}
+\end{frame}
+
+\begin{frame}[fragile]{JavaScript}
+\textbf{The Date Object}
+\begin{itemize}
+ \item Built into the JavaScript language.
+ \item Date objects are created with the new Date()
+ \item different variant of Date() constructor:
+ \begin{block}{}
+  \begin{lstlisting}
+   new Date()
+   new Date(milliseconds)
+   new Date(datestring)
+   new Date(year,month,date[,hour,minute,second,millisecond])
+  \end{lstlisting}
+ \end{block}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Getter Methods of Date}
+\begin{description}
+ \item [Date()] returns today's date and time
+ \item [getDate()] returns the day of the month for the specified date according to local time.
+ \item [getDay()] returns the day of the week for the specified date according to local time.
+ \item [getFullYear()] returns the year of the specified date according to local time.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Getter Methods of Date}
+\begin{description}
+ \item [getHours()] returns the hour in the specified date according to local time.
+ \item [getMilliseconds()] returns the milliseconds in the specified date according to local time.
+ \item [getMinutes()] returns the minutes in the specified date according to local time.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Getter Methods of Date}
+\begin{description}
+ \item [getMonth()] returns the month in the specified date according to local time.
+ \item [getSeconds()] returns the seconds in the specified date according to local time.
+ \item [getTime()] returns the numeric value of the specified date as the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Setter Methods of Date}
+\begin{description}
+ \item [setDate()] sets the day of the month for a specified date according to local time.
+ \item [setFullYear()] sets the full year for a specified date according to local time.
+ \item [setHours()] sets the hours for a specified date according to local time.
+ \item [setMilliseconds()] sets the milliseconds for a specified date according to local time.
+ \end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Setter Methods of Date}
+\begin{description}
+ \item [setMinutes()] sets the minutes for a specified date according to local time.
+ \item [setMonth()] sets the month for a specified date according to local time.
+ \item [setSeconds()] sets the seconds for a specified date according to local time.
+ \item [setTime()] sets the Date object to the time represented by a number of milliseconds since January 1, 1970, 00:00:00 UTC.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{The Math Object}
+\begin{itemize}
+ \item Provides you properties and methods for mathematical constants and functions.
+ \item Math is not a constructor.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{The Math Object}
+\begin{itemize}
+ \item All properties and methods of Math are static and can be called by using Math as an object without creating it.
+ \item Syntax to call properties and methods of Math:
+  
+  \lstinline!var pi_val = Math.PI;!
+  
+  \lstinline!var sine_val = Math.sin(30);!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Math Properties}
+\begin{description}
+ \item [E] euler's constant and the base of natural logarithms, approximately 2.718.
+ \item [LN2] Natural logarithm of 2, approximately 0.693.
+ \item [LN10] Natural logarithm of 10, approximately 2.302.
+ \item [LOG2E] Base 2 logarithm of E, approximately 1.442.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Math Properties}
+\begin{description}
+ \item [LOG10E] Base 10 logarithm of E, approximately 0.434.
+ \item [PI] Ratio of the circumference of a circle to its diameter, approximately 3.14159.
+ \item [SQRT1\_2] Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.
+ \item [SQRT2] Square root of 2, approximately 1.414.
+\end{description}
+\end{frame}
+
+
+\begin{frame}{JavaScript}
+\textbf{Math Properties}
+\begin{description}
+ \item [abs()] returns the absolute value of a number.
+ \item [acos()] returns the arccosine (in radians) of a number.
+ \item [asin()] returns the arcsine (in radians) of a number.
+ \item [atan()] returns the arctangent (in radians) of a number.
+ \item [atan2()] returns the arctangent of the quotient of its arguments.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Math Properties}
+\begin{description}
+  \item [ceil()] returns the smallest integer greater than or equal to a number.
+  \item [cos()] returns the cosine of a number.
+ \item [exp()] returns EN, where N is the argument, and E is Euler's constant, the base of the natural logarithm.
+ \item [floor()] returns the largest integer less than or equal to a number.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Math Properties}
+\begin{description}
+ \item [log()] returns the natural logarithm (base E) of a number.
+ \item [max()] returns the largest of zero or more numbers.
+ \item [min()] returns the smallest of zero or more numbers.
+ \item [pow()] returns base to the exponent power, that is, base exponent.
+ \item [random()] returns a pseudo-random number between 0 and 1.
+\end{description}
+\end{frame}
+
+\begin{frame}{JavaScript}
+\textbf{Math Properties}
+\begin{description}
+ \item [round()] returns the value of a number rounded to the nearest integer.
+ \item [sin()] returns the sine of a number.
+ \item [sqrt()] returns the square root of a number.
+ \item [tan()] returns the tangent of a number.
+ \item [toSource()] Returns the string ``Math''.
+\end{description}
+\end{frame}
+
+
+
+
+\begin{frame}{JavaScript}
+ \begin{figure}[H]
+    \includegraphics[scale=.3]{qa.png}   
+   \end{figure}
+\end{frame}
+
+\end{document}

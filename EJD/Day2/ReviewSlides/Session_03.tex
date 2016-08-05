@@ -1,0 +1,77 @@
+\documentclass[14pt]{beamer}
+\title[BPT:VCS:03]{Getting Started - Git :: Session 03}
+\author[TS]{TalentSprint}
+\institute[L\&D]{Licensed To Skill}
+\date{Version 1.0.4}
+\usetheme{Madrid}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{TS-Logo.jpg}}
+%\graphicspath{{/home/tsuser/Desktop/Latex_Slides/Images/}}
+\graphicspath{{../../Images/}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Learning Objectives}
+At the end of this session you will learn
+  \begin{itemize}
+  \item how to work with external repository
+  \item how to copy the external repository to local machine
+  \item how to update the external repository
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Check for connectiviy}
+type the below command in terminal
+\begin{itemize}
+\item ping -c 5 IP address of the server system.
+\end{itemize}
+\begin{block}{}
+If the message displayed is `Destination Host Unreachable'' means you are unable to connect to server.
+\end{block}
+\end{frame}
+
+\begin{frame}{Git :: clone}
+To copy the existing project into your local machine follow the below steps
+\begin{enumerate}
+\item \$ mkdir $<$directory name$>$
+\item \$ cd $<$directory name$>$
+\item \$ git clone username@IPaddress://path
+\end{enumerate}
+\begin{block}{}
+Copies an existing repository located at given $<$path$>$ onto the local machine.
+\end{block}
+\end{frame}
+
+\begin{frame}{Git :: clone}
+\begin{enumerate}
+\item creates a directory with repository name
+\item initializes a .git directory inside it
+\item pulls down all the data for that repository
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Git}
+Now you will have the complete project in the local machine. Do the required changes (like add, edit, commit, etc.) as discussed in the previous sessions.
+\end{frame}
+
+\begin{frame}{Git :: push}
+\begin{itemize}
+\item \$ git push origin master
+\end{itemize}
+\begin{block}{}
+push the changes in the current active branch to a remote repository
+\end{block}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{description}
+\item [clone] Makes a Git repository copy from remote source to local machine.
+\item [push] Update data from your current branch to the remote repository.
+\end{description}
+\end{frame}
+
+\end{document}

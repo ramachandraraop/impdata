@@ -1,0 +1,264 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../../TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Conditional Statements}}}
+\vspace{1pc}
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+\begin{enumerate}
+\item What would be the output of the below code?
+\begin{lstlisting}
+int x = 5;
+if (x > 3)
+    x = x - 2;
+else
+    x = x + 2;
+\end{lstlisting}
+\AnswerBox
+\item What would be the output of the below code?
+\begin{lstlisting}
+int a = 10, b = 5;
+if (a > b);
+    System.out.println(``A is Greater\n'');
+else
+    System.out.println(``B is Greater\n");
+\end{lstlisting}
+\AnswerBox
+
+\item What will be the output of the below code?
+\begin{lstlisting}
+int x = 5;
+if (x < 1)
+    printf(``value is -ve\n'');
+if (x == 5)
+    printf(``value is 5\n'');
+else
+    printf(``value is not equal to 5\n'');
+\end{lstlisting}
+
+\AnswerBox
+
+\item What would be the output of the below code when executed\\
+    java SampleCode1 40 20
+\begin{lstlisting} 
+class SampleCode1 {
+    public static void main(String[] args) {
+        int num1 = Integer.parseInt(args[0]);
+        int num2 = Integer.parseInt(args[1]);
+        if (num1 > num2)
+            System.out.println(num1);
+        else
+            System.out.println(num2);
+    }
+}
+\end{lstlisting} 
+\AnswerBox
+
+\item Write an expression in line 4, to get the correct output.
+\begin{lstlisting} 
+class SampleCode2 {
+    public static void main(String[] args) {
+        int val1 = Integer.parseInt(args[0]);
+    if (_______)
+        System.out.println(val1 + " is Even");
+    else
+        System.out.println(val1 + " is Odd");
+}
+\end{lstlisting} 
+\AnswerBox
+
+\item What would be the output of the below code when executed\\
+    java SampleCode3 44 true
+\begin{lstlisting}
+class SampleCode3 {
+    public static void main(String[] args) {
+        int age = Integer.parseInt(args[0]);
+        boolean HasVID = Boolean.parseBoolean(args[1]);
+        if (age >= 18) {
+            if (HasVID)
+                System.out.println(``Eligible to Vote'');
+            else
+                System.out.println(``Eligible to Apply'');
+        } else {
+            System.out.println(``Not Eligible'');
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output of the below code?
+\begin{lstlisting}
+class SampleCode4 {
+     public static void main(String[] args) {
+         int w = 4, q = 3;
+         if (q > 5)
+             if (w == 7)
+                 w = 3;
+             else
+                 w = 2;
+         else
+             if (w > 3)
+                 w = 1;
+             else
+                 w = 0;
+         System.out.println(w);
+     }
+ }
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output of the below code when executed\\
+    java SampleCode5 85 77 87
+\begin{lstlisting}
+class SampleCode5 {
+    public static void main(String[] args) {
+         int m1 = Integer.parseInt(args[0]);
+         int m2 = Integer.parseInt(args[1]);
+         int m3 = Integer.parseInt(args[2]);
+         int avg = (m1 + m2 + m3) / 3;
+         if (m1 >= 35 && m2 >= 35 && m3 >= 35) {
+             if (avg >= 75)
+                 System.out.println(``Passed in Distinction'');
+             else
+                 System.out.println(``Passed'');
+         } else {
+              System.out.println(``Failed'');
+         }
+     }
+ }
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output when we execute below code?
+\begin{lstlisting}
+class SampleCode6 {
+    public static void main(String[] args) {
+        int a = 14, b = 0;
+        if (a < 5)
+            b = 4;
+        else if (a < 10)
+            b = 3;
+        else if (a > 5)
+            b = 2;
+        else
+            b = 1;
+        System.out.println(b);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output of the below code when executed\\
+    java SampleCode7 58
+\begin{lstlisting} 
+class SampleCode7 {
+    public static void main(String[] args) {
+        int avg = Integer.parseInt(args[0]);
+        if (avg < 40)
+            System.out.println(``Failed'');
+        else if (avg >= 40)
+            System.out.println(``Passed in Third Division'');
+        else if (avg >= 50)
+            System.out.println(``Passed in Second Division'');
+        else if (avg >= 60)
+            System.out.println(``Passed in First Division'');
+    }
+}
+\end{lstlisting} 
+\AnswerBox
+
+\item Write an expression in the space provided to find the number of days in a given month?\\
+    java SampleCode8 4
+\begin{lstlisting} 
+class SampleCode8 {
+    public static void main(String[] args) {
+        int mon = Integer.parseInt(args[0]);
+        if (_____________________)
+            System.out.println(``31 Days'');
+        else if (_____________________)
+            System.out.println(``28 Days'');
+        else
+            System.out.println(``30 Days'');
+    }
+}
+\end{lstlisting} 
+
+\AnswerBox
+
+\item What would be the output of the below code when executed\\
+    java SampleCode9 22
+\begin{lstlisting}
+class SampleCode9 {
+    public static void main(String[] args) {
+        int age = Integer.parseInt(args[0]);                         
+        if (age < 15) {                  
+            System.out.println(``Child''); 
+        } else if (age >=15 && age <= 19) {             
+            System.out.println(``Teenager'');       
+        } else if (age > 19 && age <= 25) {
+            System.out.println(``Young'');     
+        } else if (age > 25 && age <= 40) {
+            System.out.println("Adult");
+        } else if (age > 40 && age <= 60) {
+            System.out.println("Middle Age");
+        } else {
+            System.out.println("Old Age");
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output of the below code when executed\\
+    java SampleCodeA 160
+\begin{lstlisting}
+class SampleCodeA {
+    public static void main(String[] args) {
+        int unit = Integer.parseInt(args[0]);
+        int total = 0;
+        if (unit <= 100) {
+            total = unit * 4;
+        } else if (unit > 100 && unit <= 300) {
+            total = unit * 4.5;
+        } else if (unit > 300 && unit <= 500) {
+            total = unit * 4.75;
+        } else {
+            total = unit * 5;
+        }
+        System.out.println(``Total: '' + total);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output for the below code when executed\\
+    java SampleCodeB 150
+\begin{lstlisting}
+class SampleCodeB {
+    public static void main(String[] args) {
+        int x = Integer.parseInt(args[0]);
+        if (x >= 100)
+            x += 50;
+        else if (x >=50)
+            x += 20;
+        else if (x > 0)
+            x += 10;
+        else 
+            x = -x;
+        System.out.println(x);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\def\Answerbox{\fbox{\begin{minipage}{4in}\hfill\vspace{1.0in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Strings}}}
+\vspace{1pc}
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+\begin{enumerate}
+\item What would be the output for the below code, when executed?
+    java SampleCodeA ``Programming Language''
+\begin{lstlisting}
+class SampleCodeA {
+    public static void main(String[] args) {
+        String str = args[0];
+        System.out.println(str.length());
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output for the below code?
+\begin{lstlisting}
+class SampleCodeB {
+    public static void main(String[] args) {
+        String str = ``Hello World'';
+        for (int i = 0; i < str.length(); i += 2) {
+            System.out.print(str.charAt(i));
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output for the below code, write your understanding?
+\begin{lstlisting}
+class SampleCodeC {
+    public static void main(String[] args) {
+        String s = new String(``Hello'');
+        String s1 = new String(``Hello'');
+        System.out.println(s == s1);
+        System.out.println(s.compareTo(s1));
+        System.out.println(s.equals(s1));
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output for the below code?
+\begin{lstlisting}
+class SampleCodeD {
+    public static void main(String[] args) {
+        String s = ``Talent Sprint'';
+        System.out.println(s.substring(0,6));
+        System.out.println(s.substring(7));
+
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output for the below code?
+\begin{lstlisting}
+class SampleCodeE {
+    public static void main(String[] args) {
+        String str = ``Have a Good Day!'';
+        String[] words = str.split(`` '');
+        for (String word : words) {
+            System.out.println(word);
+        }
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\item What would be the output for the below code?
+\begin{lstlisting}
+class SampleCodeF {
+    public static void main(String[] args) {
+        String str = ``This is my Life!'';
+        String[] words = str.split(`` '');
+        int l = 0;
+        for (String word : words) {
+            l += word.length();
+        }
+        System.out.println(l);
+    }
+}
+\end{lstlisting}
+\AnswerBox
+\end{enumerate}
+\end{document}

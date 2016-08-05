@@ -1,0 +1,89 @@
+	Select the language which is supported by selenium web driver
+(x)	Perl
+()	Sql
+()	ASP
+()	Cobol
+
+
+
+	Which selenium component supports all operating systems
+(x)	Selenium Generator
+()	Selenium IDE
+()	Selenium WebDriver
+
+
+
+
+	Select the variation which locates elements by the value of the “name” attribute in WebDriver selenium  
+(x)	By.name
+()	By.nametag
+()	By.tagname
+()	By.nametags
+
+
+
+
+	What is the faster component between the selenium WebDriver and selenium RC?
+(x)	Selenium RC
+()	Selenium WebDriver
+
+
+
+	Select the variation which locates elements by the value of their “id” attribute in WebDriver selenium
+(x)	By.id
+()	By.idno
+()	By.id_no
+()	By.tag_id
+
+
+
+
+
+	Select the Get command which fetches the inner text of the element that you specify in WebDriver Selenium
+(x)	getinnertext()
+()	get_in_text()
+()	get_inner_text()
+()	getText()
+
+
+
+
+	Which navigate command takes you forward by one page on the browser’s history in webdriver  selenium 
+(x)	navigate.forward()
+()	navigate().forward()
+()	navigate()_forward()
+()	navigate_forward()
+
+
+
+
+
+	Which method is used when you want to verify whether a certain checkbox, radio button, or option in dropdown box is selected in selenium WebDriver
+(x)	is-selected()
+()	isselect()
+()	isSelected()
+()	is_Select()
+
+
+
+
+
+	Select the method which clears all selected entries in WebDriver selenium
+(x)	dselectAll()
+()	deselectAll()
+()	dselect_All()
+()	deselectAll()
+
+
+
+
+
+
+     In webdriver, which of the following is a valid select statement that selects a value from a drop down element? 
+
+()	selectByIndex()
+()	selectByVisibleText()
+()	selectByValue()
+(x)	all above
+
+

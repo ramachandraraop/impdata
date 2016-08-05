@@ -1,0 +1,47 @@
+Programmatic description can be very useful if you want to perform an operation on an object that is stored in the object repository.
+(x) True
+( ) False
+
+There are two types of programmatic descriptions
+(x) Static and Dynamic
+( ) Statement and Dynamic
+( ) Step and Dynamic
+( ) Standard and Dynamic
+
+You can also use programmatic descriptions to perform the same operation on several objects with certain identical properties, or to perform an operation on an object whose properties match a description that you determine dynamically during the run session.
+(x) True
+( ) False
+
+QuickTest evaluates all property values in programmatic descriptions as regular expressions
+(x) True
+( ) False
+
+From the below 4 statements which one is invalid
+( ) Browser("Title:=Mercury Tours").Page("Title:=Mercury Tours").WebEdit("Name:=Author", "Index:=3").Set "Amit Kumar"
+( ) Browser("Index").Page(Desc1).Link(docu3)
+( ) Browser("Mercury Tours").Page("Title:=Mercury Tours").WebEdit("Name:=Author", "Index:=3").Set "Amit Kumar"
+(x) Browser("Title:=Mercury Tours").Page("Title:=Mercury Tours").WebEdit("Author").Set "Amit Kumar"
+
+When using programmatic descriptions from a specific point within a test object hierarchy, you must continue to use programmatic descriptions from that point onward within the same statement.
+(x) True
+( ) False
+
+You can run any application from a specified location using a ..... statement.
+( ) Start.Application
+( ) System.UtilRun
+(x) SystemUtil.Run
+( ) SystemUtii.INVOKE
+
+When creating a programmatic description for an ActiveX test object and the relevant run-time object is windowless (has no window handle associated with it), you must add the ........ property to the description and set its value to True.
+(x) Window Handle
+( ) WindowLess
+( ) Winless
+( ) None
+
+You can compare the run-time value of a specified object property with the expected value of that property using either programmatic descriptions or user-defined functions.
+(x) True
+( ) False
+
+When you specify an application to open using the Record and Run Settings dialog box, QuickTest adds a SystemUtil.Run statement to your test.
+( ) True
+(x) False

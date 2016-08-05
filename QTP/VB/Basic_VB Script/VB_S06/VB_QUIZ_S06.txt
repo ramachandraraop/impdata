@@ -1,0 +1,131 @@
+What is the default value return by Lbound function in vb script?
+A. 0
+B. 1
+C. 2
+D. 3
+Answer : A
+
+
+
+In order to get the integer ASCII code of a character, we should use:
+A. Asc()
+B. Chr()
+C. Trim()
+D. Left()
+Answer :A
+
+Which functireturns the day of the month for given date
+A. Day
+B. Weekday
+C. WeekdayName
+D. None of the above 
+Answer : A
+
+Which function returns the month of the year
+A. MonthName
+B. Month
+c. Year
+D. None of the above 
+Answer : B
+ 
+Which function returns a number among 1 to 7 that represents the day of the week
+A. Day
+B. Weekday
+C. WeekdayName
+D. None of the above 
+Answer : B
+
+WeekdayName returns weekday name of the specified day of the week
+A. True
+B. False
+Answer : A
+
+Time function returns the current sysytem time along with date
+A. True
+B. False
+Answer : B
+ 
+Hour function returns a number 0 to 23 that represents the hour of the day
+A. True
+B. False
+Answer : A
+
+When StrComp function returns 1
+A. If string1 is greater than string2
+B. If string2 is greater than string2
+C. If string1 is equl to string2
+Answer : A
+
+When StrComp function returns 0
+A. If string1 is greater than string2
+B. If string2 is greater than string2
+C. If string1 is equl to string2
+Answer : c
+
+
+Which string function returns specified number of chracters from the given position 
+A. Mid 
+B. Left
+c. Right
+D. Trim
+Answer : A
+
+What is the output of the below three statements?
+msgbox strcomp("Rose","Lilly")
+msgbox strcomp("AxI","AXI",vbtextcompare)
+msgbox strcomp("Apple","Mango")
+A. 1,1,-1
+B. 1,1,1
+C. 1,0,-1
+D. 1,0,1
+Answer : C
+
+Now function returns what ?
+A. Date along with the system time
+B. System time
+c. System date
+D. None of the above
+Answer : A
+
+What is the output of the given program?
+str="welcome to vbscript"
+msgbox mid(left(right(str,8),4),1,2)
+A. welcome
+B. vbscript
+C. to
+D. vb
+Answer : D
+
+Which string function replaces a specified part of a string with another string a specified number of times?
+A. Replace()
+B. Trim()
+C. Space()
+D. Instr()
+Answer: C
+
+Which function returns the number of characters in a string?
+A. Right()
+B. Trim
+C. Left()
+D. Len
+Answer: D
+
+Consider the code given?
+StrText="this world is most beautiful"
+msgbox Right(StrText,9)
+On execution of this code the output would be:
+A. None
+B. beautiful
+C. most beautiful
+D. Beautiful
+Answer: B
+
+Consider the code given
+StrText="this world is most beautiful"
+msgbox Mid(StrText,6,5)
+On execution of this code the output would be:
+A. this world 
+B. world is
+C. None
+D. world
+Answer: D

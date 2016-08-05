@@ -1,0 +1,8 @@
+   1: This is an input file.
+   2: It is read by Program-13-1. It has
+   3: some lines longer than 25 characters.
+   4: 
+   5: It also has a few lines that are longer than 50 characters.
+   6: It is intersting to see how the program handles all of that.
+   7: 
+   8: Please read carefully.

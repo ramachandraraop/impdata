@@ -1,0 +1,37 @@
+Post-recovery test run options specifies
+(x) How to continue the run session after QTP identify the event
+() Errors while running
+() Recovery scenario during a run session
+() None
+
+QuickTest can detects an application crash and activate a defined recovery scenario to continue the run session.
+(x) True
+() False
+
+The file which is used for recovering from the run time errors known as
+(x) QRS
+() TSR
+() PNG
+() DAT
+
+The method that explicitly activates the recovery scenario mechanism is?
+(x) recovery.activate
+() enable
+() recovery.enable
+() activate
+
+The recovery mechanism does not handle triggers that occur in the last step of a test
+(x) True
+() False
+
+What are the available trigger event types?
+() Pop-up window, object state, VBScript event
+() Object state, VBScript event, Application crash
+() Pop-up window, object state, test run error, QTP crash
+(x) Pop-up window, object state, test run error, Application crash
+
+What is the first thing that must be defined in a Recovery Scenario?
+(x) Trigger
+() Recovery Operation
+() Recovery Scenario Name
+() The Function used in the scenario

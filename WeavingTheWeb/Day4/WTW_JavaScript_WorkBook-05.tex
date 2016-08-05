@@ -1,0 +1,139 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\begin{document}
+\section*{\center{Practice Exercise}}
+\subsection*{Review Questions}
+\begin{enumerate}\itemsep10pt
+\item How do you check validations in Javascript?\underline{\hspace{3cm}}.
+\item How do you get field value in Javascript?\underline{\hspace{3cm}}.
+\item How to validate a email-address, in form using Javascript?\underline{\hspace{3cm}}.
+\item In which part does the form validation occur?\underline{\hspace{3cm}}.
+\item What would happen if the data in the client had been wrong?\underline{\hspace{3cm}}.
+\item  What is the purpose of the basic validation?\underline{\hspace{3cm}}.
+\item What is the purpose of data format validation?\underline{\hspace{3cm}}.
+\item Which is the function that is called to validate a data?\underline{\hspace{3cm}}.
+\item The\underline{\hspace{3cm}}event can be used to call a function to check all fields that require validation before sending a form.
+\item The validation function must return a \texttt{true} if ready to submit or a \texttt{false} if not ready.(Yes / No)\underline{\hspace{3cm}}.
+\end{enumerate}
+
+\subsection*{Exercises}
+\begin{itemize}
+\item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+\item Then execute the programs and check your answers.
+\item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item[program 1]\
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    function validate() {
+        var name = document.getElementById(``custname'').value;
+        if (name == ``'') {
+             alert(``Your name is required'');
+             return false;
+        }
+    }
+</script>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What happens if name = ``''?
+\item What happens if name = ``WISE''?
+\item What happens if name = ``12@34\&5''?
+
+\end{enumerate}
+
+\item[Program 2]\
+\begin{lstlisting}
+<form method = ``post'' action = ``mailto:asokanp@tswise.com">
+    <p>Name: <input type = ``text'' size = ``65''></p>
+    <p>E-mail Address:  <input type = ``text'' size = ``65'' ></p>
+    <p>Telephone: <input type = ``text'' size = ``65''><br>
+        <input type = ``checkbox''> Please do not call me.</p>
+    <p> What can we help you with?
+        <select type = ``text'' value = ``''>
+            <option>  </option>
+            <option>Customer Service</option>
+            <option>Question</option>
+            <option>Comment</option>
+            <option>Consultation</option>
+            <option>Other</option>
+        </select></p>
+    <p>Comments:  <textarea cols=``55''>  </textarea></p>
+    <p><input type=``submit'' value=``Send'' name=``submit''><br>
+    <input type=``reset'' value=``Reset'' name=``reset''></p>
+</form>
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write javascript form validations for the above HTML code?
+\end{enumerate}
+\item [Program 3]\ 
+\begin{lstlisting}
+<script type = ``text/JavaScript'' language = ``JavaScript''>
+    if (email.value == ``'') {
+        window.alert(``Please enter a valid e-mail address.'');
+        email.focus();
+        return false;
+    }
+    if (email.value.indexOf(``@'', 0) < 0) {
+        window.alert(``Please enter a valid e-mail address.'');
+        email.focus();
+        return false;
+    }
+    if (email.value.indexOf(``.'', 0) < 0) {
+        window.alert(``Please enter a valid e-mail address.'');
+        email.focus();
+        return false;
+    }
+
+</script>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is happening in the above code snippet?
+\item What will happen if the value of email is abc@xyz.com?
+\item What \texttt{if} returns for the empty value of email? 
+\end{enumerate}
+\item [Program 4]\
+\begin{lstlisting}
+<body bgcolor = ``yellow''>
+        <form action = ``Response.html''>
+            Username: <input type = ``text'' name = ``uname''\>
+            Password: <input type = ``password'' name = ``pass''\>
+            Email-Id: <input type = ``text'' name = ``email''\>
+            Phone-No: <input type = ``text'' name = ``phno''\>
+            <input type = ``submit'' value = ``Submit''\>
+        </form> 
+    </body>
+\end{lstlisting}
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item Write form validations for the above HTML code using javascript?
+\end{enumerate}
+\end{description}
+
+\subsection*{Additional Exercises}
+\begin{enumerate}
+\item Write the JavaScript function \texttt{validate()} that generates a JavaScript alert message \texttt{``Your name is required''} and returns false if the Name text input field has not been filled in, otherwise it returns true.
+\item Add the JavaScript code to make Email and Website required fields and let Company and Telephone be optional fields.
+\item Write the JavaScript code that uses a regular expression to validate that the user name consists of only letters or the blank space character. Generate an alert message if the name is incorrect.
+\item Write the JavaScript code that uses a regular expression to validate that the Email consists aa@bb.cc where aa, bb, and cc are one or more alphanumeric characters.
+\item Write the JavaScript code that uses a regular expression to validate that the optional Telephone field is in the pattern ddd-ddd-dddd or ddd-dddd where d is any digit.
+\item Write the JavaScript code that uses a regular expression to validate that the Website field is in the pattern http://aaa.bbb.ccc where aaa, bbb, ccc, are one or more alphanumeric characters.
+\item Create a javascript function which returns true or false depending on the validation.
+\end{enumerate}
+\end{document}

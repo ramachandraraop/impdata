@@ -1,0 +1,9 @@
+VB Script required for establishing QTP connectivity with database .
+A. True
+B. False
+Answer: A
+
+ADO Record set object used to hold a set of records from a database table.
+A. True
+B. False
+Answer: A

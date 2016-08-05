@@ -1,0 +1,376 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{verbatim}
+\usepackage{fancyhdr}           % For header and footer
+\usepackage{multicol}           % Allows multicols in tables
+\usepackage{graphicx}           % For images
+\usepackage{xcolor}             % For hex colours
+\usepackage{colortbl}           % For coloured tables
+\usepackage{setspace}           % For line height
+\usepackage{seqsplit}           % Splits long words.
+\usepackage{amsmath}            % Symbols
+
+\graphicspath{{../Images/}}
+% Lengths and widths
+\addtolength{\textwidth}{5cm}
+\addtolength{\hoffset}{-1cm}
+\setlength{\headsep}{-12pt} % Reduce space between header and content
+\setlength{\headheight}{85pt} % If less, LaTeX automatically increases it
+\renewcommand{\footrulewidth}{2pt} % Remove footer line
+\renewcommand{\headrulewidth}{1pt} % Remove header line
+\renewcommand{\seqinsert}{\ifmmode\allowbreak\else\-\fi} % Hyphens in seqsplit
+% This two commands together give roughly
+% the right line height in the tables
+\renewcommand{\arraystretch}{1.3}
+\onehalfspacing
+
+
+
+% Commands
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}} % Shortcut for row colour
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{white}}#2}{#3}} % For coloured multi-cols
+\newcolumntype{x}[1]{>{\raggedright}p{#1}} % New column types for ragged-right paragraph columns
+\newcommand{\tn}{\tabularnewline} % Required as custom column type in use
+
+% Font and Colours
+\definecolor{HeadBackground}{HTML}{333333}
+\definecolor{FootBackground}{HTML}{666666}
+\definecolor{TextColor}{HTML}{333333}
+\definecolor{DarkBackground}{HTML}{6B8E23} %{FD1AA8}
+\definecolor{LightBackground}{HTML}{E8FED8} %D3FDC8
+\definecolor{tit}{HTML}{FF6600}
+\renewcommand{\familydefault}{\sfdefault}
+\color{TextColor}
+ \headsep = 25pt
+% Header and Footer
+\pagestyle{fancy}
+\usepackage[headheight=110pt]{geometry}
+\fancyhf{}% Clear header/footer
+
+\fancyhead[r]{\includegraphics[width = 4cm, height = 2cm]{TS-Logo.png}\hspace{0cm}}
+\fancyhead[l]{\Large{\bf{\textcolor{tit}{\textrm{Select and Aggregate Functions}}}}}
+
+\renewcommand{\headrulewidth}{0.4pt}% Default \headrulewidth is 0.4pt
+\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+
+\rfoot{Page \thepage}
+\lfoot{COPYRIGHT \textcopyright TALENTSPRINT, 2015. ALL RIGHTS RESERVED.}
+
+\begin{document}
+\vspace{5in}
+
+The SELECT statement is used to retrieve data from a table. SELECT statement has many optional elements that we can use. The order of FROM, WHERE, GROUP
+BY, HAVING, ORDER BY and LIMIT has to be in the sequence mentioned.
+To select all columns in a table you can use asterisk (*) notation instead of listing all column names in the SELECT statement.
+For example, if you need to query all the columns in ``employees'' table, you can use the following query\\
+\begin{verbatim}
+mysql> SELECT * FROM employees;
+\end{verbatim}
+SELECT statement also allows you to view partial data of a table by listing columns' name after the SELECT keyword. This is called \textbf{Projection}.\\
+
+For example if you need to view only ``firstname'', ``lastname'' and ``jobtitle'' of employee in the ``employees'' table, you can use the following query
+\begin{verbatim}
+ mysql> SELECT firstname, lastname, jobtitle FROM employees;
+\end{verbatim}
+
+\subsubsection*{Where Clause}
+WHERE clause of the SELECT statement enables you to select particular rows which match its conditions or search criteria. You use WHERE clause to filter the
+records based on a certain conditions.
+For example, you can find the details of president of company by using the following query
+\begin{verbatim}
+mysql> SELECT firstname, lastname, email FROM employees WHERE jobtitle = ``president''; 
+\end{verbatim}
+\subsubsection*{Distinct Clause}
+With DISTINCT clause, you can eliminate the duplicate records while displaying the result.
+For example, to find how many job titles of all employees in the employees table, you use DISTINCT keyword in SELECT statement as follows
+\begin{verbatim}
+ mysql> SELECT DISTINCT jobtitle FROM employees;
+mysql> SELECT DISTINCT (jobtitle) FROM employees;
+\end{verbatim}
+The DISTINCT clause can be applied with more than one column. In this case, the combinations of all columns are used to define the uniqueness of a record in the
+return result set.
+
+For example, to get all cities and states of customers in the customers table, we can use the following query
+
+\begin{verbatim} mysql> SELECT DISTINCT city, state FROM customers; \end{verbatim}
+
+\subsubsection*{ORDER BY Clause}
+The ORDER BY clause allows you to sort the result set on one or more columns in ascending or descending order. To sort the result set in ascending order you use ASC
+and in descending order you use DESC keywords. By default, the ORDER BY will sort the result set in ascending order.
+For example, to sort the name of employees by firstname, you can execute the following query\\
+\begin{verbatim} mysql>SELECT firstname, lastname, jobtitle FROM employees ORDER BY firstname; \end{verbatim}
+\subsubsection*{LIMIT Clause}
+MySQL supports a feature called LIMIT to allow you to constrain the returned records with SELECT statement.\\
+
+Let's say you have a database table with 10000 records and you want to get just first N records, you can use the following query\\
+
+\textbf{Syntax}\\
+\begin{verbatim} mysql> SELECT * FROM table LIMIT N; \end{verbatim}\\
+
+\textbf{Example}
+If you want to get the first five employees in the table employees, you can use the following query\\
+
+\begin{verbatim} mysql> SELECT firstname, lastname FROM employees LIMIT 5; \end{verbatim}\\
+
+The MySQL LIMIT also allows you to get a range of records where you decide starting record number and how many records you want to retrieve. \\
+
+\textbf{Syntax}\\
+\begin{verbatim} mysql> SELECT columns FROM table LIMIT S, N; \end{verbatim}\\
+NOTE In the query above, S is the starting record index. MySQL specifies that the first record starts with 0. N is the number of records you want to select.
+
+\textbf{Example}
+Now if you want to get five employees from employee number 10 you can use MySQL LIMIT with offset as follows\\
+\begin{verbatim} mysql> SELECT firstname, lastname FROM employees LIMIT 10, 5; \end{verbatim}
+
+\subsubsection*{IN Operator}
+SQL IN allows you to select values which match any one of a list of values. The usage of SQL IN is as follows\\
+\textbf{Syntax}\\
+\begin{verbatim}SELECT columnlist FROM tablename WHERE column IN (``listitem1'',``listitem2''……); \end{verbatim}\\
+
+\textbf{Example}
+Suppose if you want to find out all offices which are located in US and France, you can perform the following query\\
+
+\begin{verbatim} mysql> SELECT officeCode, city, phone FROM offices WHERE country IN (`USA', `France'); \end{verbatim}\\
+
+\textbf{Example}
+To get all countries which are not located in USA or France, we can use NOT IN in the where clause as follows\\
+
+\begin{verbatim} mysql> SELECT officeCode, city, phone FROM offices WHERE country NOT IN (`USA', `France'); \end{verbatim}\\
+
+\subsubsection*{LIKE Operator}
+MySQL provides LIKE operator in SQL standard. The MySQL LIKE operator is commonly used to select data based on patterns matching.\\
+MySQL provides you two wildcard characters for using with LIKE\\
+
+The Percentage (\%) wildcard allows you to match any string of zero or more characters.\\
+Underscore ({Example}) allows you to match any single character.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT * from table where column LIKE PATTERN; \end{verbatim}\\
+
+\textbf{Example}
+Suppose you want to search for employee in employees table who has first name starting with character `a', you can do it as follows\\
+
+\begin{verbatim} mysql> SELECT * FROM employees WHERE firstname LIKE `a%'; \end{verbatim}
+
+\subsubsection*{Functions}
+MySQL has many built-in functions for performing calculations on data as follows\\
+
+\subsubsection*{Aggregrate Functions}
+
+Aggregate functions return a single value, calculated from values in a column.\\
+
+\subsubsection*{AVG():} The AVG(): function returns the average value of a numeric column.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT AVG(columnname) FROM tablename; \end{verbatim}\\
+
+\textbf{Example}
+\begin{verbatim}sql>SELECT AVG(SAL) from employees; \end{verbatim}\\
+
+\subsubsection*{COUNT():} The COUNT(): function returns the number of rows that matches a specified criteria.\\
+
+textbf{Syntax}\\
+\begin{verbatim}SELECT COUNT(columnname) FROM tablename; \end{verbatim}\\
+The COUNT(columnname) function returns the number of values (NULL values will not be counted) of the specified column\\
+
+textbf{Example}
+\begin{verbatim} mysql> SELECT COUNT(empno) FROM employees; \end{verbatim}
+
+\subsubsection*{MAX():} The MAX(): function returns the largest value of the selected column.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT MAX(columnname) FROM tablename; \end{verbatim}\\
+
+\textbf{Example}
+\begin{verbatim}sql>SELECT MAX(sal) FROM employees; \end{verbatim}\\
+
+\subsubsection*{MIN():} The MIN(): function returns the smallest value of the selected column.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT MIN(columnname) FROM tablename; \end{verbatim}\\
+
+\textbf{Example}
+\begin{verbatim}sql>SELECT MIN(sal) FROM employees; \end{verbatim}\\
+
+\subsubsection*{SUM():} The SUM(): function returns the total sum of a numeric column.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT SUM(columnname) FROM tablename; \end{verbatim}\\
+
+\textbf{Example}
+\begin{verbatim}sql>SELECT SUM(sal) FROM employees; \end{verbatim}\\
+
+\subsubsection*{ROUND():} The ROUND(): function rounds a numeric field to the number of decimals specified.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT ROUND(columnname,number) FROM tablename; \end{verbatim}\\
+
+\textbf{Example}
+\begin{verbatim} mysql> select ROUND(sal,2) from employees; \end{verbatim}\\
+
+\subsubsection*{TRUNCATE():} The TRUNCATE(): truncates a numeric field to the number of decimals specified.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT TRUNCATE(columnname,number) FROM tablename; \end{verbatim}
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT TRUNCATE(sal,2) from employees; \end{verbatim}
+
+\subsubsection*{SCALAR Functions}
+
+\subsubsection*{UCASE():} Converts a field to upper case.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT UCASE(columnname) FROM tablename; \end{verbatim}\\
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT UCASE(ename) from employees; \end{verbatim}\\
+
+\subsubsection*{LCASE():} Converts a field to lower case.\\
+
+\textbf{Syntax}
+\begin{verbatim}SELECT LCASE(columnname) FROM tablename; \end{verbatim}
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT LCASE(ename) FROM employees; \end{verbatim}
+
+\subsubsection*{LENGTH():} Returns of the length of the text field.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT LENGTH(columnname) FROM tablename; \end{verbatim}\\
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT LCASE(ename) FROM employees; \end{verbatim}\\
+
+\subsubsection*{MID():} Extracts character from a text field.\\
+
+\textbf{Syntax}\\
+\begin{verbatim}SELECT MID(column,pos) from tablename; \end{verbatim}
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT MID(ename,3) FROM emp WHERE ename='SANTOSH'; \end{verbatim}\\
+Note Above specified 3 is the starting character and ending character.\\
+
+\begin{verbatim} mysql> SELECT MID(ename,1,3) FROM emp WHERE ename='SANTOSH'; \end{verbatim}
+Note Above specified 1 is the starting character and 3 is the ending character.
+\subsubsection*{REPLACE():} Returns the string with all occurrences 
+                       of the string from{Example}str replaced by the string to{Example}str.
+\textbf{Syntax}
+\begin{verbatim}SELECT REPLACE(str,from{Example}str,to_str) FROM tablename; \end{verbatim}
+
+\textbf{Example}
+\begin{verbatim}
+\begin{verbatim} mysql> SELECT REPLACE(ename,'a','A') FROM employee;
+\end{verbatim}
+
+\subsubsection*{DATE Functions}
+
+\subsubsection*{NOW():} Returns the current date and time.\\
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT NOW(): FROM dual; \end{verbatim}
+
+\subsubsection*{CURDATE():} Returns the current date.\\
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT CURDATE(): FROM dual; \end{verbatim}\\
+
+\subsubsection*{CURTIME():} Returns the current time.\\
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT CURTIME(): FROM dual; \end{verbatim}\\
+
+\subsubsection*{EXTRACT():} Extracts a single part of a date/time.\\
+
+\textbf{Example}
+\begin{verbatim}
+ mysql> SELECT EXTRACT(year FROM now():) FROM dual; 
+ mysql> SELECT EXTRACT(month FROM now():) FROM dual; 
+ mysql> SELECT EXTRACT(day FROM now():) FROM dual; 
+ mysql> SELECT EXTRACT(hour FROM now():) FROM dual;
+ mysql> SELECT EXTRACT(minute FROM now():) FROM dual; 
+ mysql> SELECT EXTRACT(second FROM now():) FROM dual; \end{verbatim}
+
+\subsubsection*{DATE\_ADD():}  Adds a specified time interval to a date.\\
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT DATE_ADD(NOW():,INTERVAL 10 DAY) FROM dual; \end{verbatim}
+
+\subsubsection*{DATE\_SUB():} Subtracts a specified time interval from a date.\\
+
+\textbf{Example}
+\begin{verbatim} mysql> SELECT DATE_SUB(NOW():,INTERVAL 10 DAY) FROM dual; \end{verbatim}
+
+\subsubsection*{DATEDIFF():} Returns the number of days between two dates.
+
+\textbf{Example}
+\begin{verbatim} 
+ mysql> SELECT DATEDIFF(NOW():,`20130612') FROM dual; 
+ mysql> SELECT DATEDIFF(NOW():,`20000612') FROM dual; 
+ mysql> SELECT (DATEDIFF(NOW():,`20000612'))/365 FROM dual; \end{verbatim}
+
+\subsubsection*{DATE\_FORMAT():} Specifies the format for date and time.\\
+\begin{tabular}{||l|l||}\hline
+
+\multicolumn{2}{c}{Formats}\\\hline\hline
+
+Format         & Description\\\hline
+\%M	       & Month Name \\
+\%m            & Month, in Numeric  \\ 
+\%D	       & Day of Month Numeric(th) \\
+\%d           & Day of Month numberic\\
+\%Y           & 4 Digits
+\\\hline
+\end{tabular}
+
+\textbf{Example}
+
+\begin{verbatim}
+ mysql> SELECT DATE_FORMAT(NOW():,`%d%m%y') FROM dual; 
+ mysql> SELECT DATE_FORMAT(NOW():,`%D%M%Y') FROM dual; \end{verbatim}
+\subsubsection*{ORDER BY Clause}
+The ORDER BY clause allows you to sort the result set on one or more columns in ascending or descending order. To sort the result set in ascending order you use ASC
+and in descending order you use DESC keywords. By default, the ORDER BY will sort the result set in ascending order.
+For example, to sort the name of employees by firstname, you can execute the following query:
+\begin{verbatim}
+ mysql>SELECT firstname, lastname, jobtitle FROM employees ORDER BY firstname;
+\end{verbatim}
+
+\subsubsection*{GROUP BY Clause}
+The MySQL GROUP BY clause is used with SQL SELECT statement to group selected records into a set of summary records by the one or more column's value or expression.\\
+The MySQL GROUP BY clause must appear after the WHERE clause or FROM clause if WHERE clause is omitted of the SQL SELECT statement.
+
+\textbf{Syntax}
+\begin{verbatim}SELECT columname(s) from tablename GROUP BY column(s);\end{verbatim}
+
+\textbf{Example}
+
+Let's say if you want to know how many orders in each status group you can use the COUNT function as follows:
+
+\begin{verbatim}mysql> SELECT status, count (*) FROM orders GROUP BY status;\end{verbatim}
+
+If you want to see the result of the query above in the descending order, you can do it as follows:
+
+\begin{verbatim}mysql> SELECT status, count (*) FROM orders GROUP BY status DESC;\end{verbatim}
+
+\subsubsection*{HAVING Clause}
+The HAVING clause is an optional part of and used only with the SQL SELECT statement. The HAVING clause specifies a filter condition for a group of
+record or an aggregate.
+
+The HAVING is often used with GROUP BY clause. When using with GROUP BY clause, you can apply filter condition of the HAVING clause
+only to the columns appear in the GROUP BY clause.
+
+\textbf{NOTE}
+If the GROUP BY clause is omitted, the HAVING clause will behave like a WHERE clause.\\
+HAVING clause applies to groups as a whole while the WHERE clause applies to individual rows.
+
+\textbf{Example}\\
+What order has total value greater than 1000. In this case, you need to use the MySQL HAVING clause on aggregate to answer that
+question.
+
+\begin{verbatim}
+mysql> SELECT ordernumber, SUM (price) AS total FROM orderdetails 
+       GROUP BY ordernumber HAVING total > 1000; \end{verbatim}
+
+
+\end{document}

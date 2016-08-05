@@ -1,0 +1,292 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{Object Oriented Programming(OOP) Basics}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item What is class?
+
+    \AnswerBox 
+
+\item What is local variable?
+    
+    \AnswerBox
+
+\item What is instance variable?
+    
+    \AnswerBox
+
+\item What is encapsulation?
+    
+    \AnswerBox
+
+\item What is object?
+    
+    \AnswerBox
+
+\item How to define a constant variable in Java?
+
+    \AnswerBox
+
+\item What is the return type of the main() method?  \underline{\hspace{4cm}}
+\item Why is the main() method declared static? \underline{\hspace{4cm}}
+\item What is the arguement of main() method? \underline{\hspace{4cm}}
+
+
+\end{enumerate}
+\section*{State whether the following are True/False}
+\begin{enumerate}\itemsep2pt
+        \item A class consists of only local variables [   ]        
+        \item A method declaration must always contain the access level. [    ]
+        \item Encapsulation means the same thing as information hiding. [    ]
+        \item If a Java source file is compiled successfully, the compilation produces one or more files with a java extension. [    ]
+        \item A main method should be compulsorily declared in all java classes. [   ]       
+        \item The order of public and static declaration matters in main  method. [ ]
+\end{enumerate}
+\section*{Multiple Choice Questions}
+
+\begin{enumerate}
+    \item Which of these operators is used to allocate memory for an object?
+        \begin{enumerate}
+            \item malloc
+            \item alloc
+            \item new
+            \item give
+        \end{enumerate}
+
+\item Which of the following package stores all the simple data types in java?
+ \begin{enumerate}
+            \item lang
+            \item java
+            \item util
+            \item java.packages
+        \end{enumerate}
+        
+\item Which of these statement is incorrect?
+\begin{enumerate}
+\item All object of a class are allotted memory for the all the variables defined in the class.
+\item If a function is defined public it can be accessed by object of other class by inheritation.
+\item main() method must be made public.
+\item All object of a class are allotted memory for the methods defined in the class.
+\end{enumerate}
+
+\item Which of the following is a valid declaration of an object of class Box?
+\begin{enumerate}
+\item Box obj = new Box();
+\item Box obj = new Box;
+\item obj = new Box();
+\item new Box obj;
+    \end{enumerate}
+    
+\item  Which of these class is superclass of all other classes?
+    \begin{enumerate}
+        \item Math
+        \item Process
+        \item System
+        \item Object
+    \end{enumerate}
+    
+\item  Which of these method of Object class can generate duplicate copy of the object on which it is called?
+    \begin{enumerate}
+        \item clone()
+        \item copy()
+        \item duplicate()
+        \item dito()
+    \end{enumerate}
+\end{enumerate}
+\section*{Exercises}
+\begin{itemize}
+    \item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+\item [Program 1]\
+\begin{lstlisting}
+public final static void main(String[] args) {
+    double d = 10.0 / -0;
+    if(d == Double.POSITIVE_INFINITY)
+        System.out.println(``Positive infinity'');
+    else
+        System.out.println(``Negative infinity'');
+}
+
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the result of trying to compile and run the above code.
+\end{enumerate}
+
+\item [Program 2]\
+\begin{lstlisting}
+void aMethod() {
+    float f = (1 / 4) * 10;
+    int i = Math.round(f);
+    System.out.println(i);
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What is the result that will be printed out ?
+    \end{enumerate}
+
+
+\item [Program 3]\
+    \begin{lstlisting}
+     int i = 0XCAFE;
+     boolean b = 0;
+     char c    = `A';
+     byte b    = 128;
+     char c    = ``A'';
+     \end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item Which of the above declarations are valid?
+\end{enumerate}
+\item [Program 4] \
+\begin{lstlisting}
+class Box {
+    int width;
+    int height;
+    int length;
+} 
+class MainClass {
+    public static void main(String args[]) {        
+        Box obj = new Box();
+        obj.width = 10;
+        obj.height = 2;
+        obj.length = 10;
+        int result = obj.width * obj.height * obj.length; 
+        System.out.print(result);
+    } 
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the program?
+\end{enumerate}
+
+\item [Program 5] \
+\begin{lstlisting}
+public class Test {    
+    public void main(String[] args) {  
+        System.out.println(``Hello'' + args[0]); 
+    } 
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the program, if this code is executed with the command line by passing argument as world.
+\end{enumerate}
+
+\item [Program 6] \
+\begin{lstlisting}
+public class Test {
+    public static void main(String [] args) {
+        int [] [] [] x = new int [3] [] [];
+        int i, j;
+        x[0] = new int[4][];
+        x[1] = new int[2][];
+        x[2] = new int[5][];
+        for (i = 0; i < x.length; i++) {
+            for (j = 0; j < x[i].length; j++) {
+                x[i][j] = new int [i + j + 1];
+                System.out.println(``size = '' + x[i][j].length);
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item In the given program, how many lines of output will be produced?
+\end{enumerate}
+
+\item [Program 7]\
+\begin{lstlisting}
+public class Test {
+    public static void main(String[] args) {
+        Float f = new Float(32D);    
+        System.out.println(f);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item  What is the result of attempting to compile and run above code?
+    \end{enumerate}
+
+\item [Program 8] \
+\begin{lstlisting}
+public class ObjComp {
+    public static void main(String [] args) {
+        int result = 0;
+        ObjComp oc = new ObjComp();
+        Object o = oc;
+        if (o == oc)  
+            result = 1;
+        if (o != oc)  
+            result = result + 10;
+        if (o.equals(oc))  
+            result = result + 100;
+        if (oc.equals(o))  
+            result = result + 1000;
+        System.out.println(``result = '' + result);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the program?
+\end{enumerate}
+
+
+\end{description}
+\end{document}
+
+

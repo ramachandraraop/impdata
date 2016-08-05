@@ -1,0 +1,47 @@
+1. How many different types of default timers in JMeter?
+a) 3
+b) 6
+c) 9
+d) 12
+
+Ans: C
+
+2. What are the different types of default timers in JMeter?
+a) Test Action
+b) Stop timer
+c) End timer 
+d) None
+
+Ans: D
+
+3. Which is the third party plugin of timer in JMeter?
+a) Uniform Random Timer
+b) Synchronizing Timer
+c) Throughput Shaping Timer
+d) Gaussian Random Timer
+
+Ans: C
+
+4. Which Timer is to block threads until X number of threads have been blocked, and then they are all released at once.
+a) Uniform Random Timer
+b) Synchronizing Timer
+c) Constant Timer
+d) Throughput Shaping Timer
+
+Ans: B
+
+5. Which timer has each thread pause for the same amount of time between requests?
+a) Uniform Random Timer
+b) Synchronizing Timer
+c) Constant Timer
+d) Gaussian Random Timer
+
+Ans: D
+
+6. Which timer is not used in JMeter?
+a) Uniform Random Timer
+b) Gaussian Random Timer
+c) Constant Timer
+d) Continue Timer
+
+Ans: D

@@ -1,0 +1,82 @@
+1. Dim Preserve arrData(1) is this statement is true or false?
+A. True
+B. False
+Answer :B
+
+2. Is array index value can be changed in vb script?
+A. Yes
+B. No
+Answer :B
+
+3. If the size of array may be 3 then how many elements that we can store in array?
+A. 3
+B. 4
+C. 5
+D. 2
+Answer :B
+
+4. What is the use of preserve statement in VB Script?
+A. To create a dynamic array
+B. To remove the elements from an array
+C. To create a static array
+D. To restore the elements into a new array
+Answer :D
+
+5. What is the use of Redim statement in VB Script?
+A. To create a dynamic array
+B. To remove the elements from an array
+C. To create a static array
+D. To restore the elements into a new array
+Answer :A
+
+
+6. Which array function Returns a Boolean value that indicates whether a specified variable is an array or not?
+A. Join
+B. Split
+c. Array
+D. Isarray
+Answer : D
+
+7. Number of dimensions that we can have in array?
+A. 10
+B. 3
+c. 5
+D. 60
+Answer : D
+
+
+8. What is the use of array function Ubound() in VB Script?
+A. None of the above .
+B. Returns the largest subscript for the    indicated dimension of an array 
+C. Returns the smallest subscript for the    indicated dimension of an array
+D. Returns a zero-based, one-dimensional array that contains a specified number of sub strings.
+Answer: B
+
+
+9. An array is a variable that allow you to store?
+A. Multiple values in a single varialble
+B. Single value in a single variable
+C. None
+D. Multiple values in multiple variable
+Answer: A
+
+10. How can we declare an array?
+A. Using Redim statement
+B. Using Dim statement
+C. Using Dim statement and Array function
+D. Using Array function
+Answer: C
+
+11. Which function returns a string which consisit of number of sub strings in an array?
+A. Ubound()
+B. Lbound()
+C. Split()
+D. Join()
+Answer: D
+
+12. Which keyword should be used to restore the elements of an array after resizing?
+A. Preserve
+B. Dim
+C. Redim
+D. Next
+Answer: A

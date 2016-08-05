@@ -1,0 +1,376 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{Collection Framework}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+
+\item What does \texttt{get(int index)} method define by \texttt{List} interface do?\underline{\hspace{4cm}}
+\item Collection stores only\underline{\hspace{3cm}}
+\item \texttt{TreeSet} maintains\underline{\hspace{3cm}}order.
+\item What is the data structure that a \texttt{Set} uses to store its elements?\underline{\hspace{3cm}}
+\item What type of \texttt{Map} is used with synchronized access?\underline{\hspace{3cm}}
+\item Which method do we need to implement the \texttt{java.lang.Comparable} interface?\underline{\hspace{3cm}}
+\item How many ways does the \texttt{java.lang.Comparable} interface allow us to sort a collection?\underline{\hspace{3cm}}
+\item What is returned from both the \texttt{compare() and compareTo()} methods?\underline{\hspace{3cm}}
+\item Name the collection interface implemented by the \texttt{Vector} class\underline{\hspace{3cm}}
+\item What is the name of collection interface used to maintain unique elements\underline{\hspace{3cm}}
+\item Name the collection interface implemented by the \texttt{HashSet} class\underline{\hspace{3cm}}
+\item Which collection class allows you to access its elements by associating a key with an element's value, and provides synchronization?\underline{\hspace{3cm}}
+\end{enumerate}
+\section*{State whether the following are True/False}
+\begin{enumerate}\itemsep2pt
+    \item The elements in the collection \texttt{java.util.HashSet} are guaranteed to be unique. [\hspace{1cm}]
+    \item The \texttt{ListIterator} interface extends both the \texttt{List} and \texttt{Iterator} interfaces. [\hspace{1cm}]
+    \item The \texttt{ListIterator} interface provides forward and backward iteration capabilities.[\hspace{1cm}]
+    \item The elements in the collection \texttt{java.util.ArrayList} are ordered.[\hspace{1cm}]
+    \item \texttt{TreeSet} stores elements sorted ascending order. [\hspace{1cm}]
+    \item \texttt{ArrayList} is not synchronized. [\hspace{1cm}]
+    \item \texttt{HashMap} is synchronized. [\hspace{1cm}]
+    \item \texttt{Set} allows at most one null element. [\hspace{1cm}]
+    \item There are no direct implementation of the \texttt{Collection$<$E$>$} interface. [\hspace{1cm}]
+    \item If two arrays hold the same elements they are considered equal by the \texttt{Arrays.equals()} method. [\hspace{1cm}]
+    \item \texttt{Map} interface is derived from the \texttt{Collection} interface. [\hspace{1cm}]
+\end{enumerate}
+\section*{Multiple Choice Questions}
+\begin{enumerate}
+    \item Which of these packages contain all the collection classes?
+    \begin{enumerate}
+	\item java.lang
+	\item java.util
+	\item java.net
+	\item java.awt
+    \end{enumerate}
+    \item Which interface does \texttt{java.util.Hashtable} implement?
+    \begin{enumerate}
+	\item java.util.Map
+	\item java.util.List
+        \item java.util.HashTable
+	\item java.util.Collection
+    \end{enumerate}
+    \item Which interface provides the capability to store objects using a key-value pair?
+    \begin{enumerate}
+	\item java.util.Map
+        \item java.util.Set
+        \item java.util.List	
+	\item java.util.Collection
+    \end{enumerate}
+    \item Which of these classes is not part of collection framework?
+    \begin{enumerate}
+	\item Map
+	\item Array
+	\item Stack
+	\item Queue
+    \end{enumerate}
+    \item Which of these interface is not a part of collection framework?
+    \begin{enumerate}
+	\item List
+	\item Set
+	\item SortedMap
+	\item SortedList
+    \end{enumerate}
+    \item Which of the following method is used to return a \texttt{Set} that contains the entries in a \texttt{Map}?
+    \begin{enumerate}    
+        \item keySet()
+	\item getSet()
+	\item entrySet()
+	\item getAll()
+    \end{enumerate}
+    \item Which interface is used to traverse a list in both forward and backword direction?
+    \begin{enumerate}
+	\item Iterator
+	\item ListIterator
+	\item Enumeration
+	\item None of these
+    \end{enumerate}
+    \item Which of these is Basic interface that all other interfaces inherits?
+    \begin{enumerate}    
+	\item Set
+	\item Array
+	\item List
+	\item Collection
+    \end{enumerate}
+    \item Which of these classes implement the collection interface \texttt{SortedMap}.
+    \begin{enumerate}
+	\item HashMap
+    	\item Hashtable
+	\item TreeMap
+	\item HashSet
+    \end{enumerate}
+    \item  What type of collection would we use if we wanted no duplicates?
+    \begin{enumerate}
+    	\item List
+    	\item Map
+    	\item Queue
+    	\item Set
+    \end{enumerate}
+    \item  What type of List is used with synchronized access?
+    \begin{enumerate}
+    	\item ArrayList$<$E$>$
+    	\item Vector$<$E$>$
+    	\item LinkedList$<$E$>$
+    \end{enumerate}
+    \item What type of collection does not extend the Collection$<$E$>$ interface?
+    \begin{enumerate}
+    	\item List
+    	\item Map
+    	\item Queue
+    	\item Set
+    \end{enumerate}
+    \item What type of collections are Lists?
+    \begin{enumerate}
+    	\item ordered
+    	\item sorted
+    	\item unordered
+    \end{enumerate}
+    \item  Which List class is synchronized?
+    \begin{enumerate}
+    	\item ArrayList
+    	\item LinkedList
+    	\item Vector
+    \end{enumerate}
+    \item What type of variables can we use with the \texttt{java.util.Collection}s Class?
+    \begin{enumerate}
+    	\item primitive variables
+    	\item reference variables
+    	\item neither
+    	\item both
+    \end{enumerate}
+    \item  Which interface would we use to sort a class that can't be modified?
+    \begin{enumerate}
+    	\item java.lang.Comparable
+    	\item java.util.Comparator
+    \end{enumerate}
+\end{enumerate}
+\section*{Exercises}
+\begin{itemize}
+    \item Write the expected output, or compiler errors if any, for each of the following programs in the box provided below each program.
+    \item Then execute the programs and check your answers.
+    \item Then answer the questions given below.
+\end{itemize}
+\begin{description}
+    \item [Program 1] \
+\begin{lstlisting}
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+public class Test{
+    public static void main(String[] args) {
+        Set s = new HashSet();
+        s.add(``A''); // Line 1
+        s.add(new Foo()); // Line 2
+        Set t = new TreeSet();
+        t.add(``A''); // Line 3
+        t.add(new Foo()); // Line 4
+    }
+}
+class Foo {
+
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item The code will throw a runtime exception, which line causes the exception?
+ \end{enumerate}
+
+\item [Program 2] \
+\begin{lstlisting}
+import java.util.SortedSet;
+import java.util.TreeSet;
+public class Test {
+    public static void main(String[] args) {
+        TreeSet<Integer> map = new TreeSet<Integer>();
+        map.add(1);
+        map.add(2);
+        map.add(4);
+        map.add(7);
+        SortedSet<Integer> smap = map.subSet(2,7);
+        map.add(5);
+        map.add(9);
+        System.out.println(smap);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the result of compiling and running the code?
+\end{enumerate}
+
+\item [Program 3] \
+\begin{lstlisting}
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.add(1);
+        queue.add(3);
+        queue.add(4);
+        queue.add(7);
+        // insert code here
+        System.out.println(queue);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+        \item What can be inserted, independently, at line // insert code here to cause the program to print out : [3, 4, 7, 0]
+    \end{enumerate}
+
+\item [Program 4] \
+\begin{lstlisting}
+import java.util.HashSet;
+import java.util.Set;
+public class Test{
+    public static void main(String[] args) {
+        Set<Human> humans = new HashSet<Human>();
+        humans.add(new Human(13));
+        humans.add(new Human(33));
+        humans.add(new Human(21));
+        humans.add(new Human(21));
+        System.out.print(humans.size()+`` '');
+        System.out.print(humans);
+    }
+}
+class Human implements Comparable<Human> {
+    Integer age;
+    public Human(int age) {
+        this.age = age;
+    }
+    public int compareTo(Human h) {
+        return h.age.compareTo(this.age);
+    }
+    public String toString() {
+        return ``''+this.age;
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item What is the result of compiling and running the code?
+    \end{enumerate}
+
+\item [Program 5] \
+\begin{lstlisting}
+import java.util.*; 
+class Test {
+    public static void main (String[] args) {
+        Object i = new ArrayList().iterator(); 
+        System.out.print((i instanceof List)+","); 
+        System.out.print((i instanceof Iterator)+","); 
+        System.out.print(i instanceof ListIterator); 
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What will be the output of the program?
+\end{enumerate}
+
+\item [Program 6] \
+\begin{lstlisting}
+public static void main(String[] args) {
+    Object obj = new Object() {
+        public int hashCode() {
+            return 42;
+        }
+    }; 
+    System.out.println(obj.hashCode()); 
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+ \item What will be the output of the program?
+    \end{enumerate}
+
+\item [Program 7] \
+\begin{lstlisting}
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Integer int = new Integer(10);
+        Vector vec = new Vector();
+        LinkedList list = new LinkedList();
+        vec.add(int);
+        list.add(int);
+        if(vec.equals(list)) 
+            System.out.println(``equal'');
+        else  
+            System.out.println(``not equal'');
+                                                           }
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the result of attempting to compile and run the code?
+\end{enumerate}
+
+\item [Program 8] \
+\begin{lstlisting}
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Integer num1 = new Integer(4);
+        Integer num2 = new Integer(8);
+        Integer num3 = new Integer(4);
+        HashSet hs = new HashSet();
+        hs.add(num1);
+        hs.add(num2);
+        hs.add(num3); 
+        System.out.println(hs);
+    }
+}
+\end{lstlisting}
+
+\AnswerBox
+
+
+\begin{enumerate}[label=\bfseries Q\arabic*:]\itemsep10pt
+\item What is the expected output of the above code?
+    \end{enumerate}
+
+\end{description}
+\end{document}
+

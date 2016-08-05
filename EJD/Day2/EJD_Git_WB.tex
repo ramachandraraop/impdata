@@ -1,0 +1,143 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{graphicx}
+
+\usepackage{listings}
+
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+
+
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{../Images/TS-Logo.png}}
+
+
+\begin{document}
+
+
+
+\centerline{\huge{ \textbf{Introduction to VCS and GIT}}}
+
+\vspace{1pc}
+
+\centerline{\huge{ \textbf{ Workbook}}}
+
+\section*{Answer the Following}
+\begin{enumerate}\itemsep10pt
+\item  What is GIT?
+
+\AnswerBox
+\item What is a repository in GIT?
+
+\AnswerBox
+\item What is the command you can use to write a commit message?
+
+\AnswerBox
+\item What are the advantages of using GIT?
+
+\AnswerBox
+\item What language is used in GIT?
+
+\AnswerBox
+\item What is the function of ‘GIT PUSH’ in GIT?
+
+\AnswerBox
+\item What is ``Staging Area'' or ``Index'' in GIT? 
+
+\AnswerBox
+\item What is the function of `git clone'?
+
+\AnswerBox
+\item What is the function of `git config'?
+
+\AnswerBox
+\item How can you create a repository in Git?
+
+\AnswerBox
+\item What is the difference between `git remote' and `git clone'?
+
+\AnswerBox
+\item What is the function of `git rm'?
+
+\AnswerBox
+\item What is the use of `git log'?
+
+\AnswerBox
+\item What `git add' is used for?
+
+\AnswerBox
+\end{enumerate}
+\section*{State whether the following are True/False}
+\begin{enumerate}\itemsep2pt
+\item Version Control System keeps track of all old versions of files. [   ]
+\item CVCS is independent on access to the server. [   ]
+\item CVCS can be slower because every command connects to the server. [   ]
+\item A git repository contains set of references to commit objects, called heads. [   ]
+\item A head is simply a reference to a commit object. [   ]
+\item The `git init' creates an empty git repository on the desktop. [  ]
+\item Git internally holds a thing called the index, which is a snapshot of
+your project files. [   ]
+\item The `git clone' command makes a Git repository copy from a remote
+source. [   ]
+\end{enumerate}
+\section*{Multiple Choice Questions}
+\begin{enumerate}
+    \item When using the git version control system, the concepts of working directory, index, and commit(s) are ubiquitous. Which of the following statements is correct?
+    \begin{enumerate}
+	\item A commit is a snapshot of any number of files. Thus, to save the current version of your working directory with git, all you need to do is to create a new commit.
+	\item  As its name indicates, the index is simply a list of all previous snapshots. Thus, to save the current version of your working directory with git, all you need to do is to add it to the index.
+	\item Saving the current version of your working directory with git requires two steps: add the files to the index, then create a snapshot based on the files listed in the index.
+	\item Saving the current version of your working directory with git requires two steps: create a snapshot of the files in the working directory, then add this snapshot to the index.
+    \end{enumerate}
+    \item Your working directory contains three files, named file1, file2, and file3. Which of the following commands will save the current version of your working directory with git.
+    \begin{enumerate}
+    \item git init file1 file2 file3; git commit
+    \item git init; git add file1 file2 file3
+    \item git add file1 file2 file3; git commit
+    \item git commit file1 file2 file3; git add
+    \end{enumerate}
+    \item  If you need to remove a file permanentaly from Git repository what command will you use?
+    \begin{enumerate}
+    \item Simply delete the file
+    \item git rm \textless file-name\textgreater
+    \item rm \textless file-name\textgreater
+    \item remove \textless file-name\textgreater
+    \end{enumerate}
+    \item I want to experiment with branching, compare, and merge, and I want this to be private. How do I create the repository?
+    \begin{enumerate}
+    \item Clone a remote repository
+    \item Create a repository on Github
+    \item Create a local repository
+    \end{enumerate}
+    \item  When creating a local repository what location on disk should never be used ?
+    \begin{enumerate}
+    \item A shared folder
+    \item A folder with no group access
+    \item A folder under the Eclipse workspace
+    \end{enumerate}
+    \item  When should you commit changes from a branch to a product's master branch?
+    \begin{enumerate}
+    \item Whenever an error is found and a fix is made
+    \item After review and testing
+    \item Never, all work is done in task-based branches
+    \end{enumerate}
+    \item  When do you use the option to clone a repository?
+    \begin{enumerate}
+    \item When you need to create a new local repository from a shared repository
+    \item When you want to use xtUML editor to view a model in a shared repository
+    \item Before creating a branch to perform a task in
+    \item All of the above
+    \end{enumerate}
+    
+    
+\end{enumerate}
+\end{document}
+

@@ -1,0 +1,8 @@
+digraph if {
+    a[shape=diamond, label="Condition"];
+    b[shape=rectangle,label="Statements\ninside if"];
+    c[shape=rectangle,label="Statements\nafter if"];
+    a->b[label="True"];
+    a->c[label="False"];
+    b->c;
+    };

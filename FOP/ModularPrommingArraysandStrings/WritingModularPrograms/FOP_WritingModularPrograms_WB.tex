@@ -1,0 +1,95 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=Java,numbers=left,numberstyle=\tiny,numbersep=10pt,showstringspaces=false}
+\usepackage{array}
+\usepackage{enumitem}
+\def\AnswerBox{\fbox{\begin{minipage}{4in}\hfill\vspace{0.5in}\end{minipage}}}
+\def\Answerbox{\fbox{\begin{minipage}{4in}\hfill\vspace{1.0in}\end{minipage}}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\includegraphics[scale=.5]{TS-Logo.png}}
+\begin{document}
+\centerline{\huge{ \textbf{Writing Modular Programs}}}
+\vspace{1pc}
+\centerline{\Large{ \textbf{Workbook}}}
+\section*{Answer the following}
+
+\begin{enumerate}
+\item What would be the output of the below code?
+\begin{lstlisting}
+public class Method_A {
+    public static int methodA(int x, int y) {
+        return (x + y);
+    }
+    public static void main(String args[]) {
+        System.out.println(methodA(10, 20); 
+    }  
+}
+\end{lstlisting}
+\AnswerBox
+
+\item Explain your understanding about the below function?
+\begin{lstlisting}
+public int fun1(int num) {
+    int s = 0;
+    while (num > 0) {
+        int x = num % 10;
+        if (x % 2 == 0)
+            s += x;
+        num /= 10;
+    }
+    return s;
+}
+\end{lstlisting}
+\AnswerBox
+
+\item Explain your understanding about the below function, and what it return if the argument value is 56?
+\begin{lstlisting}
+public boolean xyz(int n) {
+    if (n % 2 != 0)
+        return true;
+    return false;
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output if the argument value is 220?
+\begin{lstlisting}
+public void displayFactors(int num) {
+    System.out.println(``1'');
+    for (int i = 2; i <= num / 2; i++) {
+        if (num % i == 0) 
+        System.out.println(i);
+    }
+    System.out.println(num);
+}
+\end{lstlisting}
+\AnswerBox
+
+\item What would be the output when called the below method by passing 67 as argument?
+\begin{lstlisting}
+public char getGrade(int avg) {
+    if (avg >= 80)
+        return 'A';
+    if (avg >= 60)
+        return 'B';
+    if (avg >= 40)
+        return 'C';
+    return 'F';
+}
+\end{lstlisting}
+\AnswerBox
+
+\item Write the body of the method, which returns the minimum value?
+
+\begin{lstlisting}[numbers=none]
+public static int getMin(int a, int b, int c) {
+\end{lstlisting}
+\Answerbox
+\begin{lstlisting}[numbers=none]
+}
+\end{lstlisting}
+\end{enumerate}
+\end{document}

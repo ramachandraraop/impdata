@@ -1,0 +1,33 @@
+Among the following recording modes, which method uses both the objects and mouse coordinates?
+() Normal
+() Low level
+(x) Analog
+() All of the above
+
+Identify the recording mode, by which you can record the non-standard object in QTP
+() Standard recording
+() Analog recording
+(x) Low level recording
+() None
+
+QuickTest supports virtual object for analog or low-level recording?
+() True
+(x) False
+
+The statement that calls the recorded analog file is
+(x) RunAnalog
+() CallAnalog
+() ExecuteAnalog
+() A and B
+
+To use low-level recording, what must you do first?
+() Start a new test
+() Be in the Keyword view
+(x) Be recording in Normal mode
+() Click Low Level Recoding under the Automation Menu
+
+You will use the recording mode for an object not recognized by QuickTest.
+(x) Low-Level Recording Mode
+() Normal recording Mode
+() Analog Mode
+() A and B

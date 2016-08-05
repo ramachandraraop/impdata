@@ -1,0 +1,48 @@
+ Selenium RC is used
+(x) To run your Test against different browsers on different operating systems
+() To create Test with little or no prior knowledge in programming
+() To Test web application against Firefox only
+() To run a huge Test suite, that can be executed on multiple machines
+
+
+
+
+ How do you start selenium rc server with user extensions? 
+() java -jar selenium-server.jar
+(x) java -jar selenium-server.jar -userExtensions user-extensions.js
+() java -jar selenium-server.jar user-extensions.js
+() java -jar selenium-server.jar user-extensions.js -h
+
+
+ Which Selenium command do you use to run commands in slow motion in Selenium RC? 
+(x) selenium.setSpeed()
+() selenium.speed()
+() selenium.serverSpeed()
+() None of the above
+
+
+
+
+ Which command is used for verifying if a web element exists? 
+(x) selenium.isElementPresent(String locator)
+() assertTrue(Selenium.isElementPresent())
+() selenium.ElementPresent()
+
+
+
+
+ Which command is used for typing in a textbox? 
+() selenium.input()
+(x) selenium.type(String locator, String value)
+() assertequals(selenium.getValues())
+() selenium.textInput()
+
+
+
+ What is the command to load a page? 
+(x) selenium.waitForPageToLoad(String timeoutInMilliseconds)
+() selenium.waitForPageToLoadInt timeoutInMilliseconds
+() selenium.waitForPageToLoad(timeoutInMilliseconds)
+() selenium.waitForPageToLoad()
+
+

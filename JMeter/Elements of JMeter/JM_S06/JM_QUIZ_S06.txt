@@ -1,0 +1,88 @@
+1. How many types of samplers supported by JMeter ?
+a) 2
+b) 4
+c) 6
+d) 8
+
+Ans: C
+
+2. Which Method does not support for Java HTTP implementation?
+a) Get
+b) Post
+c) PUT
+d) Copy
+
+Ans: D
+
+3. What are different types of implementations available in HTTP Request?
+a) Httpclient4
+b) Httpclient3.1
+c) Java
+d) All of above
+
+Ans: D
+
+4. What is the default port number for Https protocal?
+a)1458
+b)4521
+c)443
+d)5478
+
+Ans: C
+
+5. What is the invalid Parameter field in Https request?
+a) Name
+b) Password
+c) Value
+d) Encode?
+
+Ans: B
+
+6. How many different types of default Assertion in JMeter?
+a) 3
+b) 10
+c) 9
+d) 13
+
+Ans: D
+
+7. Which is the third party plugin of Assertion in JMeter?
+a) Response Assertion
+b) Duration Assertion
+c) HTML Assertion
+d) JSON Path Assertion
+
+Ans: D
+
+
+8. Which fields contains Response field to test in Response Assertion?
+a) Text/Document/URLSampled/Response Code/Response Message/Response Headers/Ignore Status
+b) Mani Sample and Sub-samples/Main Sample only/Sub-samples only/Jmeter Variable
+c) Contains/Matches/Equals/Substring/Not
+d) None
+
+Ans: A
+
+9. Which assertion is not used in JMeter?
+a) Duration
+b) Size
+c) XML
+d) Web 
+
+Ans: D
+
+10. Which Assertion tests that each response was received within a given amount of time?
+a) Duration Assertion
+b) Size Assertion
+c) XML Assertion
+d) Response Assertion
+
+Ans: A
+
+11. Which Assertion tests that each response contains the right number of bytes in it
+a) Duration Assertion
+b) Size Assertion
+c) XML Assertion
+d) Response Assertion
+
+Ans: B
